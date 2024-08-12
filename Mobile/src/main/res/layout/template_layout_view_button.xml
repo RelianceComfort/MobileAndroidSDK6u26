@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Horizontal.Table">
+
+    <View
+        android:paddingStart="@dimen/field_horizontal_margin"
+        style="@style/TextViewBase.Normal.Table.TwoColumn"
+        android:layout_weight="0">
+    </View>
+
+    <Button
+        android:paddingEnd="@dimen/field_horizontal_margin"
+        android:paddingBottom="@dimen/field_separator"
+        style="@style/ButtonBase.Normal.MD.Table.OneColumn"
+        android:tag="ButtonBase.Normal.ActionBar">
+    </Button>
+
+</LinearLayout>

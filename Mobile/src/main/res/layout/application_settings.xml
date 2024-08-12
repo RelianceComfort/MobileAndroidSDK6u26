@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<androidx.coordinatorlayout.widget.CoordinatorLayout
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/coordinator_layout">
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			style="@style/LinearBase.Normal.Vertical"
+			android:id="@+id/outer_layout">
+			<androidx.core.widget.NestedScrollView
+				android:id="@+id/scroll_view"
+				style="@style/ScrollViewBase.Normal.Vertical"
+				android:layout_weight="1">
+				<LinearLayout
+					android:id="@+id/table_layout"
+					style="@style/LinearBase.Normal.Vertical" >
+					<TextView
+						style="@style/TextViewBase.Title"
+						android:tag="SCREEN_LABEL" >
+					</TextView>
+					<TextView
+						style="@style/TextViewBase.Emphasis"
+						android:tag="SCREEN_TIP" >
+					</TextView>
+					<LinearLayout
+						style="@style/LinearBase.Normal.Vertical.Table" >
+
+						<TextView
+							android:paddingBottom="0dp"
+							style="@style/TextViewBase.Normal.Table.Label"
+							android:id="@+id/ServiceAddress55dd55a0" />
+						<EditText
+							android:id="@+id/appsetting__service_address"
+							android:paddingTop="0dp"
+							style="@style/EditTextBase.Normal.Table"
+							android:inputType="textNoSuggestions" >
+						</EditText>
+					</LinearLayout>
+					<LinearLayout
+						style="@style/LinearBase.Normal.Vertical.Table" >
+
+						<TextView
+							android:paddingBottom="0dp"
+							style="@style/TextViewBase.Normal.Table.Label"
+							android:id="@+id/SyncInterval7086a07f" />
+						<Spinner
+							android:id="@+id/appsetting__sync_interval"
+							android:paddingTop="0dp"
+							style="@style/SpinnerBase.Normal.Table" >
+						</Spinner>
+					</LinearLayout>
+					<LinearLayout
+						style="@style/LinearBase.Normal.Vertical.Table" >
+
+						<TextView
+							android:id="@+id/logText"
+							android:paddingBottom="0dp"
+							style="@style/TextViewBase.Normal.Table.Label" />
+
+						<Spinner
+							android:id="@+id/appsetting__logLevel"
+							android:paddingTop="0dp"
+							style="@style/SpinnerBase.Normal.Table" >
+						</Spinner>
+					</LinearLayout>
+					<LinearLayout
+						style="@style/LinearBase.Normal.Horizontal.Table" >
+
+						<TextView
+							style="@style/TextViewBase.Normal.Table.TwoColumn"
+							android:visibility="invisible"
+							android:id="@+id/empty_space7a21d8b8" />
+
+						<CheckBox
+							android:id="@+id/pauseSync"
+							style="@style/CheckBoxBase.Normal.Table.TwoColumn"
+							android:textColor="@color/Black" />
+					</LinearLayout>
+					<LinearLayout
+						style="@style/LinearBase.Normal.Horizontal.Table" >
+
+						<TextView
+							style="@style/TextViewBase.Normal.Table.TwoColumn"
+							android:visibility="invisible"
+							android:id="@+id/empty_space1ebcfaf8" />
+
+						<CheckBox
+							android:id="@+id/requireLogin"
+							style="@style/CheckBoxBase.Normal.Table.TwoColumn"
+							android:textColor="@color/Black"/>
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/enableSoundLayout"
+						style="@style/LinearBase.Normal.Horizontal.Table" >
+
+						<TextView
+							style="@style/TextViewBase.Normal.Table.TwoColumn"
+							android:visibility="invisible"
+							android:id="@+id/empty_spaced46f86ed" />
+
+						<CheckBox
+							android:id="@+id/playSound"
+							style="@style/CheckBoxBase.Normal.Table.TwoColumn"
+							android:textColor="@color/Black"/>
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:background="@color/White"
+						android:orientation="horizontal"
+						android:padding="5dip"  >
+
+						<Button
+							android:id="@+id/sendLog"
+							style="@style/ButtonBase.Normal.ActionBar"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1" />
+						<Button
+							android:id="@+id/sendDatabase"
+							style="@style/ButtonBase.Normal.ActionBar"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:background="@color/White"
+						android:orientation="horizontal"
+						android:padding="5dip"  >
+						<Button
+							android:id="@+id/changePassword"
+							style="@style/ButtonBase.Normal.ActionBar"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1" />
+						<Button
+							android:id="@+id/logoutAndClose"
+							style="@style/ButtonBase.Normal.ActionBar"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:background="@color/White"
+						android:orientation="horizontal"
+						android:padding="5dip"  >
+						<Button
+							android:id="@+id/refreshCustomDesign"
+							style="@style/ButtonBase.Normal.ActionBar"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1" />
+					</LinearLayout>
+				</LinearLayout>
+			</androidx.core.widget.NestedScrollView>
+			<include layout="@layout/important_information_bar" />
+			<include layout="@layout/split_action_bar" />
+		</LinearLayout>
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			style="@style/FloatingActionBtnBase.First"
+			android:id="@+id/Init"
+			android:src="@drawable/ic_initialize_white_24dp"/>
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			style="@style/FloatingActionBtnBase.Second"
+			android:id="@+id/save"
+			app:layout_anchor="@id/Init"
+			android:src="@drawable/ic_save_white_24dp"/>
+	</androidx.coordinatorlayout.widget.CoordinatorLayout>
+	<!-- The navigation drawer -->  
+    <include layout="@layout/sliding_menu_layout"/>
+    
+</androidx.drawerlayout.widget.DrawerLayout>

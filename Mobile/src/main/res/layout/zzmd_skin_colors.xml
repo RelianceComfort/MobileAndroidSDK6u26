@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">	
+	<LinearLayout style="@style/ZZMD.LinearBase.Normal.Vertical"
+		android:descendantFocusability="beforeDescendants"
+		android:focusableInTouchMode="true">
+	    <ScrollView
+	        style="@style/ZZMD.ScrollViewBase.Normal.Vertical"
+	        android:layout_weight="1" >
+		    <LinearLayout
+		        android:id="@+id/table_layout"
+		        style="@style/ZZMD.LinearBase.Normal.Vertical"
+		        android:focusable="true"
+	            android:focusableInTouchMode="true" >
+
+				<TextView
+					style="@style/ZZMD.TextViewBase.Title"
+					android:id="@+id/colors"></TextView>
+
+				<TextView
+					style="@style/ZZMD.TextViewBase.Emphasis"
+					android:id="@+id/screen_info_metrix_designer_skin_colors"></TextView>
+				<LinearLayout style="@style/ZZMD.LinearBase.Normal.Horizontal.Table">
+
+					<TextView
+						style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn"
+						android:layout_weight="0.4"
+						android:id="@+id/primary"></TextView>
+					<EditText
+					    android:id="@+id/mm_skin__primary_color"
+						style="@style/ZZMD.EditTextBase.Normal.Table.FourColumn"
+						android:maxLength="6" 
+						android:inputType="text"
+						android:layout_weight="0.5" />
+				    <Button
+				        android:id="@+id/primary_color_pick"
+				        style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+				        android:layout_width="32dip" 
+				        android:layout_height="32dip"
+				        android:background="@drawable/color_picker" />
+				    <View android:id="@+id/mm_skin__primary_color_preview"
+	        			android:layout_width="30dip" android:layout_height="30dip" />     
+				</LinearLayout>
+				<LinearLayout style="@style/ZZMD.LinearBase.Normal.Horizontal.Table">
+
+					<TextView
+						style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn"
+						android:layout_weight="0.4"
+						android:id="@+id/secondary"></TextView>
+					<EditText
+					    android:id="@+id/mm_skin__secondary_color"
+						style="@style/ZZMD.EditTextBase.Normal.Table.FourColumn"
+						android:maxLength="6" 
+						android:inputType="text"
+						android:layout_weight="0.5" />
+				    <Button
+				        android:id="@+id/secondary_color_pick"
+				        style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+				        android:layout_width="32dip" 
+				        android:layout_height="32dip"
+				        android:background="@drawable/color_picker" />
+					<View android:id="@+id/mm_skin__secondary_color_preview"
+	        			android:layout_width="30dip" android:layout_height="30dip" />
+				</LinearLayout>
+				<LinearLayout style="@style/ZZMD.LinearBase.Normal.Horizontal.Table">
+
+					<TextView
+						style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn"
+						android:layout_weight="0.4"
+						android:id="@+id/hyperlink"></TextView>
+					<EditText
+					    android:id="@+id/mm_skin__hyperlink_color"
+						style="@style/ZZMD.EditTextBase.Normal.Table.FourColumn"
+						android:maxLength="6"
+						android:inputType="text"
+						android:layout_weight="0.5" />
+				    <Button
+				        android:id="@+id/hyperlink_color_pick"
+				        style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+				        android:layout_width="32dip" 
+				        android:layout_height="32dip"
+				        android:background="@drawable/color_picker" />
+					<View android:id="@+id/mm_skin__hyperlink_color_preview"
+	        			android:layout_width="30dip" android:layout_height="30dip" />
+				</LinearLayout>
+				<LinearLayout 
+					style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+					android:paddingTop="10dp" >  
+		    		<LinearLayout style="@style/ZZMD.LinearBase.Normal.Vertical"
+		    		    android:layout_weight="0.5" >	
+						<LinearLayout 
+							style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+							android:layout_height="wrap_content"
+							android:paddingTop="5dp"
+							android:paddingBottom="5dp">
+							<TextView
+								style="@style/ZZMD.TextViewBase.Normal.FullWidth"
+								android:id="@+id/first_gradient" />
+
+							<TextView
+								android:id="@+id/mm_skin__first_gradient_preview"
+								android:layout_width="30dip"
+								android:layout_height="30dip"
+								android:gravity="center" />
+						</LinearLayout>	    
+						<LinearLayout 
+							style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+							android:layout_height="wrap_content" >  
+							<EditText
+							    android:id="@+id/mm_skin__first_gradient1"
+								style="@style/ZZMD.EditTextBase.Normal.Table.FourColumn"
+								android:layout_weight="0.9" android:maxLength="6"
+								android:inputType="text" />
+							<Button
+						        android:id="@+id/first_gradient1_pick"
+						        style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+						        android:layout_width="32dip" 
+				        		android:layout_height="32dip"
+						        android:background="@drawable/color_picker"/>
+						</LinearLayout>	
+						<LinearLayout 
+							style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+							android:layout_height="wrap_content" >  
+							<EditText
+							    android:id="@+id/mm_skin__first_gradient2"
+								style="@style/ZZMD.EditTextBase.Normal.Table.FourColumn"
+								android:layout_weight="0.9" android:maxLength="6" 
+								android:inputType="text" />
+							<Button
+						        android:id="@+id/first_gradient2_pick"
+						        style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+						        android:layout_width="32dip" 
+				        		android:layout_height="32dip"
+						        android:background="@drawable/color_picker" />
+						</LinearLayout>
+						<LinearLayout 
+							style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+							android:layout_height="wrap_content" >  
+							<EditText
+							    android:id="@+id/mm_skin__first_gradient_text"
+								style="@style/ZZMD.EditTextBase.Normal.Table.FourColumn"
+								android:layout_weight="0.9" android:maxLength="6" 
+								android:inputType="text" />
+							<Button
+						        android:id="@+id/first_gradient_text_pick"
+						        style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+						        android:layout_width="32dip" 
+				        		android:layout_height="32dip"
+						        android:background="@drawable/font_color_icon" />
+						</LinearLayout>  
+		    		</LinearLayout>		
+					<View
+					    android:layout_width="1dp"
+					    android:layout_height="fill_parent"
+					    android:background="@android:color/black" />
+		    		<LinearLayout style="@style/ZZMD.LinearBase.Normal.Vertical"
+		    		    android:layout_weight="0.5" android:layout_marginLeft="5dp" >	
+						<LinearLayout 
+							style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+							android:layout_height="wrap_content"
+							android:paddingTop="5dp"
+							android:paddingBottom="5dp">
+							<TextView
+								style="@style/ZZMD.TextViewBase.Normal.FullWidth"
+								android:id="@+id/second_gradient" />
+
+							<TextView
+								android:id="@+id/mm_skin__second_gradient_preview"
+								android:layout_width="30dip"
+								android:layout_height="30dip"
+								android:gravity="center" />
+						</LinearLayout>	    		    
+						<LinearLayout 
+							style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+							android:layout_height="wrap_content" >  
+							<EditText
+							    android:id="@+id/mm_skin__second_gradient1"
+								style="@style/ZZMD.EditTextBase.Normal.Table.FourColumn"
+								android:layout_weight="0.9" android:maxLength="6"
+								android:inputType="text" />
+							<Button
+						        android:id="@+id/second_gradient1_pick"
+						        style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+						        android:layout_width="32dip" 
+				        		android:layout_height="32dip"
+						        android:background="@drawable/color_picker" />
+						</LinearLayout>	
+						<LinearLayout 
+							style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+							android:layout_height="wrap_content" >  
+							<EditText
+							    android:id="@+id/mm_skin__second_gradient2"
+								style="@style/ZZMD.EditTextBase.Normal.Table.FourColumn"
+								android:layout_weight="0.9" android:maxLength="6"
+								android:inputType="text" />
+							<Button
+						        android:id="@+id/second_gradient2_pick"
+						        style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+						        android:layout_width="32dip" 
+				        		android:layout_height="32dip"
+						        android:background="@drawable/color_picker" />
+						</LinearLayout>		
+						<LinearLayout 
+							style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+							android:layout_height="wrap_content" >  
+							<EditText
+							    android:id="@+id/mm_skin__second_gradient_text"
+								style="@style/ZZMD.EditTextBase.Normal.Table.FourColumn"
+								android:layout_weight="0.9" android:maxLength="6" 
+								android:inputType="text" />
+							<Button
+						        android:id="@+id/second_gradient_text_pick"
+						        style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+						        android:layout_width="32dip" 
+				        		android:layout_height="32dip"
+						        android:background="@drawable/font_color_icon" />
+						</LinearLayout>  
+					</LinearLayout>	
+				</LinearLayout>			
+	        </LinearLayout>
+	    </ScrollView>
+		<LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@color/White"
+		    android:orientation="horizontal"
+		    android:padding="5dip" >
+
+			<Button
+				android:id="@+id/save"
+				style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1" />
+
+			<Button
+				android:id="@+id/view_images"
+				style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1" />
+		</LinearLayout>
+	    <android.inputmethodservice.KeyboardView
+	        android:id="@+id/hex_keyboard_view"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_centerHorizontal="true"
+	        android:focusable="true"
+	        android:focusableInTouchMode="true"
+	        android:visibility="gone" />
+	</LinearLayout>
+	<!-- The navigation drawer -->  
+    <include layout="@layout/sliding_menu_layout"/>
+    
+</androidx.drawerlayout.widget.DrawerLayout>

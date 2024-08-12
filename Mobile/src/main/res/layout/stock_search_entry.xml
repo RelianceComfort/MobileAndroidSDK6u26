@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingEnd="?dialogPreferredPadding"
+    android:paddingStart="?dialogPreferredPadding">
+    <LinearLayout
+        style="@style/LinearBase.Normal.Horizontal.Table"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvPartLabel"
+            style="@style/TextViewBase.Normal.Table.TwoColumn"
+            tools:text="Part ID" />
+
+        <EditText
+            android:id="@+id/txtSearchPartId"
+            style="@style/EditTextBase.Normal.Table.TwoColumn"
+            android:drawableEnd="@drawable/magnifying_glass"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LinearBase.Normal.Horizontal.Table"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvDistanceLabel"
+            style="@style/TextViewBase.Normal.Table.TwoColumn"
+            tools:text="Distance" />
+
+        <Spinner
+            android:id="@+id/spinDistance"
+            style="@style/SpinnerBase.Normal.Table.TwoColumn" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LinearBase.Normal.Horizontal.Table"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvPlacesLabel"
+            style="@style/TextViewBase.Normal.Table.TwoColumn"
+            tools:text="Places" />
+
+        <Spinner
+            android:id="@+id/spinPlaces"
+            style="@style/SpinnerBase.Normal.Table.TwoColumn" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LinearBase.Normal.Horizontal.Table"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvQuantityLabel"
+            style="@style/TextViewBase.Normal.Table.TwoColumn"
+            tools:text="Quantity" />
+
+        <EditText
+            android:id="@+id/txtMinQtyRequired"
+            style="@style/EditTextBase.Normal.Table.TwoColumn"
+            android:inputType="text" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/signin_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dip"
+    android:orientation="vertical" android:layout_alignParentBottom="true">
+
+    <LinearLayout
+        android:id="@+id/table_layout"
+        style="@style/LinearBase"
+        android:layout_margin="5dip"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/LinearBase" >
+
+            <EditText
+                android:id="@+id/personId"
+                style="@style/EditTextBase.Normal.Table.TwoColumn.Special"
+                android:inputType="textNoSuggestions"></EditText>
+
+            <EditText
+                android:id="@+id/password"
+                style="@style/EditTextBase.Normal.Table.TwoColumn.Special"
+                android:inputType="textPassword"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LinearBase"
+            android:orientation="horizontal" >
+            <CheckBox
+                android:id="@+id/showPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/White" />
+        </LinearLayout>
+        
+        <LinearLayout
+            style="@style/LinearBase" >
+            <CheckBox
+                android:id="@+id/rememberMe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/White" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+
+            <Button
+                android:id="@+id/logIn"
+                style="@style/ButtonBase.Normal.ActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+            </Button>
+
+            <Button
+                android:id="@+id/changePassword"
+                style="@style/ButtonBase.Normal.ActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

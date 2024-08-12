@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="500dp"
+    android:layout_height="fill_parent"
+    android:background="@color/White"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="1.0" >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/time_clock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="@drawable/time_clock_gradient_background"
+        android:orientation="horizontal"
+        android:padding="5dip" >
+        <Spinner
+            android:id="@+id/time_clock__sequence"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".70" >
+        </Spinner>
+        <ImageView
+            android:id="@+id/time_clock_start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dip"
+            android:src="@drawable/button_blue_play" />
+        <ImageView
+            android:id="@+id/time_clock_pause_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dip"
+            android:src="@drawable/button_blue_pause"
+            android:visibility="gone" />
+        <ImageView
+            android:id="@+id/time_clock_stop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dip"
+            android:src="@drawable/button_grey_stop" />
+        <Chronometer
+            android:id="@+id/time_clock_chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:format="H:MM:SS"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:paddingTop="6dip"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

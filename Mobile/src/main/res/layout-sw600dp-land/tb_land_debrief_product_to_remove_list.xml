@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coordinator_layout">
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            style="@style/LinearBase.Normal.Horizontal" >
+            <include layout="@layout/debrief_navigation_bar" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:background="#b2b2b2" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.8"
+                android:orientation="vertical" >
+                <LinearLayout
+                    android:id="@+id/table_layout"
+                    style="@style/LinearBase.Normal.Vertical"
+                    android:layout_weight="1" android:layout_height="0dp" tools:ignore="NestedWeights"
+                    android:padding="5dp" >
+                    <include layout="@layout/quicklinks_with_screen_label" />
+                    <TextView
+                        style="@style/TextViewBase.Emphasis"
+                        android:tag="SCREEN_TIP" />
+                	<androidx.recyclerview.widget.RecyclerView
+                	    android:id="@+id/recyclerView"
+                	    android:layout_width="match_parent"
+                	    android:layout_height="match_parent"
+                	    android:scrollbars="vertical" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <include layout="@layout/add_next_bar" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!-- The navigation drawer -->
+    <include layout="@layout/sliding_menu_layout" />
+</androidx.drawerlayout.widget.DrawerLayout>

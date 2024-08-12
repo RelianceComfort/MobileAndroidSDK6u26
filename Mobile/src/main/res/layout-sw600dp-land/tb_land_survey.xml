@@ -1,0 +1,36 @@
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        style="@style/LinearBase.Normal.Horizontal" android:baselineAligned="false">
+        <include layout="@layout/debrief_navigation_bar" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="fill_parent" android:id="@+id/panel_two" android:layout_weight="0.8" android:orientation="horizontal">
+	        <include layout="@layout/tb_land_layout_seperator" />
+	        <com.metrix.architecture.ui.widget.ObservableScrollView
+		        xmlns:android="http://schemas.android.com/apk/res/android"
+		        style="@style/ScrollViewBase.Normal.Vertical"
+		        android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+		        android:id="@+id/survey_scrollview"
+		        android:padding="5dp">
+		        <LinearLayout
+		            xmlns:android="http://schemas.android.com/apk/res/android"
+		            android:id="@+id/table_layout"
+		            style="@style/LinearBase.Normal.Vertical" >
+		            
+		            <LinearLayout
+		                android:layout_width="fill_parent"
+					    android:layout_height="wrap_content"
+		                android:orientation="vertical"
+		                android:id="@+id/survey_question_container">
+		            </LinearLayout>
+		        </LinearLayout>
+		    </com.metrix.architecture.ui.widget.ObservableScrollView>
+	    </LinearLayout>
+    </LinearLayout>
+    <!-- The navigation drawer -->
+    <include layout="@layout/sliding_menu_layout" />
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DO NOT CHANGE THIS FILE -->
+<resources>
+
+	<string-array name="system_tables">
+		<item> CREATE TABLE mm_keys(
+			table_name nvarchar (128) NOT NULL,
+			key
+			nvarchar(128) NOT NULL,
+			data_type nvarchar(30));
+		</item>
+		<item> CREATE TABLE mm_foreign_keys(
+			table_name nvarchar(128) NOT NULL,
+			column_name nvarchar(128) NOT NULL,
+			foreign_table_name nvarchar(128)
+			NOT NULL,
+			foreign_column_name nvarchar(128) NOT NULL);
+		</item>
+		<item> CREATE TABLE mm_current_keys(
+			table_name nvarchar(128) NOT NULL,
+			key_name nvarchar(128) NOT NULL,
+			key_value nvarchar(128) NOT NULL,
+			PRIMARY KEY (table_name, key_name),
+			UNIQUE(table_name, key_name));
+		</item>
+		<item> CREATE TABLE mm_message_in (
+			message_id integer PRIMARY KEY AUTOINCREMENT,
+			person_id nvarchar (128) NOT NULL,
+			transaction_type nvarchar (128) NOT NULL,
+			message text NOT NULL,
+			related_message_id integer NULL,
+			retry_num integer NOT NULL default 0,
+			status nvarchar(32) NULL,
+			created_dttm text NOT NULL);
+		</item>
+		<item> CREATE TABLE mm_message_out (
+			message_id integer PRIMARY KEY AUTOINCREMENT,
+			person_id nvarchar (128) NOT NULL,
+			transaction_type nvarchar (128) NOT NULL,
+			transaction_id integer not NULL default 0,
+			transaction_key_id nvarchar (128),
+			transaction_key_name nvarchar (128),
+			status nvarchar (128) NOT NULL,
+			table_name nvarchar (128),
+			metrix_log_id integer,
+			message text,
+			attachment text NULL,
+			activity_name nvarchar (128) NULL,
+			screen_id numeric(18,0) NULL,
+			transaction_desc nvarchar (128) NULL,
+			created_dttm text not NULL,
+			modified_dttm text NOT NULL);
+		</item>
+		<item> CREATE TABLE mm_message_receipt (
+			message_id integer primary
+			key,
+			person_id text NOT NULL,
+			created_dttm text not
+			NULL);
+		</item>
+		<item> CREATE TABLE mm_counter_and_id(
+			counter_name nvarchar (128) not
+			NULL,
+			starting_value numeric (18) NULL,
+			minimum_value numeric (18)
+			NULL,
+			last_value_used numeric (18) NULL,
+			description nvarchar (256)
+			NULL,
+			constraint counter_and_id_pk PRIMARY KEY (counter_name))
+		</item>
+		<item> CREATE TABLE mm_filter_history(
+			filter_name nvarchar(128) not
+			NULL,
+			filter_value nvarchar(256) NOT NULL,
+			usage_count numeric (18) not
+			NULL);
+		</item>
+		    <item>
+CREATE TABLE mm_message_def_view (
+metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+locale_code nvarchar(1) NULL,
+localization_key nvarchar(1) NULL,
+message_id nvarchar(1) NULL,
+message_text nvarchar(1) NULL,
+message_type nvarchar(1) NULL,
+modified_dttm datetime NULL);
+</item>
+		<item> CREATE TABLE mm_assignment (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			assignment_id numeric(18,0) NOT NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			design_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			precedence numeric(18,0) NULL,
+			revision_id numeric(18,0) NULL,
+			type nvarchar(128) NULL,
+			UNIQUE(assignment_id));
+		</item>
+		<item> CREATE TABLE mm_assignment_LOG (
+			metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+			metrix_row_id integer NOT NULL,
+			assignment_id numeric(18,0) NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			design_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			precedence numeric(18,0) NULL,
+			revision_id numeric(18,0) NULL,
+			type nvarchar(128) NULL);
+		</item>
+		<item> CREATE TRIGGER mm_assignment_LOG_UPDTRG AFTER UPDATE OF assignment_id, revision_id, design_id ON mm_assignment_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_assignment\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND ((transaction_type =
+			\'INSERT\' AND (NEW.revision_id IS NULL OR NEW.revision_id NOT LIKE \'-%%\') AND (NEW.design_id IS NULL OR NEW.design_id NOT LIKE
+			\'-%%\')) OR ((transaction_type = \'UPDATE\' OR transaction_type = \'DELETE\') AND (NEW.assignment_id IS NULL OR NEW.assignment_id NOT LIKE \'-%%\') AND
+			(NEW.revision_id IS NULL OR NEW.revision_id NOT LIKE \'-%%\') AND (NEW.design_id IS NULL OR NEW.design_id NOT LIKE \'-%%\')));
+			END;
+		</item>
+		<item> CREATE TRIGGER mm_assignment_UPDTRG AFTER UPDATE OF assignment_id ON mm_assignment
+			BEGIN
+			UPDATE mm_assignment_LOG SET assignment_id = NEW.assignment_id WHERE assignment_id = OLD.assignment_id;
+			UPDATE mm_assignment_val SET assignment_id = NEW.assignment_id WHERE assignment_id =
+			OLD.assignment_id;
+			UPDATE mm_assignment_val_LOG SET assignment_id = NEW.assignment_id WHERE assignment_id = OLD.assignment_id;
+			END;
+		</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_assignment\', \'assignment_id\', \'numeric(18,0)\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_assignment\', \'assignment_id\', \'mm_assignment_val\', \'assignment_id\');</item>
+		<item> CREATE TABLE mm_assignment_val (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			assignment_id numeric(18,0) NOT NULL,
+			assignment_value nvarchar(256) NOT NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			UNIQUE(assignment_id, assignment_value));
+		</item>
+		<item> CREATE TABLE mm_assignment_val_LOG (
+			metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+			metrix_row_id integer NOT NULL,
+			assignment_id numeric(18,0) NULL,
+			assignment_value nvarchar(256) NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm
+			datetime NULL);
+		</item>
+		<item> CREATE TRIGGER mm_assignment_val_LOG_UPDTRG AFTER UPDATE OF assignment_id, assignment_value ON mm_assignment_val_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_assignment_val\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND
+			((transaction_type = \'INSERT\' AND (NEW.assignment_id IS NULL OR NEW.assignment_id NOT LIKE \'-%%\')) OR ((transaction_type = \'UPDATE\' OR
+			transaction_type = \'DELETE\') AND (NEW.assignment_id IS NULL OR NEW.assignment_id NOT LIKE \'-%%\') AND (NEW.assignment_value IS NULL OR
+			NEW.assignment_value NOT LIKE \'-%%\')));
+			END;
+		</item>
+		<item> CREATE TRIGGER mm_assignment_val_UPDTRG AFTER UPDATE OF assignment_id, assignment_value ON mm_assignment_val
+			BEGIN
+			UPDATE mm_assignment_val_LOG SET assignment_id = NEW.assignment_id WHERE assignment_id = OLD.assignment_id;
+			UPDATE mm_assignment_val_LOG SET assignment_value =
+			NEW.assignment_value WHERE assignment_value = OLD.assignment_value;
+			END;
+		</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_assignment_val\', \'assignment_id\', \'numeric(18,0)\');</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_assignment_val\', \'assignment_value\', \'nvarchar(256)\');</item>
+		<item> CREATE TABLE mm_design (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			design_id numeric(18,0) NOT NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name nvarchar(128) NULL,
+			parent_design_id
+			numeric(18,0) NULL,
+			design_set_id numeric(18,0) NULL,
+			UNIQUE(design_id));
+		</item>
+		<item> CREATE TABLE use_mm_design (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			design_id numeric(18,0) NOT NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name nvarchar(128) NULL,
+			parent_design_id
+			numeric(18,0) NULL,
+			design_set_id numeric(18,0) NULL,
+			UNIQUE(design_id));
+		</item>
+		<item> CREATE TABLE mm_design_LOG (
+			metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+			metrix_row_id integer NOT NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			design_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name nvarchar(128)
+			NULL,
+			parent_design_id numeric(18,0) NULL,
+			design_set_id numeric(18,0) NULL);
+		</item>
+		<item> CREATE TRIGGER mm_design_LOG_UPDTRG AFTER UPDATE OF design_id, design_set_id ON mm_design_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_design\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND ((transaction_type = \'INSERT\' AND
+			(NEW.design_set_id IS NULL OR NEW.design_set_id NOT LIKE \'-%%\')) OR ((transaction_type = \'UPDATE\' OR transaction_type =
+			\'DELETE\') AND (NEW.design_id IS NULL OR NEW.design_id NOT LIKE \'-%%\') AND (NEW.design_set_id IS NULL OR NEW.design_set_id NOT LIKE \'-%%\')));
+			END;
+		</item>
+		<item> CREATE TRIGGER mm_design_UPDTRG AFTER UPDATE OF design_id ON mm_design
+			BEGIN
+			UPDATE mm_design_LOG SET design_id = NEW.design_id WHERE design_id = OLD.design_id;
+			UPDATE mm_assignment SET design_id = NEW.design_id WHERE design_id = OLD.design_id;
+			UPDATE mm_assignment_LOG SET design_id =
+			NEW.design_id WHERE design_id = OLD.design_id;
+			UPDATE mm_home_item SET design_id = NEW.design_id WHERE design_id = OLD.design_id;
+			UPDATE mm_home_item_LOG SET design_id = NEW.design_id WHERE design_id = OLD.design_id;
+			UPDATE mm_menu_item SET design_id = NEW.design_id WHERE design_id = OLD.design_id;
+			UPDATE mm_menu_item_LOG SET design_id = NEW.design_id WHERE design_id = OLD.design_id;
+			UPDATE mm_screen SET design_id = NEW.design_id WHERE design_id = OLD.design_id;
+			UPDATE mm_screen_LOG SET design_id = NEW.design_id WHERE design_id = OLD.design_id;
+			UPDATE mm_workflow SET design_id = NEW.design_id
+			WHERE design_id = OLD.design_id;
+			UPDATE mm_workflow_LOG SET design_id = NEW.design_id WHERE design_id = OLD.design_id;
+			END;
+		</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_design\', \'design_id\', \'numeric(18,0)\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_design\', \'design_id\', \'mm_assignment\', \'design_id\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_design\', \'design_id\', \'mm_home_item\', \'design_id\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_design\', \'design_id\', \'mm_menu_item\', \'design_id\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_design\', \'design_id\', \'mm_screen\', \'design_id\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_design\', \'design_id\', \'mm_workflow\', \'design_id\');</item>
+		<item> CREATE TABLE mm_design_revision_view (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			revision_id numeric(18,0) NULL,
+			design_id numeric(18,0) NULL,
+			revision_number numeric(18,0) NULL);
+		</item>
+		<item> CREATE TABLE mm_design_set (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name nvarchar(128) NULL,
+			design_set_id numeric(18,0) NOT NULL,
+			UNIQUE(design_set_id));
+		</item>
+		<item> CREATE TABLE use_mm_design_set (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name nvarchar(128) NULL,
+			design_set_id numeric(18,0) NOT NULL,
+			UNIQUE(design_set_id));
+		</item>
+		<item> CREATE TABLE mm_design_set_LOG (
+			metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+			metrix_row_id integer NOT NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name nvarchar(128) NULL,
+			design_set_id
+			numeric(18,0) NULL);
+		</item>
+		<item> CREATE TRIGGER mm_design_set_LOG_UPDTRG AFTER UPDATE OF design_set_id ON mm_design_set_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_design_set\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND ((transaction_type = \'INSERT\') OR ((transaction_type
+			= \'UPDATE\' OR transaction_type = \'DELETE\') AND (NEW.design_set_id IS NULL OR NEW.design_set_id NOT
+			LIKE \'-%%\')));
+			END;
+		</item>
+		<item> CREATE TRIGGER mm_design_set_UPDTRG AFTER UPDATE OF design_set_id ON mm_design_set
+			BEGIN
+			UPDATE mm_design_set_LOG SET design_set_id = NEW.design_set_id WHERE design_set_id = OLD.design_set_id;
+			UPDATE mm_design SET design_set_id = NEW.design_set_id WHERE design_set_id = OLD.design_set_id;
+			UPDATE mm_design_LOG SET
+			design_set_id = NEW.design_set_id WHERE design_set_id = OLD.design_set_id;
+			UPDATE mm_revision SET design_set_id = NEW.design_set_id WHERE design_set_id = OLD.design_set_id;
+			UPDATE mm_revision_LOG SET design_set_id = NEW.design_set_id WHERE design_set_id = OLD.design_set_id;
+			END;
+		</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_design_set\', \'design_set_id\', \'numeric(18,0)\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_design_set\', \'design_set_id\', \'mm_design\', \'design_set_id\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_design_set\', \'design_set_id\', \'mm_revision\', \'design_set_id\');</item>
+		<item> CREATE TABLE mm_field (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			column_name nvarchar(128) NULL,
+			control_type nvarchar(1) NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			data_type nvarchar(1) NULL,
+			default_value nvarchar(1) NULL,
+			description text NULL,
+			display_order numeric(18,0) NULL,
+			field_id numeric(18,0) NOT NULL,
+			force_case nvarchar(1) NULL,
+			input_type nvarchar(1) NULL,
+			label nvarchar(1) NULL,
+			list_display_column nvarchar(1) NULL,
+			list_filter_column nvarchar(1) NULL,
+			list_filter_value nvarchar(1) NULL,
+			list_order_by nvarchar(1) NULL,
+			list_table_name nvarchar(1) NULL,
+			list_value_column nvarchar(1) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			modified_revision_id numeric(18,0) NULL,
+			read_only nvarchar(1) NULL,
+			region nvarchar(1) NULL,
+			required nvarchar(1) NULL,
+			screen_id numeric(18,0) NULL,
+			table_name nvarchar(128) NULL,
+			validation nvarchar(1) NULL,
+			visible nvarchar(1) NULL,
+			workflow_id numeric(18,0) NULL,
+			UNIQUE(field_id));
+		</item>
+		<item> CREATE TABLE use_mm_field (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			column_name nvarchar(128) NULL,
+			control_type nvarchar(1) NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			data_type nvarchar(1) NULL,
+			default_value nvarchar(1) NULL,
+			description text NULL,
+			display_order numeric(18,0) NULL,
+			field_id numeric(18,0) NOT NULL,
+			force_case nvarchar(1) NULL,
+			input_type nvarchar(1) NULL,
+			label nvarchar(1) NULL,
+			list_display_column nvarchar(1) NULL,
+			list_filter_column nvarchar(1) NULL,
+			list_filter_value nvarchar(1) NULL,
+			list_order_by nvarchar(1) NULL,
+			list_table_name nvarchar(1) NULL,
+			list_value_column nvarchar(1) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			modified_revision_id numeric(18,0) NULL,
+			read_only nvarchar(1) NULL,
+			region nvarchar(1) NULL,
+			required nvarchar(1) NULL,
+			screen_id numeric(18,0) NULL,
+			table_name nvarchar(128) NULL,
+			validation nvarchar(1) NULL,
+			visible nvarchar(1) NULL,
+			workflow_id numeric(18,0) NULL,
+			UNIQUE(field_id));
+		</item>
+		<item> CREATE TABLE mm_field_LOG (
+			metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+			metrix_row_id integer NOT NULL,
+			column_name nvarchar(128) NULL,
+			control_type nvarchar(1) NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			data_type nvarchar(1) NULL,
+			default_value nvarchar(1) NULL,
+			description text NULL,
+			display_order numeric(18,0) NULL,
+			field_id numeric(18,0) NULL,
+			force_case nvarchar(1) NULL,
+			input_type nvarchar(1) NULL,
+			label nvarchar(1) NULL,
+			list_display_column nvarchar(1) NULL,
+			list_filter_column nvarchar(1) NULL,
+			list_filter_value nvarchar(1) NULL,
+			list_order_by nvarchar(1) NULL,
+			list_table_name nvarchar(1) NULL,
+			list_value_column nvarchar(1) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			modified_revision_id numeric(18,0) NULL,
+			read_only nvarchar(1) NULL,
+			region nvarchar(1) NULL,
+			required nvarchar(1) NULL,
+			screen_id numeric(18,0) NULL,
+			table_name nvarchar(128) NULL,
+			validation nvarchar(1) NULL,
+			visible nvarchar(1) NULL,
+			workflow_id numeric(18,0) NULL);
+		</item>
+		<item> CREATE TRIGGER mm_field_LOG_UPDTRG AFTER UPDATE OF field_id, screen_id ON mm_field_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_field\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND ((transaction_type = \'INSERT\' AND (NEW.screen_id IS
+			NULL OR NEW.screen_id NOT LIKE \'-%%\')) OR ((transaction_type = \'UPDATE\' OR transaction_type =
+			\'DELETE\') AND (NEW.field_id IS NULL OR NEW.field_id NOT LIKE \'-%%\') AND (NEW.screen_id IS NULL OR NEW.screen_id NOT LIKE \'-%%\')));
+			END;
+		</item>
+		<item> CREATE TRIGGER mm_field_UPDTRG AFTER UPDATE OF field_id ON mm_field
+			BEGIN
+			UPDATE mm_field_LOG SET field_id = NEW.field_id WHERE field_id = OLD.field_id;
+			END;
+		</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_field\', \'field_id\', \'numeric(18,0)\');</item>
+		<item>
+		    CREATE INDEX use_mm_field_x1 ON use_mm_field(screen_id);
+		</item>
+		<item> CREATE TABLE mm_home_item (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			description text NULL,
+			design_id numeric(18,0) NULL,
+			display_order numeric(18,0) NULL,
+			item_id numeric(18,0) NOT NULL,
+			item_name nvarchar(128) NULL,
+			label nvarchar(1) NULL,
+			image_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			modified_revision_id numeric(18,0) NULL,
+			revision_id numeric(18,0) NULL,
+			screen_id numeric(18,0) NULL,
+			UNIQUE(item_id));
+		</item>
+		<item> CREATE TABLE use_mm_home_item (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			description text NULL,
+			design_id numeric(18,0) NULL,
+			display_order numeric(18,0) NULL,
+			item_id numeric(18,0) NOT NULL,
+			item_name nvarchar(128) NULL,
+			label nvarchar(1) NULL,
+			image_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			modified_revision_id numeric(18,0) NULL,
+			revision_id numeric(18,0) NULL,
+			screen_id numeric(18,0) NULL,
+			UNIQUE(item_id));
+		</item>
+		<item> CREATE TABLE mm_home_item_LOG (
+			metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+			metrix_row_id integer NOT NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			description text NULL,
+			design_id numeric(18,0) NULL,
+			display_order numeric(18,0) NULL,
+			item_id numeric(18,0) NULL,
+			item_name nvarchar(128) NULL,
+			label nvarchar(1) NULL,
+			image_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			modified_revision_id numeric(18,0) NULL,
+			revision_id numeric(18,0) NULL,
+			screen_id numeric(18,0) NULL);
+		</item>
+		<item> CREATE TRIGGER mm_home_item_LOG_UPDTRG AFTER UPDATE OF item_id, revision_id, design_id ON mm_home_item_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_home_item\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND ((transaction_type = \'INSERT\'
+			AND (NEW.revision_id IS NULL OR NEW.revision_id NOT LIKE \'-%%\') AND (NEW.design_id IS NULL OR NEW.design_id NOT LIKE
+			\'-%%\')) OR ((transaction_type = \'UPDATE\' OR transaction_type = \'DELETE\') AND (NEW.item_id IS NULL OR NEW.item_id NOT LIKE \'-%%\') AND (NEW.revision_id IS NULL OR
+			NEW.revision_id NOT LIKE \'-%%\') AND (NEW.design_id IS NULL OR NEW.design_id NOT LIKE \'-%%\')));
+			END;
+		</item>
+		<item> CREATE TRIGGER mm_home_item_UPDTRG AFTER UPDATE OF item_id ON mm_home_item
+			BEGIN
+			UPDATE mm_home_item_LOG SET item_id = NEW.item_id WHERE item_id = OLD.item_id;
+			END;
+		</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_home_item\', \'item_id\', \'numeric(18,0)\');</item>
+		<item> CREATE TABLE mm_menu_item (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			description text NULL,
+			design_id numeric(18,0) NULL,
+			display_order numeric(18,0) NULL,
+			item_id numeric(18,0) NOT NULL,
+			item_name nvarchar(128) NULL,
+			label nvarchar(1) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			modified_revision_id numeric(18,0) NULL,
+			revision_id numeric(18,0) NULL,
+			screen_id numeric(18,0) NULL,
+			UNIQUE(item_id));
+		</item>
+		<item> CREATE TABLE use_mm_menu_item (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			description text NULL,
+			design_id numeric(18,0) NULL,
+			display_order numeric(18,0) NULL,
+			item_id numeric(18,0) NOT NULL,
+			item_name nvarchar(128) NULL,
+			label nvarchar(1) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			modified_revision_id numeric(18,0) NULL,
+			revision_id numeric(18,0) NULL,
+			screen_id numeric(18,0) NULL,
+			UNIQUE(item_id));
+		</item>
+		<item> CREATE TABLE mm_menu_item_LOG (
+			metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+			metrix_row_id integer NOT NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			description text NULL,
+			design_id numeric(18,0) NULL,
+			display_order numeric(18,0) NULL,
+			item_id numeric(18,0) NULL,
+			item_name nvarchar(128) NULL,
+			label nvarchar(1) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			modified_revision_id numeric(18,0) NULL,
+			revision_id numeric(18,0) NULL,
+			screen_id numeric(18,0) NULL);
+		</item>
+		<item> CREATE TRIGGER mm_menu_item_LOG_UPDTRG AFTER UPDATE OF item_id, revision_id, design_id ON mm_menu_item_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_menu_item\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND ((transaction_type = \'INSERT\'
+			AND (NEW.revision_id IS NULL OR NEW.revision_id NOT LIKE \'-%%\') AND (NEW.design_id IS NULL OR NEW.design_id NOT LIKE
+			\'-%%\')) OR ((transaction_type = \'UPDATE\' OR transaction_type = \'DELETE\') AND (NEW.item_id IS NULL OR NEW.item_id NOT LIKE \'-%%\') AND (NEW.revision_id IS NULL OR
+			NEW.revision_id NOT LIKE \'-%%\') AND (NEW.design_id IS NULL OR NEW.design_id NOT LIKE \'-%%\')));
+			END;
+		</item>
+		<item> CREATE TRIGGER mm_menu_item_UPDTRG AFTER UPDATE OF item_id ON mm_menu_item
+			BEGIN
+			UPDATE mm_menu_item_LOG SET item_id = NEW.item_id WHERE item_id = OLD.item_id;
+			END;
+		</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_menu_item\', \'item_id\', \'numeric(18,0)\');</item>
+		<item> CREATE TABLE mm_revision (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			revision_id numeric(18,0) NOT NULL,
+			revision_number numeric(18,0) NULL,
+			design_set_id numeric(18,0) NULL,
+			skin_id numeric(18,0) NULL,
+			status nvarchar(128) NULL,
+			UNIQUE(revision_id));
+		</item>
+		<item> CREATE TABLE use_mm_revision (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			revision_id numeric(18,0) NOT NULL,
+			revision_number numeric(18,0) NULL,
+			design_set_id numeric(18,0) NULL,
+			skin_id numeric(18,0) NULL,
+			status nvarchar(128) NULL,
+			UNIQUE(revision_id));
+		</item>
+		<item> CREATE TABLE mm_revision_LOG (
+			metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+			metrix_row_id integer NOT NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			revision_id numeric(18,0) NULL,
+			revision_number numeric(18,0) NULL,
+			design_set_id numeric(18,0) NULL,
+			skin_id numeric(18,0) NULL,
+			status nvarchar(128) NULL);
+		</item>
+		<item> CREATE TRIGGER mm_revision_LOG_UPDTRG AFTER UPDATE OF revision_id, design_set_id ON mm_revision_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_revision\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND ((transaction_type = \'INSERT\' AND
+			(NEW.design_set_id IS NULL OR NEW.design_set_id NOT LIKE \'-%%\')) OR ((transaction_type = \'UPDATE\' OR transaction_type =
+			\'DELETE\') AND (NEW.revision_id IS NULL OR NEW.revision_id NOT LIKE \'-%%\') AND (NEW.design_set_id IS NULL OR NEW.design_set_id NOT LIKE \'-%%\')));
+			END;
+		</item>
+		<item> CREATE TRIGGER mm_revision_UPDTRG AFTER UPDATE OF revision_id ON mm_revision
+			BEGIN
+			UPDATE mm_revision_LOG SET revision_id = NEW.revision_id WHERE revision_id = OLD.revision_id;
+			UPDATE mm_assignment SET revision_id = NEW.revision_id WHERE revision_id = OLD.revision_id;
+			UPDATE mm_assignment_LOG
+			SET revision_id = NEW.revision_id WHERE revision_id = OLD.revision_id;
+			UPDATE mm_home_item SET revision_id = NEW.revision_id WHERE revision_id = OLD.revision_id;
+			UPDATE mm_home_item_LOG SET revision_id = NEW.revision_id WHERE revision_id = OLD.revision_id;
+			UPDATE mm_menu_item SET revision_id =
+			NEW.revision_id WHERE revision_id = OLD.revision_id;
+			UPDATE mm_menu_item_LOG SET revision_id = NEW.revision_id WHERE revision_id = OLD.revision_id;
+			UPDATE mm_screen SET revision_id = NEW.revision_id WHERE revision_id = OLD.revision_id;
+			UPDATE mm_screen_LOG SET revision_id = NEW.revision_id WHERE
+			revision_id = OLD.revision_id;
+			UPDATE mm_workflow SET revision_id = NEW.revision_id WHERE revision_id = OLD.revision_id;
+			UPDATE mm_workflow_LOG SET revision_id = NEW.revision_id WHERE revision_id = OLD.revision_id;
+			END;
+		</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_revision\', \'revision_id\', \'numeric(18,0)\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_revision\', \'revision_id\', \'mm_assignment\', \'revision_id\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_revision\', \'revision_id\', \'mm_home_item\', \'revision_id\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_revision\', \'revision_id\', \'mm_menu_item\', \'revision_id\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_revision\', \'revision_id\', \'mm_screen\', \'revision_id\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_revision\', \'revision_id\', \'mm_workflow\', \'revision_id\');</item>
+	  <item> CREATE TABLE mm_screen (
+	   metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+	   allow_delete nvarchar(1) NULL,
+	   allow_modify nvarchar(1) NULL,
+	   created_by nvarchar(32) NULL,
+	   created_dttm datetime NULL,
+	   created_revision_id numeric(18,0) NULL,
+	   description text NULL,
+	   design_id numeric(18,0) NULL,
+	   force_order nvarchar(32) NULL,
+	   help nvarchar(1) NULL,
+	   label nvarchar(1) NULL,
+	   linked_screen_id numeric(18,0) NULL,
+	   modified_by nvarchar(32) NULL,
+	   modified_dttm datetime NULL,
+	   modified_revision_id numeric(18,0) NULL,
+	   primary_table nvarchar(128) NULL,
+	   revision_id numeric(18,0) NULL,
+	   read_only nvarchar(1) NULL,
+	   refresh_event nvarchar(256) NULL,
+	   screen_id numeric(18,0) NOT NULL,
+	   screen_name nvarchar(128) NULL,
+	   screen_type nvarchar(32) NULL,   
+	   tip nvarchar(1) NULL,  
+	   where_clause_script nvarchar(256) NULL,
+	   UNIQUE(screen_id));
+	  </item>
+	  <item> CREATE TABLE use_mm_screen (
+	   metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+	   allow_delete nvarchar(1) NULL,
+	   allow_modify nvarchar(1) NULL,
+	   created_by nvarchar(32) NULL,
+	   created_dttm datetime NULL,
+	   created_revision_id numeric(18,0) NULL,
+	   description text NULL,
+	   design_id numeric(18,0) NULL,
+	   force_order nvarchar(32) NULL,
+	   help nvarchar(1) NULL,
+	   label nvarchar(1) NULL,
+	   linked_screen_id numeric(18,0) NULL,
+	   modified_by nvarchar(32) NULL,
+	   modified_dttm datetime NULL,
+	   modified_revision_id numeric(18,0) NULL,
+	   primary_table nvarchar(128) NULL,
+	   revision_id numeric(18,0) NULL,
+	   read_only nvarchar(1) NULL,
+	   refresh_event nvarchar(256) NULL,
+	   screen_id numeric(18,0) NOT NULL,
+	   screen_name nvarchar(128) NULL,
+	   screen_type nvarchar(32) NULL,
+	   tip nvarchar(1) NULL,
+	   where_clause_script nvarchar(256) NULL,
+	   UNIQUE(screen_id));
+	  </item>
+	  <item> CREATE TABLE mm_screen_LOG (
+	   metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+	   metrix_row_id integer NOT NULL,
+	   allow_delete nvarchar(1) NULL,
+	   allow_modify nvarchar(1) NULL,
+	   created_by nvarchar(32) NULL,
+	   created_dttm datetime NULL,
+	   created_revision_id numeric(18,0) NULL,
+	   description text NULL,
+	   design_id numeric(18,0) NULL,
+	   force_order nvarchar(32) NULL,
+	   help nvarchar(1) NULL,
+	   label nvarchar(1) NULL,
+	   linked_screen_id numeric(18,0) NULL,
+	   modified_by nvarchar(32) NULL,
+	   modified_dttm datetime NULL,
+	   modified_revision_id numeric(18,0) NULL,
+	   primary_table nvarchar(128) NULL,
+	   revision_id numeric(18,0) NULL,
+	   read_only nvarchar(1) NULL,
+	   refresh_event nvarchar(256) NULL,
+	   screen_id numeric(18,0) NULL,
+	   screen_name nvarchar(128) NULL,
+	   screen_type nvarchar(32) NULL,
+	   tip nvarchar(1) NULL,
+	   where_clause_script nvarchar(256) NULL)
+	  </item>
+		<item> CREATE TRIGGER mm_screen_LOG_UPDTRG AFTER UPDATE OF screen_id, revision_id, design_id ON mm_screen_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_screen\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND ((transaction_type = \'INSERT\' AND
+			(NEW.revision_id IS NULL OR NEW.revision_id NOT LIKE \'-%%\') AND (NEW.design_id IS NULL OR NEW.design_id NOT LIKE
+			\'-%%\')) OR ((transaction_type = \'UPDATE\' OR transaction_type = \'DELETE\') AND (NEW.screen_id IS NULL OR NEW.screen_id NOT LIKE \'-%%\') AND (NEW.revision_id IS NULL OR
+			NEW.revision_id NOT LIKE \'-%%\') AND (NEW.design_id IS NULL OR NEW.design_id NOT LIKE \'-%%\')));
+			END;
+		</item>
+		<item> CREATE TRIGGER mm_screen_UPDTRG AFTER UPDATE OF screen_id ON mm_screen
+			BEGIN
+			UPDATE mm_screen_LOG SET screen_id = NEW.screen_id WHERE screen_id = OLD.screen_id;
+			UPDATE mm_field SET screen_id = NEW.screen_id WHERE screen_id = OLD.screen_id;
+			UPDATE mm_field_LOG SET screen_id = NEW.screen_id WHERE
+			screen_id = OLD.screen_id;
+			UPDATE mm_workflow_screen SET screen_id = NEW.screen_id WHERE screen_id = OLD.screen_id;
+			UPDATE
+			mm_workflow_screen_LOG SET screen_id = NEW.screen_id WHERE screen_id = OLD.screen_id;
+			END;
+		</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_screen\', \'screen_id\', \'numeric(18,0)\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_screen\', \'screen_id\', \'mm_field\', \'screen_id\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_screen\', \'screen_id\', \'mm_workflow_screen\', \'screen_id\');</item>
+    	<item> CREATE TABLE mm_skin (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			first_gradient1 nvarchar(16) NULL,
+			first_gradient2 nvarchar(16) NULL,
+			first_gradient_text nvarchar(16) NULL,
+			hyperlink_color nvarchar(16) NULL,
+			icon_large_image_id numeric(18,0) NULL,
+			icon_small_image_id numeric(18,0) NULL,
+			login_image_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name nvarchar(128) NULL,
+			primary_color nvarchar(16) NULL,
+			second_gradient1 nvarchar(16) NULL,
+			second_gradient2 nvarchar(16) NULL,
+			second_gradient_text nvarchar(16) NULL,
+			secondary_color nvarchar(16) NULL,
+			skin_id numeric(18,0) NOT NULL,
+			UNIQUE(skin_id));
+		</item>
+    	<item> CREATE TABLE use_mm_skin (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			first_gradient1 nvarchar(16) NULL,
+			first_gradient2 nvarchar(16) NULL,
+			first_gradient_text nvarchar(16) NULL,
+			hyperlink_color nvarchar(16) NULL,
+			icon_large_image_id numeric(18,0) NULL,
+			icon_small_image_id numeric(18,0) NULL,
+			login_image_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name nvarchar(128) NULL,
+			primary_color nvarchar(16) NULL,
+			second_gradient1 nvarchar(16) NULL,
+			second_gradient2 nvarchar(16) NULL,
+			second_gradient_text nvarchar(16) NULL,
+			secondary_color nvarchar(16) NULL,
+			skin_id numeric(18,0) NOT NULL,
+			UNIQUE(skin_id));
+		</item>
+    	<item> CREATE TABLE mm_skin_LOG (
+			metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+			metrix_row_id integer NOT NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			description text NULL,
+			first_gradient1 nvarchar(16) NULL,
+			first_gradient2 nvarchar(16) NULL,
+			first_gradient_text nvarchar(16) NULL,
+			hyperlink_color nvarchar(16) NULL,
+			icon_large_image_id numeric(18,0) NULL,
+			icon_small_image_id numeric(18,0) NULL,
+			login_image_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name nvarchar(128) NULL,
+			primary_color nvarchar(16) NULL,
+			second_gradient1 nvarchar(16) NULL,
+			second_gradient2 nvarchar(16) NULL,
+			second_gradient_text nvarchar(16) NULL,
+			secondary_color nvarchar(16) NULL,
+			skin_id numeric(18,0) NULL);
+		</item>
+    	<item> CREATE TRIGGER mm_skin_LOG_UPDTRG AFTER UPDATE OF skin_id ON mm_skin_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_skin\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND ((transaction_type = \'INSERT\') OR ((transaction_type = \'UPDATE\' OR transaction_type = \'DELETE\') AND (NEW.skin_id IS NULL OR NEW.skin_id NOT LIKE \'-%%\')));
+			END;
+		</item>
+	    <item> CREATE TRIGGER mm_skin_UPDTRG AFTER UPDATE OF skin_id ON mm_skin
+			BEGIN
+			UPDATE mm_skin_LOG SET skin_id = NEW.skin_id WHERE skin_id = OLD.skin_id;
+			END;
+		</item>
+    	<item>INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_skin\', \'skin_id\', \'numeric(18,0)\');</item>		
+		<item> CREATE TABLE mm_user_assignment_view (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			design_id numeric(18,0) NULL,
+			person_id nvarchar(32) NULL,
+			precedence numeric(18,0) NULL,
+			revision_id numeric(18,0) NULL);
+		</item>
+		<item> CREATE TABLE mm_workflow (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			description text NULL,
+			design_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name nvarchar(128) NULL,
+			revision_id numeric(18,0)
+			NULL,
+			workflow_id numeric(18,0) NOT NULL,
+			UNIQUE(workflow_id));
+		</item>
+		<item> CREATE TABLE use_mm_workflow (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			description text NULL,
+			design_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name nvarchar(128) NULL,
+			revision_id numeric(18,0)
+			NULL,
+			workflow_id numeric(18,0) NOT NULL,
+			UNIQUE(workflow_id));
+		</item>
+		<item> CREATE TABLE mm_workflow_LOG (
+			metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+			metrix_row_id integer NOT NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			created_revision_id numeric(18,0) NULL,
+			description text NULL,
+			design_id numeric(18,0) NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			name
+			nvarchar(128) NULL,
+			revision_id numeric(18,0) NULL,
+			workflow_id numeric(18,0) NULL);
+		</item>
+		<item> CREATE TRIGGER mm_workflow_LOG_UPDTRG AFTER UPDATE OF workflow_id, revision_id, design_id ON mm_workflow_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_workflow\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND ((transaction_type = \'INSERT\'
+			AND (NEW.revision_id IS NULL OR NEW.revision_id NOT LIKE \'-%%\') AND (NEW.design_id IS NULL OR NEW.design_id NOT LIKE
+			\'-%%\')) OR ((transaction_type = \'UPDATE\' OR transaction_type = \'DELETE\') AND (NEW.workflow_id IS NULL OR NEW.workflow_id NOT LIKE \'-%%\') AND (NEW.revision_id IS NULL OR
+			NEW.revision_id NOT LIKE \'-%%\') AND (NEW.design_id IS NULL OR NEW.design_id NOT LIKE \'-%%\')));
+			END;
+		</item>
+		<item> CREATE TRIGGER mm_workflow_UPDTRG AFTER UPDATE OF workflow_id ON mm_workflow
+			BEGIN
+			UPDATE mm_workflow_LOG SET workflow_id = NEW.workflow_id WHERE workflow_id = OLD.workflow_id;
+			UPDATE mm_workflow_screen SET workflow_id = NEW.workflow_id WHERE workflow_id = OLD.workflow_id;
+			UPDATE
+			mm_workflow_screen_LOG SET workflow_id = NEW.workflow_id WHERE workflow_id = OLD.workflow_id;
+			END;
+		</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_workflow\', \'workflow_id\', \'numeric(18,0)\');</item>
+		<item> INSERT INTO mm_foreign_keys (table_name, column_name, foreign_table_name, foreign_column_name) VALUES (\'mm_workflow\', \'workflow_id\', \'mm_workflow_screen\', \'workflow_id\');</item>
+		<item> CREATE TABLE mm_workflow_screen (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			jump_order numeric(18,0) NULL,
+			step_order numeric(18,0) NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			screen_id numeric(18,0) NOT NULL,
+			workflow_id numeric(18,0) NOT NULL,
+			UNIQUE(screen_id,
+			workflow_id));
+		</item>
+		<item> CREATE TABLE use_mm_workflow_screen (
+			metrix_row_id integer PRIMARY KEY AUTOINCREMENT,
+			jump_order numeric(18,0) NULL,
+			step_order numeric(18,0) NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			screen_id numeric(18,0) NOT NULL,
+			workflow_id numeric(18,0) NOT NULL,
+			UNIQUE(screen_id,
+			workflow_id));
+		</item>
+		<item> CREATE TABLE mm_workflow_screen_LOG (
+			metrix_log_id integer PRIMARY KEY AUTOINCREMENT,
+			metrix_row_id integer NOT NULL,
+			jump_order numeric(18,0) NULL,
+			step_order numeric(18,0) NULL,
+			created_by nvarchar(32) NULL,
+			created_dttm datetime NULL,
+			modified_by nvarchar(32) NULL,
+			modified_dttm datetime NULL,
+			screen_id numeric(18,0) NULL,
+			workflow_id numeric(18,0) NULL);
+		</item>
+		<item> CREATE TRIGGER mm_workflow_screen_LOG_UPDTRG AFTER UPDATE OF screen_id, workflow_id ON mm_workflow_screen_LOG
+			BEGIN
+			UPDATE mm_message_out SET status = \'READY\' WHERE table_name = \'mm_workflow_screen\' AND status = \'WAITING\' and metrix_log_id = NEW.metrix_log_id AND ((transaction_type =
+			\'INSERT\' AND (NEW.workflow_id IS NULL OR NEW.workflow_id NOT LIKE \'-%%\') AND (NEW.screen_id IS NULL OR NEW.screen_id NOT
+			LIKE \'-%%\')) OR ((transaction_type = \'UPDATE\' OR transaction_type = \'DELETE\') AND (NEW.screen_id IS NULL OR NEW.screen_id NOT LIKE \'-%%\') AND (NEW.workflow_id IS
+			NULL OR NEW.workflow_id NOT LIKE \'-%%\')));
+			END;
+		</item>
+		<item> CREATE TRIGGER mm_workflow_screen_UPDTRG AFTER UPDATE OF screen_id, workflow_id ON mm_workflow_screen
+			BEGIN
+			UPDATE mm_workflow_screen_LOG SET screen_id = NEW.screen_id WHERE screen_id = OLD.screen_id;
+			UPDATE mm_workflow_screen_LOG SET workflow_id = NEW.workflow_id WHERE workflow_id =
+			OLD.workflow_id;
+			END;
+		</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_workflow_screen\', \'screen_id\', \'numeric(18,0)\');</item>
+		<item> INSERT INTO mm_keys (table_name, key, data_type) VALUES (\'mm_workflow_screen\', \'workflow_id\', \'numeric(18,0)\');</item>
+		<item> CREATE TABLE user_credentials ( 
+		    person_id nvarchar(32) PRIMARY KEY, 
+		    password nvarchar(128) NOT NULL,
+		    hidden_chg_occurred nvarchar(1) NULL); 
+		</item>
+	</string-array>
+</resources>

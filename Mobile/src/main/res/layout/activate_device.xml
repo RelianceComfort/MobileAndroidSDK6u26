@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:id="@+id/login_block" >
+
+    <LinearLayout
+        android:id="@+id/login_section"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="40dp"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="start"
+            android:layout_margin="15dip"
+            android:id="@+id/login_icon"
+            android:src="@drawable/ifs_logo_80x172"
+            android:contentDescription="openid_logo_content_description"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/table_layout"
+        style="@style/LinearBase"
+        android:layout_marginLeft="5dip" android:layout_marginRight="5dip"
+        android:layout_marginStart="5dip" android:layout_marginEnd="5dip"
+        android:layout_below="@id/login_section"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingStart="10dp"
+            android:paddingRight="10dp"
+            android:paddingEnd="10dp" >
+            <EditText
+                android:id="@+id/personId"
+                style="@style/EditTextBase.Normal.Table.TwoColumn.Special"
+                android:layout_height="wrap_content"
+                android:inputType="textUri" />
+        </LinearLayout>
+        <LinearLayout
+            android:paddingLeft="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            style="@style/LinearBase" >
+            <EditText
+                android:id="@+id/password"
+                style="@style/EditTextBase.Normal.Table.TwoColumn.Special"
+                android:inputType="textPassword"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/LinearBase"
+            android:paddingLeft="10dp"
+            android:orientation="horizontal" >
+            <CheckBox
+                android:id="@+id/showPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/IFSDarkGrey" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+            <Button
+                android:id="@+id/activate"
+                style="@style/ButtonBase.Normal.ActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"></Button>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linkSection"
+        android:layout_margin="10dip"
+        android:orientation="horizontal"
+        android:layout_below="@id/table_layout"
+        android:padding="5dip" >
+        <TextView
+            android:id="@+id/linkOidc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/UseSSO"
+            android:paddingRight="40dp"
+            android:paddingEnd="40dp"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="#0000EE" />
+        <TextView
+            android:id="@+id/linkChangePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ChangePassword"
+            android:paddingRight="40dp"
+            android:paddingEnd="40dp"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="#0000EE" />
+        <TextView
+            android:id="@+id/linkEntry"
+            android:gravity="right"
+            android:textAlignment="gravity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ReEnterUrl"
+            android:textSize="16sp"
+            android:textColor="#0000EE" />
+    </LinearLayout>
+</RelativeLayout>
+</ScrollView>

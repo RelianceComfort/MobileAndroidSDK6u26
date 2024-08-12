@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Horizontal"
+    android:background="@drawable/list_selector"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="5dp" >
+    <LinearLayout
+        style="@style/LinearBase.Normal.Vertical"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:layout_weight="0.8">
+        <TextView
+            android:id="@+id/itemdescription"
+            style="@style/TextViewBase.Heading.Lookup" />
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/LinearBase.Normal.Horizontal.Table"
+            android:background="@color/transparent">
+            <TextView
+                android:id="@+id/item1"
+                style="@style/TextViewBase.Normal.List" />
+        </LinearLayout>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/LinearBase.Normal.Vertical"
+            android:background="@color/transparent">
+            <TextView
+                android:id="@+id/item2"
+                style="@style/TextViewBase.Normal.List" />
+            <TextView
+                android:id="@+id/item3"
+                style="@style/TextViewBase.Normal.List" />
+            <TextView
+                android:id="@+id/item4"
+                style="@style/TextViewBase.Normal.List" />
+            <TextView
+                android:id="@+id/item5"
+                style="@style/TextViewBase.Normal.List" />
+            <TextView
+                android:id="@+id/item6"
+                style="@style/TextViewBase.Normal.List" />
+            <TextView
+                android:id="@+id/item7"
+                style="@style/TextViewBase.Normal.List" />
+            <TextView
+                android:id="@+id/item8"
+                style="@style/TextViewBase.Normal.List" />
+            <TextView
+                android:id="@+id/item9"
+                style="@style/TextViewBase.Normal.List" />
+            <TextView
+                android:id="@+id/item10"
+                style="@style/TextViewBase.Normal.List" />
+        </LinearLayout>
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/checkboxState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:focusable="false"
+        android:textColor="@color/transparent"
+        android:visibility="visible">
+    </CheckBox>
+
+</LinearLayout>

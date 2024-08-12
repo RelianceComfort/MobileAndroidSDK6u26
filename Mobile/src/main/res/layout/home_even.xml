@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_background"
+            style="@style/LinearBase.Normal.Vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                style="@style/HomeTableLayout"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/split_action_bar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableRow android:layout_weight="1">
+                    <RelativeLayout style="@style/HomeButtonRelativeLayoutSecondRow.LeftTile">
+                        <ImageButton android:id="@+id/home_priority_first_button" style="@style/HomeImageButton" />
+                        <RelativeLayout style="@style/HomeButtonContentRelativeLayout">
+                            <TextView android:id="@+id/home_priority_first_count" style="@style/HomeTextViewItemCount" />
+                            <TextView android:id="@+id/home_priority_first_heading" style="@style/HomeTextViewItemHeading"
+                                android:minHeight="28dp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                    <RelativeLayout style="@style/HomeButtonRelativeLayoutSecondRow.RightTile">
+                        <ImageButton android:id="@+id/home_priority_second_button" style="@style/HomeImageButton" />
+                        <RelativeLayout style="@style/HomeButtonContentRelativeLayout">
+                            <TextView android:id="@+id/home_priority_second_count" style="@style/HomeTextViewItemCount" />
+                            <TextView android:id="@+id/home_priority_second_heading" style="@style/HomeTextViewItemHeading"
+                                android:minHeight="28dp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow android:layout_weight="1">
+                    <RelativeLayout style="@style/HomeButtonRelativeLayoutSecondRow.LeftTile">
+                        <ImageButton android:id="@+id/home_priority_third_button" style="@style/HomeImageButton" />
+                        <RelativeLayout style="@style/HomeButtonContentRelativeLayout">
+                            <TextView android:id="@+id/home_priority_third_count" style="@style/HomeTextViewItemCount" />
+                            <TextView android:id="@+id/home_priority_third_heading" style="@style/HomeTextViewItemHeading"
+                                android:minHeight="28dp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                    <RelativeLayout style="@style/HomeButtonRelativeLayoutSecondRow.RightTile">
+                        <ImageButton android:id="@+id/home_priority_fourth_button" style="@style/HomeImageButton" />
+                        <RelativeLayout style="@style/HomeButtonContentRelativeLayout">
+                            <TextView android:id="@+id/home_priority_fourth_count" style="@style/HomeTextViewItemCount" />
+                            <TextView android:id="@+id/home_priority_fourth_heading" style="@style/HomeTextViewItemHeading"
+                                android:minHeight="28dp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow android:id="@+id/home_item_5and6" android:layout_weight="1">
+                    <RelativeLayout style="@style/HomeButtonRelativeLayoutSecondRow.LeftTile">
+                        <ImageButton android:id="@+id/home_priority_fifth_button" style="@style/HomeImageButton" />
+                        <RelativeLayout style="@style/HomeButtonContentRelativeLayout">
+                            <TextView android:id="@+id/home_priority_fifth_count" style="@style/HomeTextViewItemCount" />
+                            <TextView android:id="@+id/home_priority_fifth_heading" style="@style/HomeTextViewItemHeading"
+                                android:minHeight="28dp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                    <RelativeLayout style="@style/HomeButtonRelativeLayoutSecondRow.RightTile">
+                        <ImageButton android:id="@+id/home_priority_sixth_button" style="@style/HomeImageButton" />
+                        <RelativeLayout style="@style/HomeButtonContentRelativeLayout">
+                            <TextView android:id="@+id/home_priority_sixth_count" style="@style/HomeTextViewItemCount" />
+                            <TextView android:id="@+id/home_priority_sixth_heading" style="@style/HomeTextViewItemHeading"
+                                android:minHeight="28dp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow android:id="@+id/home_item_7and8" android:layout_weight="1">
+                    <RelativeLayout style="@style/HomeButtonRelativeLayoutLastRow.LeftTile">
+                        <ImageButton android:id="@+id/home_priority_seventh_button" style="@style/HomeImageButton" />
+                        <RelativeLayout style="@style/HomeButtonContentRelativeLayout">
+                            <TextView android:id="@+id/home_priority_seventh_count" style="@style/HomeTextViewItemCount" />
+                            <TextView android:id="@+id/home_priority_seventh_heading" style="@style/HomeTextViewItemHeading"
+                                android:minHeight="28dp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                    <RelativeLayout style="@style/HomeButtonRelativeLayoutLastRow.RightTile">
+                        <ImageButton android:id="@+id/home_priority_eighth_button" style="@style/HomeImageButton" />
+                        <RelativeLayout style="@style/HomeButtonContentRelativeLayout">
+                            <TextView android:id="@+id/home_priority_eighth_count" style="@style/HomeTextViewItemCount" />
+                            <TextView android:id="@+id/home_priority_eighth_heading" style="@style/HomeTextViewItemHeading"
+                                android:minHeight="28dp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </TableRow>
+
+            </TableLayout>
+
+            <include
+                android:id="@+id/split_action_bar"
+                layout="@layout/split_action_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/importantInfoScrollView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ScrollView
+                android:id="@+id/importantInfoScrollView"
+                style="@style/HomeImportantInfoScrollView"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+                <include
+                    android:id="@+id/important_information_bar"
+                    layout="@layout/important_information_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <include layout="@layout/sliding_menu_layout" />
+</androidx.drawerlayout.widget.DrawerLayout>

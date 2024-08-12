@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:padding="5dip" android:background="@color/White"
+	android:orientation="vertical"
+	android:id="@+id/view_previous_entries_bar">
+
+	<Button
+		android:id="@+id/view_previous_entries"
+		style="@style/ButtonBase.Normal.ActionBar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingStart="@dimen/mtrl_card_padding"
+		android:paddingEnd="@dimen/mtrl_card_padding"
+		android:gravity="center"
+		android:layout_gravity="center"
+		android:layout_marginBottom="@dimen/md_margin" />
+
+</LinearLayout>

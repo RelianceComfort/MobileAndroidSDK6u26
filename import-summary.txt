@@ -1,0 +1,760 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From Aviary-SDK:
+* .DS_Store
+* .tpignore
+* build.xml
+* proguard-project.txt
+From HorizontalListView:
+* .DS_Store
+* .tpignore
+* build.xml
+* proguard-project.txt
+From Metrix.Architecture:
+* .tpignore
+* default.properties
+* doc\
+* doc\allclasses-frame.html
+* doc\allclasses-noframe.html
+* doc\com\
+* doc\com\metrix\
+* doc\com\metrix\architecture\
+* doc\com\metrix\architecture\BuildConfig.html
+* doc\com\metrix\architecture\R.anim.html
+* doc\com\metrix\architecture\R.array.html
+* doc\com\metrix\architecture\R.attr.html
+* doc\com\metrix\architecture\R.color.html
+* doc\com\metrix\architecture\R.drawable.html
+* doc\com\metrix\architecture\R.html
+* doc\com\metrix\architecture\R.id.html
+* doc\com\metrix\architecture\R.layout.html
+* doc\com\metrix\architecture\R.raw.html
+* doc\com\metrix\architecture\R.string.html
+* doc\com\metrix\architecture\R.style.html
+* doc\com\metrix\architecture\R.xml.html
+* doc\com\metrix\architecture\assistants\
+* doc\com\metrix\architecture\assistants\MetrixApplicationAssistant.html
+* doc\com\metrix\architecture\assistants\MetrixBarcodeAssistant.html
+* doc\com\metrix\architecture\assistants\MetrixControlAssistant.html
+* doc\com\metrix\architecture\assistants\MetrixDialogAssistant.html
+* doc\com\metrix\architecture\assistants\MetrixLocationAssistant.html
+* doc\com\metrix\architecture\assistants\MetrixMessageAssistant.html
+* doc\com\metrix\architecture\assistants\MetrixPageAssistant.html
+* doc\com\metrix\architecture\assistants\class-use\
+* doc\com\metrix\architecture\assistants\class-use\MetrixApplicationAssistant.html
+* doc\com\metrix\architecture\assistants\class-use\MetrixBarcodeAssistant.html
+* doc\com\metrix\architecture\assistants\class-use\MetrixControlAssistant.html
+* doc\com\metrix\architecture\assistants\class-use\MetrixDialogAssistant.html
+* doc\com\metrix\architecture\assistants\class-use\MetrixLocationAssistant.html
+* doc\com\metrix\architecture\assistants\class-use\MetrixMessageAssistant.html
+* doc\com\metrix\architecture\assistants\class-use\MetrixPageAssistant.html
+* doc\com\metrix\architecture\assistants\package-frame.html
+* doc\com\metrix\architecture\assistants\package-summary.html
+* doc\com\metrix\architecture\assistants\package-tree.html
+* doc\com\metrix\architecture\assistants\package-use.html
+* doc\com\metrix\architecture\barcode\
+* doc\com\metrix\architecture\barcode\CameraManager.html
+* doc\com\metrix\architecture\barcode\android\
+* doc\com\metrix\architecture\barcode\android\Contents.Type.html
+* doc\com\metrix\architecture\barcode\android\Contents.html
+* doc\com\metrix\architecture\barcode\android\DecodeFormatManager.html
+* doc\com\metrix\architecture\barcode\android\FinishListener.html
+* doc\com\metrix\architecture\barcode\android\InactivityTimer.html
+* doc\com\metrix\architecture\barcode\android\Intents.Encode.html
+* doc\com\metrix\architecture\barcode\android\Intents.Scan.html
+* doc\com\metrix\architecture\barcode\android\Intents.SearchBookContents.html
+* doc\com\metrix\architecture\barcode\android\Intents.Share.html
+* doc\com\metrix\architecture\barcode\android\Intents.WifiConnect.html
+* doc\com\metrix\architecture\barcode\android\Intents.html
+* doc\com\metrix\architecture\barcode\android\PlanarYUVLuminanceSource.html
+* doc\com\metrix\architecture\barcode\android\ViewfinderResultPointCallback.html
+* doc\com\metrix\architecture\barcode\android\ViewfinderView.html
+* doc\com\metrix\architecture\barcode\android\class-use\
+* doc\com\metrix\architecture\barcode\android\class-use\Contents.Type.html
+* doc\com\metrix\architecture\barcode\android\class-use\Contents.html
+* doc\com\metrix\architecture\barcode\android\class-use\DecodeFormatManager.html
+* doc\com\metrix\architecture\barcode\android\class-use\FinishListener.html
+* doc\com\metrix\architecture\barcode\android\class-use\InactivityTimer.html
+* doc\com\metrix\architecture\barcode\android\class-use\Intents.Encode.html
+* doc\com\metrix\architecture\barcode\android\class-use\Intents.Scan.html
+* doc\com\metrix\architecture\barcode\android\class-use\Intents.SearchBookContents.html
+* doc\com\metrix\architecture\barcode\android\class-use\Intents.Share.html
+* doc\com\metrix\architecture\barcode\android\class-use\Intents.WifiConnect.html
+* doc\com\metrix\architecture\barcode\android\class-use\Intents.html
+* doc\com\metrix\architecture\barcode\android\class-use\PlanarYUVLuminanceSource.html
+* doc\com\metrix\architecture\barcode\android\class-use\ViewfinderResultPointCallback.html
+* doc\com\metrix\architecture\barcode\android\class-use\ViewfinderView.html
+* doc\com\metrix\architecture\barcode\android\package-frame.html
+* doc\com\metrix\architecture\barcode\android\package-summary.html
+* doc\com\metrix\architecture\barcode\android\package-tree.html
+* doc\com\metrix\architecture\barcode\android\package-use.html
+* doc\com\metrix\architecture\barcode\class-use\
+* doc\com\metrix\architecture\barcode\class-use\CameraManager.html
+* doc\com\metrix\architecture\barcode\package-frame.html
+* doc\com\metrix\architecture\barcode\package-summary.html
+* doc\com\metrix\architecture\barcode\package-tree.html
+* doc\com\metrix\architecture\barcode\package-use.html
+* doc\com\metrix\architecture\class-use\
+* doc\com\metrix\architecture\class-use\BuildConfig.html
+* doc\com\metrix\architecture\class-use\R.anim.html
+* doc\com\metrix\architecture\class-use\R.array.html
+* doc\com\metrix\architecture\class-use\R.attr.html
+* doc\com\metrix\architecture\class-use\R.color.html
+* doc\com\metrix\architecture\class-use\R.drawable.html
+* doc\com\metrix\architecture\class-use\R.html
+* doc\com\metrix\architecture\class-use\R.id.html
+* doc\com\metrix\architecture\class-use\R.layout.html
+* doc\com\metrix\architecture\class-use\R.raw.html
+* doc\com\metrix\architecture\class-use\R.string.html
+* doc\com\metrix\architecture\class-use\R.style.html
+* doc\com\metrix\architecture\class-use\R.xml.html
+* doc\com\metrix\architecture\constants\
+* doc\com\metrix\architecture\constants\MetrixChartType.html
+* doc\com\metrix\architecture\constants\MetrixConstraintOperands.html
+* doc\com\metrix\architecture\constants\MetrixControlCase.html
+* doc\com\metrix\architecture\constants\MetrixLookupFormat.html
+* doc\com\metrix\architecture\constants\MetrixRelationOperands.html
+* doc\com\metrix\architecture\constants\MetrixSaveResult.html
+* doc\com\metrix\architecture\constants\MetrixSyncTables.html
+* doc\com\metrix\architecture\constants\MetrixTransactionTypes.html
+* doc\com\metrix\architecture\constants\MetrixTransactionTypesConverter.html
+* doc\com\metrix\architecture\constants\class-use\
+* doc\com\metrix\architecture\constants\class-use\MetrixChartType.html
+* doc\com\metrix\architecture\constants\class-use\MetrixConstraintOperands.html
+* doc\com\metrix\architecture\constants\class-use\MetrixControlCase.html
+* doc\com\metrix\architecture\constants\class-use\MetrixLookupFormat.html
+* doc\com\metrix\architecture\constants\class-use\MetrixRelationOperands.html
+* doc\com\metrix\architecture\constants\class-use\MetrixSaveResult.html
+* doc\com\metrix\architecture\constants\class-use\MetrixSyncTables.html
+* doc\com\metrix\architecture\constants\class-use\MetrixTransactionTypes.html
+* doc\com\metrix\architecture\constants\class-use\MetrixTransactionTypesConverter.html
+* doc\com\metrix\architecture\constants\package-frame.html
+* doc\com\metrix\architecture\constants\package-summary.html
+* doc\com\metrix\architecture\constants\package-tree.html
+* doc\com\metrix\architecture\constants\package-use.html
+* doc\com\metrix\architecture\database\
+* doc\com\metrix\architecture\database\IMobileApplication.html
+* doc\com\metrix\architecture\database\MetrixDatabaseAdapter.html
+* doc\com\metrix\architecture\database\MetrixDatabaseManager.html
+* doc\com\metrix\architecture\database\MetrixSQLCipherDatabaseAdapter.html
+* doc\com\metrix\architecture\database\class-use\
+* doc\com\metrix\architecture\database\class-use\IMobileApplication.html
+* doc\com\metrix\architecture\database\class-use\MetrixDatabaseAdapter.html
+* doc\com\metrix\architecture\database\class-use\MetrixDatabaseManager.html
+* doc\com\metrix\architecture\database\class-use\MetrixSQLCipherDatabaseAdapter.html
+* doc\com\metrix\architecture\database\package-frame.html
+* doc\com\metrix\architecture\database\package-summary.html
+* doc\com\metrix\architecture\database\package-tree.html
+* doc\com\metrix\architecture\database\package-use.html
+* doc\com\metrix\architecture\device\
+* doc\com\metrix\architecture\device\report\
+* doc\com\metrix\architecture\device\report\PrintItem.html
+* doc\com\metrix\architecture\device\report\PrintItemBitmap.html
+* doc\com\metrix\architecture\device\report\ReportBase.PageWidth.html
+* doc\com\metrix\architecture\device\report\ReportBase.html
+* doc\com\metrix\architecture\device\report\class-use\
+* doc\com\metrix\architecture\device\report\class-use\PrintItem.html
+* doc\com\metrix\architecture\device\report\class-use\PrintItemBitmap.html
+* doc\com\metrix\architecture\device\report\class-use\ReportBase.PageWidth.html
+* doc\com\metrix\architecture\device\report\class-use\ReportBase.html
+* doc\com\metrix\architecture\device\report\package-frame.html
+* doc\com\metrix\architecture\device\report\package-summary.html
+* doc\com\metrix\architecture\device\report\package-tree.html
+* doc\com\metrix\architecture\device\report\package-use.html
+* doc\com\metrix\architecture\device\zebra\
+* doc\com\metrix\architecture\device\zebra\CpclAztecBarcodeItem.html
+* doc\com\metrix\architecture\device\zebra\CpclBarcodeItem.Symbology.html
+* doc\com\metrix\architecture\device\zebra\CpclBarcodeItem.html
+* doc\com\metrix\architecture\device\zebra\CpclBarcodeOptionalField.html
+* doc\com\metrix\architecture\device\zebra\CpclBarcodeOptionalFieldLineTerminated.html
+* doc\com\metrix\architecture\device\zebra\CpclBarcodeOrientation.html
+* doc\com\metrix\architecture\device\zebra\CpclBarcodeText.html
+* doc\com\metrix\architecture\device\zebra\CpclCommandDecimalNumericRange.html
+* doc\com\metrix\architecture\device\zebra\CpclCommandIntNumericRange.html
+* doc\com\metrix\architecture\device\zebra\CpclCommandNoParameter.html
+* doc\com\metrix\architecture\device\zebra\CpclCommandString.html
+* doc\com\metrix\architecture\device\zebra\CpclCommonCommands.html
+* doc\com\metrix\architecture\device\zebra\CpclCompressedGraphicsItem.html
+* doc\com\metrix\architecture\device\zebra\CpclCountField.html
+* doc\com\metrix\architecture\device\zebra\CpclDrawingItem.html
+* doc\com\metrix\architecture\device\zebra\CpclDrawingPattern.html
+* doc\com\metrix\architecture\device\zebra\CpclDrawingPatternItem.html
+* doc\com\metrix\architecture\device\zebra\CpclDrawingType.html
+* doc\com\metrix\architecture\device\zebra\CpclExpandedGraphicsItem.html
+* doc\com\metrix\architecture\device\zebra\CpclFieldCoordinate.html
+* doc\com\metrix\architecture\device\zebra\CpclFieldJustification.To.html
+* doc\com\metrix\architecture\device\zebra\CpclFieldJustification.html
+* doc\com\metrix\architecture\device\zebra\CpclFieldOrientation.html
+* doc\com\metrix\architecture\device\zebra\CpclFont.html
+* doc\com\metrix\architecture\device\zebra\CpclFontGroup.html
+* doc\com\metrix\architecture\device\zebra\CpclFontGroupItem.html
+* doc\com\metrix\architecture\device\zebra\CpclGraphicsCommand.html
+* doc\com\metrix\architecture\device\zebra\CpclGraphicsOrientation.html
+* doc\com\metrix\architecture\device\zebra\CpclGraphicsType.html
+* doc\com\metrix\architecture\device\zebra\CpclLabel.html
+* doc\com\metrix\architecture\device\zebra\CpclLfCommand.html
+* doc\com\metrix\architecture\device\zebra\CpclLinePrint.html
+* doc\com\metrix\architecture\device\zebra\CpclLinePrintBarcodeItem.html
+* doc\com\metrix\architecture\device\zebra\CpclLpCommand.html
+* doc\com\metrix\architecture\device\zebra\CpclMaxicodeBarcodeItem.CpclMaxicodeUps5OffTags.html
+* doc\com\metrix\architecture\device\zebra\CpclMaxicodeBarcodeItem.CpclMaxicodeUps5OnTags.html
+* doc\com\metrix\architecture\device\zebra\CpclMaxicodeBarcodeItem.html
+* doc\com\metrix\architecture\device\zebra\CpclMultilineTextItem.html
+* doc\com\metrix\architecture\device\zebra\CpclOnOutOfPaper.Actions.html
+* doc\com\metrix\architecture\device\zebra\CpclOnOutOfPaper.html
+* doc\com\metrix\architecture\device\zebra\CpclPDF417BarcodeItem.html
+* doc\com\metrix\architecture\device\zebra\CpclPace.html
+* doc\com\metrix\architecture\device\zebra\CpclPaceSelections.html
+* doc\com\metrix\architecture\device\zebra\CpclPcxGraphicsItem.html
+* doc\com\metrix\architecture\device\zebra\CpclPresentAt.html
+* doc\com\metrix\architecture\device\zebra\CpclPrintDataSourceItem.html
+* doc\com\metrix\architecture\device\zebra\CpclPrinterTimer.html
+* doc\com\metrix\architecture\device\zebra\CpclScalableFont.html
+* doc\com\metrix\architecture\device\zebra\CpclScalableTextItem.html
+* doc\com\metrix\architecture\device\zebra\CpclScalableTextRotation.html
+* doc\com\metrix\architecture\device\zebra\CpclScaleToFitTextItem.html
+* doc\com\metrix\architecture\device\zebra\CpclScaleToFitTextOrientation.html
+* doc\com\metrix\architecture\device\zebra\CpclSetCoordinateCommand.html
+* doc\com\metrix\architecture\device\zebra\CpclSetFormFeedCommand.html
+* doc\com\metrix\architecture\device\zebra\CpclSetMag.html
+* doc\com\metrix\architecture\device\zebra\CpclSetRelativeCoordinateCommand.html
+* doc\com\metrix\architecture\device\zebra\CpclTextCommand.html
+* doc\com\metrix\architecture\device\zebra\CpclTextConcat.html
+* doc\com\metrix\architecture\device\zebra\CpclTextConcatItem.html
+* doc\com\metrix\architecture\device\zebra\CpclTextConcatOrientation.html
+* doc\com\metrix\architecture\device\zebra\CpclTextItem.html
+* doc\com\metrix\architecture\device\zebra\CpclTextOrientation.html
+* doc\com\metrix\architecture\device\zebra\CpclUnitOfMeasure.In.html
+* doc\com\metrix\architecture\device\zebra\CpclUnitOfMeasure.html
+* doc\com\metrix\architecture\device\zebra\PrintData.html
+* doc\com\metrix\architecture\device\zebra\PrintDataSegment.html
+* doc\com\metrix\architecture\device\zebra\ZebraPrintHelper.html
+* doc\com\metrix\architecture\device\zebra\class-use\
+* doc\com\metrix\architecture\device\zebra\class-use\CpclAztecBarcodeItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclBarcodeItem.Symbology.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclBarcodeItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclBarcodeOptionalField.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclBarcodeOptionalFieldLineTerminated.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclBarcodeOrientation.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclBarcodeText.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclCommandDecimalNumericRange.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclCommandIntNumericRange.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclCommandNoParameter.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclCommandString.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclCommonCommands.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclCompressedGraphicsItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclCountField.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclDrawingItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclDrawingPattern.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclDrawingPatternItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclDrawingType.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclExpandedGraphicsItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclFieldCoordinate.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclFieldJustification.To.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclFieldJustification.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclFieldOrientation.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclFont.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclFontGroup.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclFontGroupItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclGraphicsCommand.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclGraphicsOrientation.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclGraphicsType.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclLabel.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclLfCommand.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclLinePrint.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclLinePrintBarcodeItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclLpCommand.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclMaxicodeBarcodeItem.CpclMaxicodeUps5OffTags.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclMaxicodeBarcodeItem.CpclMaxicodeUps5OnTags.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclMaxicodeBarcodeItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclMultilineTextItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclOnOutOfPaper.Actions.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclOnOutOfPaper.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclPDF417BarcodeItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclPace.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclPaceSelections.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclPcxGraphicsItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclPresentAt.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclPrintDataSourceItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclPrinterTimer.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclScalableFont.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclScalableTextItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclScalableTextRotation.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclScaleToFitTextItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclScaleToFitTextOrientation.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclSetCoordinateCommand.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclSetFormFeedCommand.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclSetMag.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclSetRelativeCoordinateCommand.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclTextCommand.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclTextConcat.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclTextConcatItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclTextConcatOrientation.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclTextItem.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclTextOrientation.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclUnitOfMeasure.In.html
+* doc\com\metrix\architecture\device\zebra\class-use\CpclUnitOfMeasure.html
+* doc\com\metrix\architecture\device\zebra\class-use\PrintData.html
+* doc\com\metrix\architecture\device\zebra\class-use\PrintDataSegment.html
+* doc\com\metrix\architecture\device\zebra\class-use\ZebraPrintHelper.html
+* doc\com\metrix\architecture\device\zebra\package-frame.html
+* doc\com\metrix\architecture\device\zebra\package-summary.html
+* doc\com\metrix\architecture\device\zebra\package-tree.html
+* doc\com\metrix\architecture\device\zebra\package-use.html
+* doc\com\metrix\architecture\managers\
+* doc\com\metrix\architecture\managers\MetrixChartManager.html
+* doc\com\metrix\architecture\managers\MetrixFormManager.html
+* doc\com\metrix\architecture\managers\MetrixQueryManager.html
+* doc\com\metrix\architecture\managers\MetrixUpdateManager.html
+* doc\com\metrix\architecture\managers\class-use\
+* doc\com\metrix\architecture\managers\class-use\MetrixChartManager.html
+* doc\com\metrix\architecture\managers\class-use\MetrixFormManager.html
+* doc\com\metrix\architecture\managers\class-use\MetrixQueryManager.html
+* doc\com\metrix\architecture\managers\class-use\MetrixUpdateManager.html
+* doc\com\metrix\architecture\managers\package-frame.html
+* doc\com\metrix\architecture\managers\package-summary.html
+* doc\com\metrix\architecture\managers\package-tree.html
+* doc\com\metrix\architecture\managers\package-use.html
+* doc\com\metrix\architecture\metadata\
+* doc\com\metrix\architecture\metadata\IMetrixMessage.html
+* doc\com\metrix\architecture\metadata\MetrixActivityDef.html
+* doc\com\metrix\architecture\metadata\MetrixBatchMessage.MetrixBatchSequentialType.html
+* doc\com\metrix\architecture\metadata\MetrixBatchMessage.html
+* doc\com\metrix\architecture\metadata\MetrixChartDef.html
+* doc\com\metrix\architecture\metadata\MetrixChartValue.html
+* doc\com\metrix\architecture\metadata\MetrixColumnDef.html
+* doc\com\metrix\architecture\metadata\MetrixConstraintDef.html
+* doc\com\metrix\architecture\metadata\MetrixCreateColumnDef.html
+* doc\com\metrix\architecture\metadata\MetrixDropDownDef.html
+* doc\com\metrix\architecture\metadata\MetrixErrorInfo.html
+* doc\com\metrix\architecture\metadata\MetrixFormDef.html
+* doc\com\metrix\architecture\metadata\MetrixKeys.html
+* doc\com\metrix\architecture\metadata\MetrixLookupColumnDef.html
+* doc\com\metrix\architecture\metadata\MetrixLookupDef.html
+* doc\com\metrix\architecture\metadata\MetrixLookupFilterDef.html
+* doc\com\metrix\architecture\metadata\MetrixLookupTableDef.html
+* doc\com\metrix\architecture\metadata\MetrixOrderByDef.html
+* doc\com\metrix\architecture\metadata\MetrixPerformMessage.html
+* doc\com\metrix\architecture\metadata\MetrixProcessStatus.html
+* doc\com\metrix\architecture\metadata\MetrixRelationDef.html
+* doc\com\metrix\architecture\metadata\MetrixSqlData.html
+* doc\com\metrix\architecture\metadata\MetrixTableDef.html
+* doc\com\metrix\architecture\metadata\MetrixTableStructure.html
+* doc\com\metrix\architecture\metadata\MetrixTableValues.html
+* doc\com\metrix\architecture\metadata\MetrixTransaction.html
+* doc\com\metrix\architecture\metadata\MetrixUpdateMessage.MetrixUpdateMessageTransactionType.html
+* doc\com\metrix\architecture\metadata\MetrixUpdateMessage.html
+* doc\com\metrix\architecture\metadata\MmKeys.html
+* doc\com\metrix\architecture\metadata\MmMessageIn.html
+* doc\com\metrix\architecture\metadata\MmMessageOut.html
+* doc\com\metrix\architecture\metadata\MmMessageReceipt.html
+* doc\com\metrix\architecture\metadata\MmTransaction.html
+* doc\com\metrix\architecture\metadata\TableColumnDef.html
+* doc\com\metrix\architecture\metadata\class-use\
+* doc\com\metrix\architecture\metadata\class-use\IMetrixMessage.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixActivityDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixBatchMessage.MetrixBatchSequentialType.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixBatchMessage.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixChartDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixChartValue.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixColumnDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixConstraintDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixCreateColumnDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixDropDownDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixErrorInfo.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixFormDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixKeys.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixLookupColumnDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixLookupDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixLookupFilterDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixLookupTableDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixOrderByDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixPerformMessage.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixProcessStatus.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixRelationDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixSqlData.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixTableDef.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixTableStructure.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixTableValues.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixTransaction.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixUpdateMessage.MetrixUpdateMessageTransactionType.html
+* doc\com\metrix\architecture\metadata\class-use\MetrixUpdateMessage.html
+* doc\com\metrix\architecture\metadata\class-use\MmKeys.html
+* doc\com\metrix\architecture\metadata\class-use\MmMessageIn.html
+* doc\com\metrix\architecture\metadata\class-use\MmMessageOut.html
+* doc\com\metrix\architecture\metadata\class-use\MmMessageReceipt.html
+* doc\com\metrix\architecture\metadata\class-use\MmTransaction.html
+* doc\com\metrix\architecture\metadata\class-use\TableColumnDef.html
+* doc\com\metrix\architecture\metadata\class-use\response_receipt.html
+* doc\com\metrix\architecture\metadata\package-frame.html
+* doc\com\metrix\architecture\metadata\package-summary.html
+* doc\com\metrix\architecture\metadata\package-tree.html
+* doc\com\metrix\architecture\metadata\package-use.html
+* doc\com\metrix\architecture\metadata\response_receipt.html
+* doc\com\metrix\architecture\package-frame.html
+* doc\com\metrix\architecture\package-summary.html
+* doc\com\metrix\architecture\package-tree.html
+* doc\com\metrix\architecture\package-use.html
+* doc\com\metrix\architecture\services\
+* doc\com\metrix\architecture\services\IPostListener.html
+* doc\com\metrix\architecture\services\IPostMonitor.html
+* doc\com\metrix\architecture\services\JavaDotNetFormatHelper.html
+* doc\com\metrix\architecture\services\MessageHandler.html
+* doc\com\metrix\architecture\services\MetrixAlarmReceiver.html
+* doc\com\metrix\architecture\services\MetrixIntentService.LocalBinder.html
+* doc\com\metrix\architecture\services\MetrixIntentService.html
+* doc\com\metrix\architecture\services\MetrixIntentServiceBase.html
+* doc\com\metrix\architecture\services\MetrixRemoteExecutor.html
+* doc\com\metrix\architecture\services\MetrixServiceManager.html
+* doc\com\metrix\architecture\services\MetrixSyncManager.html
+* doc\com\metrix\architecture\services\MmMessageIn.html
+* doc\com\metrix\architecture\services\RemoteMessagesHandler.HandlerException.html
+* doc\com\metrix\architecture\services\RemoteMessagesHandler.html
+* doc\com\metrix\architecture\services\ThreadHelper.html
+* doc\com\metrix\architecture\services\class-use\
+* doc\com\metrix\architecture\services\class-use\IPostListener.html
+* doc\com\metrix\architecture\services\class-use\IPostMonitor.html
+* doc\com\metrix\architecture\services\class-use\JavaDotNetFormatHelper.html
+* doc\com\metrix\architecture\services\class-use\MessageHandler.html
+* doc\com\metrix\architecture\services\class-use\MetrixAlarmReceiver.html
+* doc\com\metrix\architecture\services\class-use\MetrixIntentService.LocalBinder.html
+* doc\com\metrix\architecture\services\class-use\MetrixIntentService.html
+* doc\com\metrix\architecture\services\class-use\MetrixIntentServiceBase.html
+* doc\com\metrix\architecture\services\class-use\MetrixRemoteExecutor.html
+* doc\com\metrix\architecture\services\class-use\MetrixServiceManager.html
+* doc\com\metrix\architecture\services\class-use\MetrixSyncManager.html
+* doc\com\metrix\architecture\services\class-use\MmMessageIn.html
+* doc\com\metrix\architecture\services\class-use\RemoteMessagesHandler.HandlerException.html
+* doc\com\metrix\architecture\services\class-use\RemoteMessagesHandler.html
+* doc\com\metrix\architecture\services\class-use\ThreadHelper.html
+* doc\com\metrix\architecture\services\package-frame.html
+* doc\com\metrix\architecture\services\package-summary.html
+* doc\com\metrix\architecture\services\package-tree.html
+* doc\com\metrix\architecture\services\package-use.html
+* doc\com\metrix\architecture\superclasses\
+* doc\com\metrix\architecture\superclasses\MetrixBaseActivity.html
+* doc\com\metrix\architecture\superclasses\MetrixFormat.html
+* doc\com\metrix\architecture\superclasses\class-use\
+* doc\com\metrix\architecture\superclasses\class-use\MetrixBaseActivity.html
+* doc\com\metrix\architecture\superclasses\class-use\MetrixFormat.html
+* doc\com\metrix\architecture\superclasses\package-frame.html
+* doc\com\metrix\architecture\superclasses\package-summary.html
+* doc\com\metrix\architecture\superclasses\package-tree.html
+* doc\com\metrix\architecture\superclasses\package-use.html
+* doc\com\metrix\architecture\ui\
+* doc\com\metrix\architecture\ui\widget\
+* doc\com\metrix\architecture\ui\widget\ActionItem.html
+* doc\com\metrix\architecture\ui\widget\BalloonItemizedOverlay.html
+* doc\com\metrix\architecture\ui\widget\BalloonOverlayView.html
+* doc\com\metrix\architecture\ui\widget\DashboardLayout.html
+* doc\com\metrix\architecture\ui\widget\DateTimePicker.html
+* doc\com\metrix\architecture\ui\widget\FileDialog.html
+* doc\com\metrix\architecture\ui\widget\PopupWindows.html
+* doc\com\metrix\architecture\ui\widget\QuickAction.OnActionItemClickListener.html
+* doc\com\metrix\architecture\ui\widget\QuickAction.OnDismissListener.html
+* doc\com\metrix\architecture\ui\widget\QuickAction.html
+* doc\com\metrix\architecture\ui\widget\SelectionMode.html
+* doc\com\metrix\architecture\ui\widget\SignatureArea.html
+* doc\com\metrix\architecture\ui\widget\class-use\
+* doc\com\metrix\architecture\ui\widget\class-use\ActionItem.html
+* doc\com\metrix\architecture\ui\widget\class-use\BalloonItemizedOverlay.html
+* doc\com\metrix\architecture\ui\widget\class-use\BalloonOverlayView.html
+* doc\com\metrix\architecture\ui\widget\class-use\DashboardLayout.html
+* doc\com\metrix\architecture\ui\widget\class-use\DateTimePicker.html
+* doc\com\metrix\architecture\ui\widget\class-use\FileDialog.html
+* doc\com\metrix\architecture\ui\widget\class-use\PopupWindows.html
+* doc\com\metrix\architecture\ui\widget\class-use\QuickAction.OnActionItemClickListener.html
+* doc\com\metrix\architecture\ui\widget\class-use\QuickAction.OnDismissListener.html
+* doc\com\metrix\architecture\ui\widget\class-use\QuickAction.html
+* doc\com\metrix\architecture\ui\widget\class-use\SelectionMode.html
+* doc\com\metrix\architecture\ui\widget\class-use\SignatureArea.html
+* doc\com\metrix\architecture\ui\widget\package-frame.html
+* doc\com\metrix\architecture\ui\widget\package-summary.html
+* doc\com\metrix\architecture\ui\widget\package-tree.html
+* doc\com\metrix\architecture\ui\widget\package-use.html
+* doc\com\metrix\architecture\utilities\
+* doc\com\metrix\architecture\utilities\ActivitySwipeDetector.html
+* doc\com\metrix\architecture\utilities\DataField.html
+* doc\com\metrix\architecture\utilities\Global.ActivityType.html
+* doc\com\metrix\architecture\utilities\Global.AttachmentType.html
+* doc\com\metrix\architecture\utilities\Global.ComparisonOperator.html
+* doc\com\metrix\architecture\utilities\Global.ConnectionStatus.html
+* doc\com\metrix\architecture\utilities\Global.HyperlinkType.html
+* doc\com\metrix\architecture\utilities\Global.MessageInStatus.html
+* doc\com\metrix\architecture\utilities\Global.MessageStatus.html
+* doc\com\metrix\architecture\utilities\Global.MessageType.html
+* doc\com\metrix\architecture\utilities\Global.UploadType.html
+* doc\com\metrix\architecture\utilities\Global.html
+* doc\com\metrix\architecture\utilities\JavaDotNetFormatHelper.html
+* doc\com\metrix\architecture\utilities\LogManager.Level.html
+* doc\com\metrix\architecture\utilities\LogManager.html
+* doc\com\metrix\architecture\utilities\MetrixActivityHelper.html
+* doc\com\metrix\architecture\utilities\MetrixAttachmentManager.html
+* doc\com\metrix\architecture\utilities\MetrixAutoCompleteHelper.html
+* doc\com\metrix\architecture\utilities\MetrixBarcodeScanResult.html
+* doc\com\metrix\architecture\utilities\MetrixCurrentKeysHelper.html
+* doc\com\metrix\architecture\utilities\MetrixDatabases.html
+* doc\com\metrix\architecture\utilities\MetrixDateTimeHelper.ISO8601.html
+* doc\com\metrix\architecture\utilities\MetrixDateTimeHelper.html
+* doc\com\metrix\architecture\utilities\MetrixFileHelper.html
+* doc\com\metrix\architecture\utilities\MetrixFloatHelper.html
+* doc\com\metrix\architecture\utilities\MetrixLibraryHelper.html
+* doc\com\metrix\architecture\utilities\MetrixMapsHelper.html
+* doc\com\metrix\architecture\utilities\MetrixPasswordHelper.PasswordType.html
+* doc\com\metrix\architecture\utilities\MetrixPasswordHelper.html
+* doc\com\metrix\architecture\utilities\MetrixPublicCache.html
+* doc\com\metrix\architecture\utilities\MetrixSecurityHelper.html
+* doc\com\metrix\architecture\utilities\MetrixStringHelper.html
+* doc\com\metrix\architecture\utilities\MetrixSwipeHelper.html
+* doc\com\metrix\architecture\utilities\MetrixUIHelper.html
+* doc\com\metrix\architecture\utilities\SettingsHelper.html
+* doc\com\metrix\architecture\utilities\SkypeCommunicator.html
+* doc\com\metrix\architecture\utilities\SpinnerKeyValuePair.html
+* doc\com\metrix\architecture\utilities\StopWatch.html
+* doc\com\metrix\architecture\utilities\User.html
+* doc\com\metrix\architecture\utilities\class-use\
+* doc\com\metrix\architecture\utilities\class-use\ActivitySwipeDetector.html
+* doc\com\metrix\architecture\utilities\class-use\DataField.html
+* doc\com\metrix\architecture\utilities\class-use\Global.ActivityType.html
+* doc\com\metrix\architecture\utilities\class-use\Global.AttachmentType.html
+* doc\com\metrix\architecture\utilities\class-use\Global.ComparisonOperator.html
+* doc\com\metrix\architecture\utilities\class-use\Global.ConnectionStatus.html
+* doc\com\metrix\architecture\utilities\class-use\Global.HyperlinkType.html
+* doc\com\metrix\architecture\utilities\class-use\Global.MessageInStatus.html
+* doc\com\metrix\architecture\utilities\class-use\Global.MessageStatus.html
+* doc\com\metrix\architecture\utilities\class-use\Global.MessageType.html
+* doc\com\metrix\architecture\utilities\class-use\Global.UploadType.html
+* doc\com\metrix\architecture\utilities\class-use\Global.html
+* doc\com\metrix\architecture\utilities\class-use\JavaDotNetFormatHelper.html
+* doc\com\metrix\architecture\utilities\class-use\LogManager.Level.html
+* doc\com\metrix\architecture\utilities\class-use\LogManager.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixActivityHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixAttachmentManager.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixAutoCompleteHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixBarcodeScanResult.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixCurrentKeysHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixDatabases.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixDateTimeHelper.ISO8601.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixDateTimeHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixFileHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixFloatHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixLibraryHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixMapsHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixPasswordHelper.PasswordType.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixPasswordHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixPublicCache.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixSecurityHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixStringHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixSwipeHelper.html
+* doc\com\metrix\architecture\utilities\class-use\MetrixUIHelper.html
+* doc\com\metrix\architecture\utilities\class-use\SettingsHelper.html
+* doc\com\metrix\architecture\utilities\class-use\SkypeCommunicator.html
+* doc\com\metrix\architecture\utilities\class-use\SpinnerKeyValuePair.html
+* doc\com\metrix\architecture\utilities\class-use\StopWatch.html
+* doc\com\metrix\architecture\utilities\class-use\User.html
+* doc\com\metrix\architecture\utilities\package-frame.html
+* doc\com\metrix\architecture\utilities\package-summary.html
+* doc\com\metrix\architecture\utilities\package-tree.html
+* doc\com\metrix\architecture\utilities\package-use.html
+* doc\constant-values.html
+* doc\deprecated-list.html
+* doc\help-doc.html
+* doc\index-files\
+* doc\index-files\index-1.html
+* doc\index-files\index-10.html
+* doc\index-files\index-11.html
+* doc\index-files\index-12.html
+* doc\index-files\index-13.html
+* doc\index-files\index-14.html
+* doc\index-files\index-15.html
+* doc\index-files\index-16.html
+* doc\index-files\index-17.html
+* doc\index-files\index-18.html
+* doc\index-files\index-19.html
+* doc\index-files\index-2.html
+* doc\index-files\index-20.html
+* doc\index-files\index-21.html
+* doc\index-files\index-22.html
+* doc\index-files\index-23.html
+* doc\index-files\index-24.html
+* doc\index-files\index-25.html
+* doc\index-files\index-26.html
+* doc\index-files\index-3.html
+* doc\index-files\index-4.html
+* doc\index-files\index-5.html
+* doc\index-files\index-6.html
+* doc\index-files\index-7.html
+* doc\index-files\index-8.html
+* doc\index-files\index-9.html
+* doc\index.html
+* doc\overview-frame.html
+* doc\overview-summary.html
+* doc\overview-tree.html
+* doc\package-list
+* doc\resources\
+* doc\resources\background.gif
+* doc\resources\tab.gif
+* doc\resources\titlebar.gif
+* doc\resources\titlebar_end.gif
+* doc\serialized-form.html
+* doc\stylesheet.css
+* proguard.cfg
+From Mobile:
+* .tpignore
+* AndroidManifestMapV2Release
+* build.number
+* build.xml
+* default.properties
+* fsma563.keystore
+* proguard.cfg
+From TooltipLibrary:
+* .DS_Store
+* .tpignore
+* build.xml
+* proguard-project.txt
+From android-support-V7-appcompat:
+* .tpignore
+* README.txt
+From google-play-services_lib:
+* .tpignore
+* README.txt
+* proguard.txt
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In Aviary-SDK:
+* AndroidManifest.xml => AviarySDK\src\main\AndroidManifest.xml
+* assets\ => AviarySDK\src\main\assets\
+* libs\abtest.jar => AviarySDK\libs\abtest.jar
+* libs\annotations-12.0.jar => AviarySDK\libs\annotations-12.0.jar
+* libs\armeabi-v7a\libaviary_moalite.so => AviarySDK\src\main\jniLibs\armeabi-v7a\libaviary_moalite.so
+* libs\armeabi-v7a\libaviary_native.so => AviarySDK\src\main\jniLibs\armeabi-v7a\libaviary_native.so
+* libs\armeabi\libaviary_moalite.so => AviarySDK\src\main\jniLibs\armeabi\libaviary_moalite.so
+* libs\armeabi\libaviary_native.so => AviarySDK\src\main\jniLibs\armeabi\libaviary_native.so
+* libs\aviary-headless-library.jar => AviarySDK\libs\aviary-headless-library.jar
+* libs\aviary-sdk-library.jar => AviarySDK\libs\aviary-sdk-library.jar
+* libs\aviarycommon.jar => AviarySDK\libs\aviarycommon.jar
+* libs\aviaryreceipt.jar => AviarySDK\libs\aviaryreceipt.jar
+* libs\aviarytracking.jar => AviarySDK\libs\aviarytracking.jar
+* libs\cds.jar => AviarySDK\libs\cds.jar
+* libs\commons-io-2.4.jar => AviarySDK\libs\commons-io-2.4.jar
+* libs\commons-lang3-3.3.2.jar => AviarySDK\libs\commons-lang3-3.3.2.jar
+* libs\disklrumulticache.jar => AviarySDK\libs\disklrumulticache.jar
+* libs\exif.jar => AviarySDK\libs\exif.jar
+* libs\hlistviewanimations-library.jar => AviarySDK\libs\hlistviewanimations-library.jar
+* libs\imagezoom.jar => AviarySDK\libs\imagezoom.jar
+* libs\listviewanimations_lib-core_3.1.0.jar => AviarySDK\libs\listviewanimations_lib-core_3.1.0.jar
+* libs\localytics.jar => AviarySDK\libs\localytics.jar
+* libs\nineoldandroids-2.4.0.jar => AviarySDK\libs\nineoldandroids-2.4.0.jar
+* libs\okhttp-1.6.0.jar => AviarySDK\libs\okhttp-1.6.0.jar
+* libs\okhttp-urlconnection-1.6.0.jar => AviarySDK\libs\okhttp-urlconnection-1.6.0.jar
+* libs\picasso.jar => AviarySDK\libs\picasso.jar
+* libs\x86\libaviary_moalite.so => AviarySDK\src\main\jniLibs\x86\libaviary_moalite.so
+* libs\x86\libaviary_native.so => AviarySDK\src\main\jniLibs\x86\libaviary_native.so
+* lint.xml => AviarySDK\lint.xml
+* res\ => AviarySDK\src\main\res\
+* src\ => AviarySDK\src\main\java\
+In Metrix.Architecture:
+* AndroidManifest.xml => MetrixArchitecture\src\main\AndroidManifest.xml
+* assets\ => MetrixArchitecture\src\main\assets
+* libs\android-support-v4.jar => MetrixArchitecture\libs\android-support-v4.jar
+* libs\armeabi-v7a\libdatabase_sqlcipher.so => MetrixArchitecture\src\main\jniLibs\armeabi-v7a\libdatabase_sqlcipher.so
+* libs\armeabi-v7a\libsqlcipher_android.so => MetrixArchitecture\src\main\jniLibs\armeabi-v7a\libsqlcipher_android.so
+* libs\armeabi-v7a\libstlport_shared.so => MetrixArchitecture\src\main\jniLibs\armeabi-v7a\libstlport_shared.so
+* libs\armeabi\libdatabase_sqlcipher.so => MetrixArchitecture\src\main\jniLibs\armeabi\libdatabase_sqlcipher.so
+* libs\armeabi\libsqlcipher_android.so => MetrixArchitecture\src\main\jniLibs\armeabi\libsqlcipher_android.so
+* libs\armeabi\libstlport_shared.so => MetrixArchitecture\src\main\jniLibs\armeabi\libstlport_shared.so
+* libs\commons-io-2.4.jar => MetrixArchitecture\libs\commons-io-2.4.jar
+* libs\core.jar => MetrixArchitecture\libs\core.jar
+* libs\gson-1.7.1.jar => MetrixArchitecture\libs\gson-1.7.1.jar
+* libs\guava-r09.jar => MetrixArchitecture\libs\guava-r09.jar
+* libs\pdfviewer.jar => MetrixArchitecture\libs\pdfviewer.jar
+* libs\sqlcipher.jar => MetrixArchitecture\libs\sqlcipher.jar
+* libs\ZSDK_API.jar => MetrixArchitecture\libs\ZSDK_API.jar
+* res\ => MetrixArchitecture\src\main\res\
+* src\ => MetrixArchitecture\src\main\java\
+* src\com\metrix\architecture\assistants\package.html => MetrixArchitecture\src\main\resources\com\metrix\architecture\assistants\package.html
+* src\com\metrix\architecture\constants\package.html => MetrixArchitecture\src\main\resources\com\metrix\architecture\constants\package.html
+* src\com\metrix\architecture\database\package.html => MetrixArchitecture\src\main\resources\com\metrix\architecture\database\package.html
+* src\com\metrix\architecture\managers\package.html => MetrixArchitecture\src\main\resources\com\metrix\architecture\managers\package.html
+* src\com\metrix\architecture\metadata\package.html => MetrixArchitecture\src\main\resources\com\metrix\architecture\metadata\package.html
+* src\com\metrix\architecture\superclasses\package.html => MetrixArchitecture\src\main\resources\com\metrix\architecture\superclasses\package.html
+* src\com\metrix\architecture\utilities\package.html => MetrixArchitecture\src\main\resources\com\metrix\architecture\utilities\package.html
+In TooltipLibrary:
+* AndroidManifest.xml => TooltipLibrary\src\main\AndroidManifest.xml
+* assets\ => TooltipLibrary\src\main\assets
+* libs\nineoldandroids-2.4.0.jar => TooltipLibrary\libs\nineoldandroids-2.4.0.jar
+* res\ => TooltipLibrary\src\main\res\
+* src\ => TooltipLibrary\src\main\java\
+In android-support-V7-appcompat:
+* AndroidManifest.xml => androidsupportV7appcompat\src\main\AndroidManifest.xml
+* assets\ => androidsupportV7appcompat\src\main\assets
+* libs\android-support-v4.jar => androidsupportV7appcompat\libs\android-support-v4.jar
+* res\ => androidsupportV7appcompat\src\main\res\
+* src\ => androidsupportV7appcompat\src\main\java
+* src\.readme => androidsupportV7appcompat\src\main\resources\.readme
+In HorizontalListView:
+* AndroidManifest.xml => HorizontalListView\src\main\AndroidManifest.xml
+* assets\ => HorizontalListView\src\main\assets
+* res\ => HorizontalListView\src\main\res\
+* src\ => HorizontalListView\src\main\java\
+In google-play-services_lib:
+* AndroidManifest.xml => googleplayservices_lib\src\main\AndroidManifest.xml
+* assets\ => googleplayservices_lib\src\main\assets
+* libs\android-support-v4.jar => googleplayservices_lib\libs\android-support-v4.jar
+* libs\google-play-services.jar => googleplayservices_lib\libs\google-play-services.jar
+* res\ => googleplayservices_lib\src\main\res\
+* src\ => googleplayservices_lib\src\main\java\
+In Mobile:
+* AndroidManifest.xml => Mobile\src\main\AndroidManifest.xml
+* assets\ => Mobile\src\main\assets\
+* libs\android-support-v4.jar => Mobile\libs\android-support-v4.jar
+* libs\commons-io-2.4.jar => Mobile\libs\commons-io-2.4.jar
+* libs\core.jar => Mobile\libs\core.jar
+* libs\dropbox-android-sdk-1.5.1.jar => Mobile\libs\dropbox-android-sdk-1.5.1.jar
+* libs\google-play-services.jar => Mobile\libs\google-play-services.jar
+* libs\gson-1.7.1.jar => Mobile\libs\gson-1.7.1.jar
+* libs\guava-r09.jar => Mobile\libs\guava-r09.jar
+* libs\httpclient-4.0.3.jar => Mobile\libs\httpclient-4.0.3.jar
+* libs\httpcore-4.0.1.jar => Mobile\libs\httpcore-4.0.1.jar
+* libs\httpmime-4.0.3.jar => Mobile\libs\httpmime-4.0.3.jar
+* libs\joda-time-2.3.jar => Mobile\libs\joda-time-2.3.jar
+* libs\pdfviewer.jar => Mobile\libs\pdfviewer.jar
+* libs\sqlcipher.jar => Mobile\libs\sqlcipher.jar
+* libs\ZSDK_API.jar => Mobile\libs\ZSDK_API.jar
+* res\ => Mobile\src\main\res\
+* src\ => Mobile\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

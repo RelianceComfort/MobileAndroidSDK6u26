@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="auto_focus" type="id" />
+    <item name="decode" type="id" />
+    <item name="decode_failed" type="id" />
+    <item name="decode_succeeded" type="id" />
+    <item name="launch_product_query" type="id" />
+    <item name="quit" type="id" />
+    <item name="restart_preview" type="id" />
+    <item name="return_scan_result" type="id" />
+
+    <string name="Activate">      Activate</string>
+    <string name="Activating">Activating..</string>
+    <string name="Authenticating">Authenticating</string>
+    <string name="ActivationWait">Your device is being activated. Please wait.</string>
+    <string name="BGSyncPendingInit">Please open FSM Mobile to process a pending initialization.</string>
+    <string name="BGSyncPendingPChange">Please open FSM Mobile to process a recent password change.</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Connected">Connected</string>
+    <string name="DeviceMustBeReactivated">This device must be re-activated before proceeding with any further usage of FSM Mobile.</string>
+    <string name="Disconnected">Disconnected</string>
+    <string name="Error">Error</string>
+    <string name="FetchingMailReceipts">Fetching mail receipts.</string>
+    <string name="FetchingWaitingTransactions">Fetching any waiting transactions.</string>
+    <string name="FinishedSync">Finished sync.</string>
+    <string name="FoundTransMessages">Found %s transactional messages.</string>
+    <string name="GeneralNotificationDesc">This is for any local notifications sent to FSM Mobile.</string>
+    <string name="GeneralNotificationName">General</string>
+    <string name="HubNotificationDesc">This is for push notifications sent to FSM Mobile from a notification hub.</string>
+    <string name="HubNotificationName">Hub Notifications</string>
+    <string name="InitializationStarted">Initialization Started.</string>
+    <string name="InitializingDevice">Initializing Device ...</string>
+    <string name="InitializationEnded">Initialization Ended!</string>
+    <string name="InvalidUserPass">A116: Invalid User Name/Password pair. Please try again.</string>
+    <string name="LicensingViolation">Cannot activate at this time.  Please contact your administrator.</string>
+    <string name="LoginFSM">Login to FSM</string>
+    <string name="LoginName">Login Name</string>
+    <string name="Metrix"> Field Service Management</string>
+    <string name="MetrixHelp"> Help</string>
+    <string name="NetworkProblem">Network problem, please try again!</string>
+    <string name="NoMessagesToUpload">No messages to upload.</string>
+    <string name="OnSyncedError">Error: %s</string>
+    <string name="PleaseWait">Please Wait...</string>
+    <string name="Password">Password</string>
+    <string name="PersonId">Person ID</string>
+    <string name="PingingService">Pinging service.</string>
+    <string name="Ready">Ready</string>
+    <string name="ReEnterUrl">Re-enter URL</string>
+    <string name="ResolvingMailReceipts">Resolving any mail receipts.</string>
+    <string name="ScnInfoSyncMonMsgs">     Below is a list of messages exchanged during the synchronization process automatically for you.</string>
+    <string name="SendingWaitingTransactions">Sending any waiting transactions.</string>
+    <string name="Sent">Sent</string>
+    <string name="ServiceUrl">Service URL</string>
+    <string name="SignForMailFailed">Sign for mail failed for: %s.</string>
+    <string name="SignForMessages">Sign for message(s) %s.</string>
+    <string name="SyncTransMessages">Synchronizing transactional messages.</string>
+    <string name="ShowPassword">Show Password</string>
+    <string name="StartingSync">Starting sync.</string>
+    <string name="SyncMonitor">Sync Monitor</string>
+    <string name="UnknownActivationError">Unknown error found in activation. Please try again.</string>
+    <string name="UseSSO">Use SSO</string>
+    <string name="UseFSM">Use FSM Credentials</string>
+    <string name="UserGreeting2Args">Hello %1$s %2$s!</string>
+    <string name="Waiting">Waiting</string>
+    <string name="FSMEndPointURL">FSM Mobile Service URL</string>
+    <string name="PermissionRequired">Permission required</string>
+    <string name="StorageAndPhonePermExpl">Storage and phone permissions are required for this app to function at a minimum level. Would you like to grant these permissions now?</string>
+    <string name="EnablePermManuallyAndRetry">Please manually enable permission in the app settings and retry</string>
+    <string name="Connect">Connect</string>
+    <string name="ChangePassword">Change Password</string>
+    <string name="OldPassword">Old password</string>
+    <string name="NewPassword">New password</string>
+    <string name="ConfirmPassword">Confirm password</string>
+    <string name="EnterOldPassword">Please enter the old password.</string>
+    <string name="EnterNewPassword">Please enter the new password.</string>
+    <string name="ConfirmNewPassword">Please confirm the new password.</string>
+    <string name="PasswordsDoNotMatch">New passwords do not match.</string>
+    <string name="OldPasswordInvalid">The old password value is invalid. It must match your current password.</string>
+    <string name="PasswordChangeInProgress">Password change in progress&#8230;</string>
+    <string name="UserNotAuthForDev">This user is not authorized for this device. If you wish to authorize this user, please re-activate FSM Mobile.</string>
+    <string name="InvalidLogin">The user name or password you entered is incorrect.</string>
+    <string name="PasswordExpired">Your password is expired. Please change on the server and re-activate this device.</string>
+
+    <string name="ActivateDeviceEntryWelcomeTo">Welcome to</string>
+    <string name="ActivateDeviceEntryIFSFSM">IFS Field Service Management</string>
+    <string name="FetchOIDCSettingsFailure">Failed to obtain OpenId connect settings, please try again.</string>
+    <string name="IncorrectURLOrNetworkIssue">Incorrect service url or network connectivity issue. Please review and try again.</string>
+    <!--
+        The drawer_close and drawer_open strings are only used for accessibility when interacting
+        with the global menu drawer toggle (This is not shown but read out to the user). This is
+        required as a constructor parameter when creating a drawer toggle instance.
+        See https://developer.android.com/reference/android/support/v4/app/ActionBarDrawerToggle.html
+     -->
+    <string name="drawer_close">close</string>
+    <string name="drawer_open">open</string>
+</resources>

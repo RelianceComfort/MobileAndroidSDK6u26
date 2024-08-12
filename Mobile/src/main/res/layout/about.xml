@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/LinearBase.Normal.Vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coordinator_layout">
+    <ScrollView style="@style/ScrollViewBase.Normal.Vertical" android:layout_weight="1">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/table_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/White"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dip" >
+
+            <ImageView
+                android:id="@+id/up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ifs_logo_80x172" />
+
+            <TextView
+                android:id="@+id/version_and_build_number"
+                style="@style/TextViewBase.Large"></TextView>
+
+            <TextView
+                android:id="@+id/design_info"
+                style="@style/TextViewBase.Normal"></TextView>
+
+            <TextView
+                android:id="@+id/service_address"
+                android:gravity="center_horizontal"
+                style="@style/TextViewBase.Normal"></TextView>
+
+            <TextView
+                style="@style/TextViewBase.Normal"
+                android:text=""></TextView>
+
+            <TextView
+                style="@style/TextViewBase.Large"
+                android:gravity="center_horizontal"
+                android:id="@+id/copyright"></TextView>
+
+            <TextView
+                style="@style/TextViewBase.Normal"
+                android:text=""></TextView>
+
+            <TextView
+                style="@style/TextViewBase.Normal"
+                android:text=""></TextView>
+
+            <com.metrix.architecture.utilities.MetrixHyperlink
+                android:id="@+id/support_url"
+                style="@style/TextViewBase.Large"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                style="@style/TextViewBase.Normal"
+                android:text=""></TextView>
+
+            <com.metrix.architecture.utilities.MetrixHyperlink
+                android:id="@+id/support_email"
+                style="@style/TextViewBase.Large"
+                android:gravity="center_horizontal"/>
+
+            <com.metrix.architecture.utilities.MetrixHyperlink
+                android:id="@+id/support_phone"
+                style="@style/TextViewBase.Large"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                style="@style/TextViewBase.Normal"
+                android:text=""></TextView>
+
+        </LinearLayout>
+    </ScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

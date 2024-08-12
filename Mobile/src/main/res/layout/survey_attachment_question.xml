@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/survey_attachq_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewBase.Normal"  />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="3dip">
+        <com.metrix.architecture.attachment.AttachmentField
+            android:id="@+id/survey_attachq_field"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        </com.metrix.architecture.attachment.AttachmentField>
+        <Button
+            android:id="@+id/survey_attachq_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonBase.Survey" />
+    </LinearLayout>
+</merge>

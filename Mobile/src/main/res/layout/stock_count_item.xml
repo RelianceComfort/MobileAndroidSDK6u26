@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Vertical"
+    android:background="@drawable/list_selector" >
+    <TextView
+        android:id="@+id/run_id"
+        style="@style/TextViewBase.Heading" />
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/table_layout"
+        style="@style/TableBase.Normal" >
+        <TableRow style="@style/TableRowBase.Normal" >
+            <TextView
+                android:id="@+id/location"
+                style="@style/TextViewBase.Normal.List.Medium" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

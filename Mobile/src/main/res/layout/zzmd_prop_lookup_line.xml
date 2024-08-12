@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/ZZMD.LinearBase.Normal.Vertical" >  
+	<LinearLayout
+		style="@style/ZZMD.LinearBase.Normal.Horizontal.Table" >  
+		<TextView
+			android:tag="metrix_row_id"
+			style="@style/ZZMD.TextViewBase.Hidden" />
+		<TextView
+			android:tag="pv_id"
+			style="@style/ZZMD.TextViewBase.Hidden" />
+		<TextView
+			android:tag="control_type"
+			style="@style/ZZMD.TextViewBase.Hidden"
+			android:text="LOOKUP" /> 
+		<TextView
+			android:tag="property_name"
+			style="@style/ZZMD.TextViewBase.Hidden" /> 
+		<TextView
+		    android:tag="property_name_string"
+			style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn" />
+		<EditText
+		    android:tag="property_value"
+			style="@style/ZZMD.EditTextBase.Normal.Table.TwoColumn"
+			android:drawableRight="@drawable/magnifying_glass" />
+	</LinearLayout>
+	<LinearLayout 
+		style="@style/ZZMD.LinearBase.Normal.Horizontal.Table" >  
+        <TextView
+            android:tag="description_label"
+            style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn"
+            android:visibility="invisible" />
+		<TextView
+		    android:tag="description_text"
+		    style="@style/ZZMD.TextViewBase.ReadOnlyValue.Table.TwoColumn.Small" />
+	</LinearLayout>
+</LinearLayout>

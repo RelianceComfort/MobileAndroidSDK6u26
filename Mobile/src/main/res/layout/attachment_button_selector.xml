@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativelayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="right"
+    android:orientation="horizontal"
+    android:padding="0dp" >
+
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="Home"
+        android:tag="overview"
+        android:background="@android:color/transparent"
+        android:layout_alignWithParentIfMissing="true"
+        android:src="@drawable/quick_action_home"
+        android:layout_toLeftOf="@+id/attachmentsButton"/>
+
+    <ImageButton
+        android:id="@+id/attachmentsButton"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="Attachments"
+        android:tag="attachments"
+        android:background="@android:color/transparent"
+        android:src="@drawable/quick_action_attachments"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toLeftOf="@+id/notesButton"/>
+
+    <TextView
+        android:id="@+id/attachmentsBadge"
+		style="@style/QuickActionBarItemCount"
+        android:layout_alignRight="@+id/attachmentsButton"
+        android:layout_alignBottom="@+id/attachmentsButton"
+        android:text="0" />
+    
+   	<ImageButton
+   	    android:id="@+id/notesButton"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_centerHorizontal="true"
+        android:tag="notes"
+        android:contentDescription="Notes"
+        android:background="@android:color/transparent"
+        android:src="@drawable/quick_action_notes" 
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toLeftOf="@+id/taskStatusButton"/>
+
+    <TextView
+        android:id="@+id/notesBadge"
+		style="@style/QuickActionBarItemCount"
+        android:layout_alignRight="@+id/notesButton"
+        android:layout_alignBottom="@+id/notesButton"
+        android:text="0" />
+    
+    <ImageButton
+        android:id="@+id/taskStatusButton"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="Task Status"
+        android:tag="taskStatus"
+        android:background="@android:color/transparent"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_alignParentRight="true"/>
+    
+</RelativeLayout>

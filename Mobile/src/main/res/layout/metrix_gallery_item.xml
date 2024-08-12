@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:paddingBottom="1dp"
+    android:paddingTop="0dp" >
+
+    <ImageView
+        android:id="@+id/imgview_attachment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:adjustViewBounds="true"
+        android:padding="10dp"
+        android:scaleType="centerCrop" >
+    </ImageView>
+    <TextView
+        android:id="@+id/myImageViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imgview_attachment"
+        android:layout_alignTop="@+id/imgview_attachment"
+        android:layout_alignRight="@+id/imgview_attachment"
+        android:layout_alignBottom="@+id/imgview_attachment"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#000000" />
+    <include layout="@layout/attachment_video_icon_layout" />
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/LinearBase.Normal.Vertical">
+	<androidx.coordinatorlayout.widget.CoordinatorLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/coordinator_layout">
+	<TextView
+		android:id="@+id/textBluetooth"
+		style="@style/TextViewBase.Title"></TextView>
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/table_layout" style="@style/TableBase.Normal">
+		<TableRow style="@style/TableRowBase.Normal">
+
+			<TextView
+				android:id="@+id/textView1"
+				style="@style/TextViewBase.Emphasis"></TextView>
+		</TableRow>
+	</TableLayout> 	
+	<androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerView" android:layout_height="match_parent"
+		android:layout_width="match_parent" android:scrollbars="vertical">
+	</androidx.recyclerview.widget.RecyclerView>
+	</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

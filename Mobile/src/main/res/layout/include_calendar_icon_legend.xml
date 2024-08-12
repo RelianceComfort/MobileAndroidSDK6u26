@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout        
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:drawableLeft="@drawable/icon_state_confirmed"
+            android:drawablePadding="6dip"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/label_confirmed231dd8a9" />
+
+        <TextView
+            android:drawableLeft="@drawable/icon_state_redcolor"
+            android:drawablePadding="6dip"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/label_calendar_exception0b18079f" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="30dip"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:drawableLeft="@drawable/icon_state_unconfirmed"
+            android:drawablePadding="6dip"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/label_full_day_reportc38740d5" />
+
+        <TextView
+            android:drawableLeft="@drawable/icon_state_partial"
+            android:drawablePadding="6dip"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/label_partial_day_report8b13870f" />
+
+    </LinearLayout>
+</LinearLayout>

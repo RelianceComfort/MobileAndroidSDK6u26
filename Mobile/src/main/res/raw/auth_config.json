@@ -1,0 +1,12 @@
+{
+  "client_id": "546108a3-69cb-4285-819c-05c93a73699a",
+  "redirect_uri": "com.metrix.metrixmobile://fsmoidc",
+  "end_session_redirect_uri": "com.metrix.metrixmobile://fsmoidc",
+  "authorization_scope": "openid email profile",
+  "discovery_uri": "",
+  "authorization_endpoint_uri": "https://login.windows.net/afadec18-0533-4cba-8578-5316252ff93f/oauth2/authorize",
+  "token_endpoint_uri": "https://login.windows.net/afadec18-0533-4cba-8578-5316252ff93f/oauth2/token",
+  "registration_endpoint_uri": "",
+  "user_info_endpoint_uri": "https://login.windows.net/afadec18-0533-4cba-8578-5316252ff93f/openid/userinfo",
+  "https_required": true
+}

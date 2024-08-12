@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Vertical" >
+    <ScrollView style="@style/ScrollViewBase.Normal.Vertical" >
+        <LinearLayout
+            android:id="@+id/tab_child_layout"
+            style="@style/LinearBase.Normal.Vertical" >
+            <TextView
+                android:id="@+id/tab_child_label"
+                style="@style/TextViewBase.Title" />
+            <TextView
+                android:id="@+id/tab_child_tip"
+                style="@style/TextViewBase.Emphasis" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

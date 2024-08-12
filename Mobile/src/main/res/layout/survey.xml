@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    style="@style/LinearBase.Normal.Vertical" >
+	
+	    <com.metrix.architecture.ui.widget.ObservableScrollView
+	        xmlns:android="http://schemas.android.com/apk/res/android"
+	        style="@style/ScrollViewBase.Normal.Vertical"
+	        android:layout_weight="1"
+	        android:id="@+id/survey_scrollview">
+	        <LinearLayout
+	            xmlns:android="http://schemas.android.com/apk/res/android"
+	            android:id="@+id/table_layout"
+	            style="@style/LinearBase.Normal.Vertical" >
+	            
+	            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	                android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+	                android:orientation="vertical"
+	                android:id="@+id/survey_question_container">
+	            </LinearLayout>
+	            
+	        </LinearLayout>
+	    </com.metrix.architecture.ui.widget.ObservableScrollView>
+	</LinearLayout>
+	<!-- The navigation drawer -->  
+    <include layout="@layout/sliding_menu_layout"/>
+    
+</androidx.drawerlayout.widget.DrawerLayout>

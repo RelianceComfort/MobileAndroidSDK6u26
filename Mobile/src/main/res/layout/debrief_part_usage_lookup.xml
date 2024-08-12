@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coordinator_layout">
+        <LinearLayout style="@style/LinearBase.Normal.Vertical" >
+            <LinearLayout
+                android:id="@+id/table_layout"
+                style="@style/LinearBase.Normal.Vertical"
+                android:layout_weight="1"
+                android:padding="5dp" >
+                <TableLayout
+                    style="@style/TableBase.Normal" >
+                    <TableRow style="@style/TableRowBase.Normal" >
+                        <AutoCompleteTextView
+                            android:id="@+id/search_criteria"
+                            style="@style/EditTextBase.Normal.Table.TwoColumn"
+                            android:layout_weight="1"></AutoCompleteTextView>
+                    </TableRow>
+                </TableLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:scrollbars="vertical"/>
+            </LinearLayout>
+            <include layout="@layout/row_count_bar" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|end"
+            android:orientation="vertical"
+            app:layout_dodgeInsetEdges="bottom">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                style="@style/FloatingActionBtnBase.First"
+                android:id="@+id/add"
+                android:src="@drawable/ic_add_white_24dp"
+                android:visibility="gone"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                style="@style/FloatingActionBtnBase.First"
+                android:id="@+id/custom_proceed"
+                android:src="@drawable/ic_check_white_24dp"
+                android:visibility="gone"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                style="@style/FloatingActionBtnBase.First"
+                android:id="@+id/custom_add"
+                android:src="@drawable/ic_add_white_24dp"
+                android:visibility="gone"/>
+
+            <include layout="@layout/split_action_bar" />
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!-- The navigation drawer -->
+    <include layout="@layout/sliding_menu_layout"/>
+</androidx.drawerlayout.widget.DrawerLayout>

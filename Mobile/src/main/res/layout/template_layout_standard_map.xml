@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map_widget_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/standard_screen_map_widget_height"
+    android:layout_marginBottom="5dp">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cameraZoom="15"
+        app:liteMode="true"
+        app:mapType="normal" />
+
+    <Button
+        android:id="@+id/btn_get_directions"
+        style="@style/ButtonBase.Normal.ActionBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="2dp"
+        android:padding="16dp"
+        android:visibility="gone"
+        tools:text="Get Directions" />
+</FrameLayout>

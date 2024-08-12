@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="metrix_horizontal_margin">16dp</dimen>
+
+    <dimen name="calendar_day_item_height">52sp</dimen>
+    <dimen name="calendar_day_item_number_padding_top">6dp</dimen>
+    <dimen name="calendar_day_item_number_padding_bottom">2dp</dimen>
+    <dimen name="calendar_day_item_number_text_size">16sp</dimen>
+
+    <dimen name="mtrl_card_padding">20dp</dimen>
+    <dimen name="mtrl_card_divider_padding">16dp</dimen>
+    <dimen name="button_height">38dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_2_margin">88dp</dimen>
+    <dimen name="fab_3_margin">160dp</dimen>
+
+    <dimen name="mtrl_card_spacing">5dp</dimen>
+    <dimen name="mtrl_small_text">12sp</dimen>
+    <dimen name="mtrl_normal_text">18sp</dimen>
+    <dimen name="mtrl_large_text">24sp</dimen>
+    <dimen name="mtrl_x_large_text">32sp</dimen>
+
+    <!-- Attachment Icon Dimensions -->
+    <dimen name="attachment_icon_size">32dp</dimen>
+    <dimen name="attachment_icon_horizontal_padding">8dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="fab_offset_single">54dp</dimen>
+    <dimen name="fab_offset_double">126dp</dimen>
+    <dimen name="fab_offset_triple">198dp</dimen>
+    <dimen name="fab_offset_difference">72dp</dimen>
+    <dimen name="md_margin">5dp</dimen>
+    <dimen name="field_separator">7.5dp</dimen>
+    <dimen name="header_margin_bottom">10dp</dimen>
+
+    <dimen name="label_indent">6dp</dimen>
+    <dimen name="value_indent">12dp</dimen>
+    <dimen name="checkbox_indent">6dp</dimen>
+    <dimen name="label_text_size">12sp</dimen>
+    <dimen name="region_title_bottom_padding">5dp</dimen>
+    <dimen name="field_horizontal_margin">5dp</dimen>
+
+    <!-- Custom Spinner -->
+    <dimen name="spinner_margin">2dp</dimen>
+    <dimen name="spinner_text_padding">3dp</dimen>
+    <dimen name="spinner_text_marginTop">-5dp</dimen>
+    <dimen name="spinner_text_marginLeft">9dp</dimen>
+
+    <!-- Typography Guidelines from (adjusted with each being +2 - https://learnui.design/blog/android-material-design-font-size-guidelines.html -->
+    <dimen name="page_title_size">22sp</dimen>
+    <dimen name="paragraph_text_size">16sp</dimen>
+    <dimen name="list_title_size">16sp</dimen>
+    <dimen name="list_item_titles_size">18sp</dimen>
+    <dimen name="important_text_snippets_size">18sp</dimen>
+    <dimen name="secondary_text_size">16sp</dimen>
+    <dimen name="caption_text_size">16sp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+    <dimen name="tab_text_size">16sp</dimen>
+    <dimen name="text_input_size">16sp</dimen>
+
+
+    <dimen name="dialog_fixed_width_major">16dp</dimen>
+    <dimen name="dialog_fixed_width_minor">12dp</dimen>
+    <dimen name="dialog_fixed_height_major">16dp</dimen>
+    <dimen name="dialog_fixed_height_minor">12dp</dimen>
+
+    <dimen name="standard_screen_map_widget_height">180dp</dimen>
+    <dimen name="list_sliver_width">7dp</dimen>
+</resources>

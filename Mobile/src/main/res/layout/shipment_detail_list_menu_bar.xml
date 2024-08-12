@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu_bar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom|end"
+    android:orientation="vertical"
+    app:layout_dodgeInsetEdges="bottom">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="@style/FloatingActionBtnBase.First"
+        android:id="@+id/process"
+        android:src="@drawable/ic_check_white_24dp"/>
+
+    <include layout="@layout/split_action_bar" />
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/table_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dip" >
+    <TextView
+        android:id="@+id/field_add_attachment_dialog_title"
+        style="@style/ZZMD.TextViewBase.Dialog" >
+    </TextView>
+    <LinearLayout
+        style="@style/ZZMD.LinearBase.Normal.Horizontal.Table" >
+        <TextView android:id="@+id/faad_column_name_label" style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn"></TextView>
+        <Spinner android:id="@+id/faad_column_name" style="@style/ZZMD.SpinnerBase.Normal.Table.TwoColumn" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/ZZMD.LinearBase.Normal.Horizontal.Table">
+        <TextView android:id="@+id/faad_control_type_label" style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn"></TextView>
+        <Spinner android:id="@+id/faad_control_type" style="@style/ZZMD.SpinnerBase.Normal.Table.TwoColumn"/>
+    </LinearLayout>
+    <LinearLayout style="@style/ZZMD.LinearBase.Normal.Horizontal.Table" >
+        <TextView android:id="@+id/faad_description_label" style="@style/ZZMD.TextViewBase.Normal.FullWidth" />
+    </LinearLayout>
+    <LinearLayout style="@style/ZZMD.LinearBase.Normal.Horizontal.Table" >
+        <EditText android:id="@+id/faad_description" style="@style/ZZMD.EditTextBase.MultiLine"/>
+    </LinearLayout>
+</LinearLayout>

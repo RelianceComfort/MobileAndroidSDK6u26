@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'net.openid.appauth'
+    compileSdk rootProject.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.compileSdkVersion
+        //versionCode rootProject.versionNum
+        //versionName rootProject.versionName
+    }
+    sourceSets {
+        main.manifest.srcFile 'AndroidManifest.xml'
+        main.java.srcDirs = ['java']
+        main.aidl.srcDirs = ['java']
+        main.res.srcDir 'res'
+        main.assets.srcDir 'assets'
+        main.resources.srcDir 'java'
+        test.setRoot('javatests');
+        test.java.srcDir('javatests');
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/LICENSE.txt', 'META-INF/NOTICE.txt']
+        }
+    }
+    lint {
+        disable 'InvalidPackage', 'TrulyRandom', 'UseCompoundDrawables', 'GradleDependency'
+        warningsAsErrors true
+    }
+}
+
+// produces just the classes JAR
+task jar(type: Copy, dependsOn:'bundleRelease') {
+    from("${project.buildDir}/intermediates/bundles/release/")
+    into("${project.buildDir}/libs/")
+    include('classes.jar')
+    rename('classes.jar', "appauth-oidclibrary.jar")
+}
+
+// produces a JAR containing sources
+task sourcesJar(type: Jar, dependsOn:'generateReleaseSources') {
+    from android.sourceSets.main.java.srcDirs
+    archiveClassifier.set('sources')
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:deprecation" << "-Xlint:unchecked"
+}
+
+group = "net.openid"
+dependencies {
+    api "androidx.browser:browser:1.0.0"
+    implementation "androidx.appcompat:appcompat:${project.androidXVersions.appCompat}"
+}
+

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This file contains styles for the Mobile Designer screens, signified by the ZZMD prefix. -->
+    <style name="ZZMD" />
+    <!-- TextView Styles -->
+    <style name="ZZMD.TextViewBase">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Title">
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+        <item name="android:textColor">@color/IFSPurple</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Heading">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/IFSGold</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+    </style>
+    <style name="ZZMD.TextViewBase.ActionBarHeading">
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="ZZMD.TextViewBase.ActionBarHeading.Medium">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+    <style name="ZZMD.TextViewBase.ItemCountBarHeading">
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+    </style>
+    <style name="ZZMD.TextViewBase.ItemCountBarHeading.Dark">
+        <item name="android:textColor">#A0A0A0</item>
+    </style>
+    <style name="ZZMD.TextViewBase.ItemCountBarHeading.Light">
+        <item name="android:textColor">#D8D8D8</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Heading.Lookup">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:layout_width">fill_parent</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Emphasis">
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Strong">
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Normal">
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Large">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Dialog">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Dialog.Small">
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Normal.FullWidth">
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:drawableRight">@drawable/label_colon</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Normal.Table">
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:drawableRight">@drawable/label_colon</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Normal.Table.TwoColumn">
+        <item name="android:layout_weight">.30</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Normal.Table.FourColumn">
+        <item name="android:layout_weight">.15</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Normal.Lookup">
+        <item name="android:layout_weight">.30</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Normal.List">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Normal.List.Thin">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">.30</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Normal.List.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">.40</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Normal.List.Wide">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">.70</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Strong.List">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:layout_weight">.50</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Strong.List.Thin">
+        <item name="android:layout_weight">.35</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Strong.List.Medium">
+        <item name="android:layout_weight">.40</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Strong.List.Wide">
+        <item name="android:layout_weight">.65</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Strong.List.Full">
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Hidden">
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Hidden.Table">
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Hidden.Table.TwoColumn">
+        <item name="android:layout_weight">.30</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.TextViewBase.Hidden.Table.FourColumn">
+        <item name="android:layout_weight">.15</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.TextViewBase.ReadOnlyValue">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+    <style name="ZZMD.TextViewBase.ReadOnlyValue.Table"></style>
+    <style name="ZZMD.TextViewBase.ReadOnlyValue.Table.TwoColumn">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:paddingLeft">3dp</item>
+    </style>
+    <style name="ZZMD.TextViewBase.ReadOnlyValue.Table.TwoColumn.Small">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+    </style>
+    <style name="ZZMD.TextViewBase.ReadOnlyValue.Table.TwoColumn.Large">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ZZMD.TextViewBase.ReadOnlyValue.Table.FourColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.TextViewBase.ReadOnlyValue.Large">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+    <!-- EditText Styles -->
+    <style name="ZZMD.EditTextBase">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ZZMD.EditTextBase.Dialog">
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:layout_width">fill_parent</item>
+    </style>
+    <style name="ZZMD.EditTextBase.MultiLine">
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:gravity">top|left</item>
+    </style>
+    <style name="ZZMD.EditTextBase.Normal">
+        <item name="android:layout_width">200dp</item>
+    </style>
+    <style name="ZZMD.EditTextBase.Normal.Table"></style>
+    <style name="ZZMD.EditTextBase.Normal.Table.TwoColumn">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.EditTextBase.Normal.Table.FourColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.EditTextBase.Hidden">
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="ZZMD.EditTextBase.Hidden.Table"></style>
+    <style name="ZZMD.EditTextBase.Hidden.Table.TwoColumn">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.EditTextBase.Hidden.Table.FourColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <!-- Spinner Styles -->
+    <style name="ZZMD.SpinnerBase">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">40dp</item>
+    </style>
+    <style name="ZZMD.SpinnerBase.Normal">
+        <item name="android:layout_width">175dp</item>
+    </style>
+    <style name="ZZMD.SpinnerBase.Hidden">
+        <item name="android:layout_width">175dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="ZZMD.SpinnerBase.Normal.Table"></style>
+    <style name="ZZMD.SpinnerBase.Normal.Table.TwoColumn">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.SpinnerBase.Normal.Table.FourColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.SpinnerBase.Normal.Table.ThreeColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <!-- CheckBox Styles -->
+    <style name="ZZMD.CheckBoxBase">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ZZMD.CheckBoxBase.Normal">
+        <item name="android:layout_width">175dp</item>
+    </style>
+    <style name="ZZMD.CheckBoxBase.Hidden">
+        <item name="android:layout_width">175dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="ZZMD.CheckBoxBase.Normal.Table"></style>
+    <style name="ZZMD.CheckBoxBase.Normal.Table.TwoColumn">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ZZMD.CheckBoxBase.Normal.Table.FourColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <!-- RadioButton Styles -->
+    <style name="ZZMD.RadioButton">
+	  <item name="android:textColor">@color/Black</item> 
+	  <item name="android:textStyle">normal</item> 
+	  <item name="android:typeface">normal</item> 
+	  <item name="android:layout_height">wrap_content</item> 
+	</style>
+	<style name="ZZMD.RadioButton.Normal">
+	  <item name="android:layout_width">175dp</item> 
+	</style>
+	<style name="ZZMD.RadioButton.Survey"></style>
+    <!-- TableLayout Styles -->
+    <style name="ZZMD.TableBase">
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ZZMD.TableBase.Normal"></style>
+    <style name="ZZMD.TableBase.Normal.Buttons">
+        <item name="android:orientation">vertical</item>
+        <item name="android:stretchColumns">*</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="ZZMD.TableRowBase">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="ZZMD.TableRowBase.Normal"></style>
+    <!-- LinearLayout Styles -->
+    <style name="ZZMD.LinearBase">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="ZZMD.LinearBase.Normal">
+        <item name="android:background">@color/White</item>
+    </style>
+    <style name="ZZMD.LinearBase.Normal.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="ZZMD.LinearBase.Normal.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="ZZMD.LinearBase.Normal.Horizontal.Table">
+        <item name="android:weightSum">1.0</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <!-- ScrollView Styles -->
+    <style name="ZZMD.ScrollViewBase">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    <style name="ZZMD.ScrollViewBase.Normal"></style>
+    <style name="ZZMD.ScrollViewBase.Normal.Vertical">
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+    <style name="ZZMD.ScrollViewBase.Normal.Horizontal">
+        <item name="android:scrollbars">horizontal</item>
+    </style>
+    <!-- Button Styles -->
+    <style name="ZZMD.ButtonBase">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ZZMD.ButtonBase.Normal"></style>
+    <style name="ZZMD.ButtonBase.Normal.Table">
+        <item name="android:layout_gravity">top</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:drawablePadding">2dp</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:background">@null</item>
+        <item name="android:width">100dp</item>
+        <item name="android:padding">20dp</item>
+    </style>
+    <style name="ZZMD.ButtonBase.Normal.Center">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">2dp</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="ZZMD.ButtonBase.Normal.ActionBar">
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:layout_height">38dp</item>
+    </style>
+    <style name="ZZMD.ButtonBase.Normal.Dialog">
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_width">152dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:layout_height">38dp</item>
+    </style>
+    <style name="ZZMD.ButtonBase.Survey">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!-- ImageView Styles -->
+    <style name="ZZMD.ImageViewBase">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ZZMD.ImageViewBase.Normal"></style>
+</resources>

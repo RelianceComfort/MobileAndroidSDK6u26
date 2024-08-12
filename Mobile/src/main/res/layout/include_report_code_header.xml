@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+	    android:orientation="horizontal"      
+        >	    
+	    <TextView	        
+	        android:id="@+id/reportItemHeaderTitle"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:singleLine="true"
+	        android:layout_weight="1"
+	        tools:text="title"
+	        android:gravity="left"
+	        android:textSize="14sp" />
+	    <TextView
+	        android:gravity="right"
+	        android:id="@+id/reportItemTaskId"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_weight="1"
+	        android:singleLine="true"
+	        tools:text="subtitle"
+	        android:textSize="14sp" /> 	
+    </LinearLayout>
+	<LinearLayout
+	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+	    android:orientation="horizontal"        
+        >	   
+    	<TextView
+	        android:ellipsize="end"
+	        android:id="@+id/reportItemHeaderReportCode"
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent"
+	        android:singleLine="true"
+	        tools:text="REPORT.CODE"
+	        android:textColor="@color/IFSGreen"/>
+    	<TextView
+                android:id="@+id/nonPartUsage_metrix_row_id"
+                android:layout_height="wrap_content"
+	        	android:layout_width="wrap_content"
+                style="@style/EditTextBase.Hidden" />
+    </LinearLayout>
+</LinearLayout>

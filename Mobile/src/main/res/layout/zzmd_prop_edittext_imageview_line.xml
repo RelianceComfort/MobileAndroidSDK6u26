@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ZZMD.LinearBase.Normal.Vertical" >
+
+    <LinearLayout style="@style/ZZMD.LinearBase.Normal.Horizontal.Table" >
+
+        <TextView
+            style="@style/ZZMD.TextViewBase.Hidden"
+            android:tag="metrix_row_id" />
+
+        <TextView
+            style="@style/ZZMD.TextViewBase.Hidden"
+            android:tag="pv_id" />
+
+        <TextView
+            style="@style/ZZMD.TextViewBase.Hidden"
+            android:tag="control_type"
+            android:text="TEXTBOX" />
+        
+        <TextView
+            style="@style/ZZMD.TextViewBase.Hidden"
+            android:tag="default_value_data_type" />
+
+        <TextView
+            style="@style/ZZMD.TextViewBase.Hidden"
+            android:tag="property_name" />
+
+        <TextView
+            style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn"
+            android:layout_weight="0.3"
+            android:tag="property_name_string" />
+
+        <EditText
+            style="@style/ZZMD.EditTextBase.Normal.Table.TwoColumn"
+            android:layout_weight="0.6"
+            android:tag="property_value" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:paddingRight="6dp"
+            android:src="@drawable/magnifying_glass"
+            android:tag="lookup_button" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/ZZMD.LinearBase.Normal.Horizontal.Table" >
+
+        <TextView
+            style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn"
+            android:tag="description_label"
+            android:visibility="invisible" />
+
+        <TextView
+            style="@style/ZZMD.TextViewBase.ReadOnlyValue.Table.TwoColumn.Small"
+            android:tag="description_text" />
+    </LinearLayout>
+
+</LinearLayout>

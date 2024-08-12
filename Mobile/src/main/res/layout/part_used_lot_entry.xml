@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Vertical"
+    android:orientation="vertical">
+    <ScrollView
+        style="@style/ScrollViewBase.Normal.Vertical"
+        android:id="@+id/part_used_lot_entry_layout_scrollview"
+        android:layout_weight="1"
+        android:padding="15dp"
+        android:background="@color/DarkRed"
+        android:fillViewport="true" />
+</LinearLayout>

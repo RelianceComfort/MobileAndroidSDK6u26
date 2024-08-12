@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/LinearBase.Normal.Horizontal.Table" >
+    
+	<View
+		style="@style/TextViewBase.Normal.Table.FourColumn" android:drawableRight="@null">
+	</View>
+	
+	<View
+		style="@style/EditTextBase.Normal.Table.FourColumn" android:drawableRight="@null">
+	</View>
+	
+	<View
+		style="@style/TextViewBase.Normal.Table.FourColumn" android:drawableRight="@null">
+	</View>
+	
+	<View
+		style="@style/EditTextBase.Normal.Table.FourColumn" android:drawableRight="@null">
+	</View>
+  
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="6.0.0 Build 1" >
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <queries>
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
+    <queries>
+        <package android:name="com.google.zxing.client.android" />
+    </queries>
+    <application>
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="barcode_ui" />
+    </application>
+</manifest>

@@ -1,0 +1,112 @@
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/drawer_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<androidx.coordinatorlayout.widget.CoordinatorLayout
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/coordinator_layout">
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			xmlns:tools="http://schemas.android.com/tools"
+			style="@style/LinearBase.Normal.Horizontal"
+			android:baselineAligned="false"
+			android:id="@+id/outer_layout">
+			<include layout="@layout/debrief_navigation_bar" />
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="fill_parent"
+				android:id="@+id/panel_two"
+				android:layout_weight="0.8"
+				android:orientation="horizontal">
+				<include layout="@layout/tb_land_layout_seperator" />
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:padding="5dp"
+					android:orientation="vertical">
+					<androidx.core.widget.NestedScrollView
+						android:id="@+id/scroll_view"
+						style="@style/ScrollViewBase.Normal.Vertical"
+						android:layout_weight="1"
+						android:layout_height="0dp"
+						tools:ignore="NestedWeights">
+						<LinearLayout
+							android:id="@+id/table_layout"
+							style="@style/LinearBase.Normal.Vertical">
+							<TextView
+								style="@style/TextViewBase.Title"
+								android:tag="SCREEN_LABEL" />
+							<TextView
+								style="@style/TextViewBase.Emphasis"
+								android:tag="SCREEN_TIP" />
+						</LinearLayout>
+					</androidx.core.widget.NestedScrollView>
+					<RelativeLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:background="@color/IFSDarkGrey"
+						android:orientation="horizontal"
+						android:padding="5dip"
+						android:id="@+id/cus_signature_options_area">
+						<TextView
+							style="@style/TextViewBase.ActionBarHeading.Medium"
+							android:id="@+id/SignBelowc2202ef6">
+						</TextView>
+						<ImageView
+							tools:ignore="ContentDescription"
+							android:id="@+id/clear_signature"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_alignParentRight="true"
+							android:paddingRight="5dip"
+							android:src="@drawable/remove_24" />
+					</RelativeLayout>
+					<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+						android:background="@color/IFSDarkGrey" android:orientation="horizontal" android:padding="5dip" android:id="@+id/cus_signature_already_saved">
+
+						<TextView
+							android:id="@+id/alreadySavedMessage"
+							style="@style/TextViewBase.ItemCountBarHeading.Dark" />
+					</RelativeLayout>
+					<RelativeLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:background="@color/White"
+						android:orientation="horizontal"
+						android:padding="5dip">
+						<ImageView
+							android:clickable="true"
+							android:focusable="true"
+							android:id="@+id/signaturePreview"
+							android:background="@color/Ash"
+							android:layout_centerInParent="true"
+							android:layout_width="360dp"
+							android:layout_height="120dp" />
+					</RelativeLayout>
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:gravity="bottom|end"
+			android:orientation="vertical"
+			app:layout_dodgeInsetEdges="bottom">
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				style="@style/FloatingActionBtnBase.First"
+				android:id="@+id/save"
+				android:src="@drawable/ic_save_white_24dp"/>
+
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				style="@style/FloatingActionBtnBase.First"
+				android:id="@+id/next"
+				android:src="@drawable/ic_navigate_next_white_24dp"/>
+
+			<include layout="@layout/split_action_bar" />
+		</LinearLayout>
+	</androidx.coordinatorlayout.widget.CoordinatorLayout>
+	<!-- The navigation drawer -->
+	<include layout="@layout/sliding_menu_layout" />
+</androidx.drawerlayout.widget.DrawerLayout>

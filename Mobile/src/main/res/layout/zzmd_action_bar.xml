@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/action_bar_gradient_background"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
+    <ImageView
+        android:id="@+id/up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="5dp"
+        android:src="@drawable/ifs_logo" />
+
+    <TextView
+        android:id="@+id/action_bar_title"
+        style="@style/ZZMD.TextViewBase.ActionBarHeading.Medium"
+        android:layout_toRightOf="@id/up" >
+    </TextView>
+
+    <ImageView
+        android:id="@+id/action_bar_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:paddingRight="5dip"
+        android:src="@drawable/header_help_32x32" >
+    </ImageView>
+
+</RelativeLayout>

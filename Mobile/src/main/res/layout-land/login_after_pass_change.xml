@@ -1,0 +1,11 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/sign_in_landscape"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:id="@+id/login_block" >
+
+    <include layout="@layout/signin_after_password_change_bar" />
+
+</RelativeLayout>

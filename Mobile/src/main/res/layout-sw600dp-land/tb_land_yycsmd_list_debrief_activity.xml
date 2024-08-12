@@ -1,0 +1,75 @@
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+	<androidx.coordinatorlayout.widget.CoordinatorLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/coordinator_layout">
+		<LinearLayout style="@style/LinearBase.Normal.Horizontal" android:baselineAligned="false">
+			<include layout="@layout/debrief_navigation_bar" />
+			<LinearLayout android:layout_width="0dp" android:layout_height="fill_parent" android:id="@+id/panel_two" android:layout_weight="0.5" android:orientation="horizontal">
+				<include layout="@layout/tb_land_layout_seperator" />
+				<LinearLayout android:layout_width="match_parent"
+					android:layout_height="fill_parent"
+					android:orientation="vertical"
+					android:padding="5dp">
+					<androidx.core.widget.NestedScrollView
+						android:id="@+id/scroll_view"
+						style="@style/ScrollViewBase.Normal.Vertical"
+						android:layout_weight="1" android:layout_height="0dp" tools:ignore="NestedWeights">
+						<LinearLayout
+							android:id="@+id/table_layout_data"
+							style="@style/LinearBase.Normal.Vertical"
+							android:focusable="true"
+							android:focusableInTouchMode="true" >
+							<RelativeLayout
+								android:layout_width="fill_parent"
+								android:layout_height="wrap_content"
+								android:orientation="horizontal">
+								<TextView
+									android:id="@+id/layout_title"
+									style="@style/TextViewBase.Title"
+									android:tag="SCREEN_LABEL" >
+								</TextView>
+							</RelativeLayout>
+							<TextView
+								style="@style/TextViewBase.Emphasis"
+								android:tag="SCREEN_TIP" />
+						</LinearLayout>
+					</androidx.core.widget.NestedScrollView>
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout android:layout_width="0dp" android:layout_height="fill_parent" android:id="@+id/panel_three" android:layout_weight="0.3" android:orientation="horizontal">
+				<include layout="@layout/tb_land_layout_seperator" />
+				<LinearLayout
+					android:id="@+id/table_layout_parent"
+					android:layout_width="match_parent"
+					android:layout_height="fill_parent"
+					android:orientation="vertical"
+					android:padding="5dp" >
+					<LinearLayout
+						android:id="@+id/table_layout"
+						style="@style/LinearBase.Normal.Vertical"
+						android:layout_weight="1" android:layout_height="0dp" tools:ignore="NestedWeights">
+						<include layout="@layout/quicklinks_with_screen_label" />
+						<TextView
+							style="@style/TextViewBase.Emphasis"
+							android:tag="SCREEN_TIP" >
+						</TextView>
+					<androidx.recyclerview.widget.RecyclerView
+						android:id="@+id/recyclerView"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:scrollbars="vertical" />
+					</LinearLayout>
+					<!--<include layout="@layout/split_action_bar"/>-->
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+		<include layout="@layout/add_next_bar" />
+	</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!-- The navigation drawer -->
+    <include layout="@layout/sliding_menu_layout" />
+</androidx.drawerlayout.widget.DrawerLayout>

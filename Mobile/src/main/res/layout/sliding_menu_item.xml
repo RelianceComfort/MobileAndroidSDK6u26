@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/metrix_horizontal_margin"
+    android:paddingEnd="@dimen/metrix_horizontal_margin"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@drawable/list_selector">
+    
+    <ImageView
+        android:id="@+id/imageview_sliding_menu_item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"/>
+    
+    <TextView
+        android:id="@+id/textview_sliding_menu_item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/Black"
+        android:layout_centerVertical="true"
+        android:gravity="center" 
+        android:textSize="12sp"
+        />
+ 
+    <TextView
+        android:id="@+id/textview_sliding_menu_item_name"
+        android:layout_toEndOf="@id/imageview_sliding_menu_item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:textColor="@color/Black"
+        android:textSize="16sp"
+        android:layout_marginStart="25dp"
+        android:layout_toStartOf="@+id/textview_sliding_menu_item_count"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="Roboto Condensed"
+        android:minHeight="48dp"/>
+ 
+</RelativeLayout>

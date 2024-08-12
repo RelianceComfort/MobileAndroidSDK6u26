@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Vertical"
+    android:padding="5dp" >
+    <com.metrix.architecture.attachment.AttachmentAdditionControl
+        android:id="@+id/attachment_add_ctrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top" />
+    <ImageView
+        android:id="@+id/file_preview"
+        android:layout_width="120dip"
+        android:layout_height="120dip" />
+</LinearLayout>

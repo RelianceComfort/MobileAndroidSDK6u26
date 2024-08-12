@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<LinearLayout style="@style/ZZMD.LinearBase.Normal.Vertical"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+	    <ScrollView
+	        style="@style/ZZMD.ScrollViewBase.Normal.Vertical"
+	        android:layout_weight="1" >
+	        <LinearLayout
+	            style="@style/ZZMD.LinearBase.Normal.Vertical"
+	            android:focusable="true"
+	            android:focusableInTouchMode="true" >
+	            <TextView
+	                style="@style/ZZMD.TextViewBase.Title"
+					android:id="@+id/screen_title">
+	            </TextView>
+	            <TextView
+	                style="@style/ZZMD.TextViewBase.Emphasis"
+	                android:id="@+id/zzmd_field_lookup_prop_emphasis" >
+	            </TextView>
+		        <LinearLayout
+		            android:id="@+id/table_layout"
+		            style="@style/ZZMD.LinearBase.Normal.Vertical" >
+		        </LinearLayout>
+
+				<Button
+					android:id="@+id/validate"
+					style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:layout_margin="5dp" />
+
+				<Button
+					android:id="@+id/view_tables"
+					style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:layout_margin="5dp" />
+
+				<Button
+					android:id="@+id/view_filters"
+					style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:layout_margin="5dp" />
+
+				<Button
+					android:id="@+id/view_orderby"
+					style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:layout_margin="5dp" />
+	        </LinearLayout>
+	    </ScrollView>
+		<LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@color/White"
+		    android:orientation="horizontal"
+		    android:padding="5dip" >
+
+			<Button
+				android:id="@+id/save"
+				style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1" />
+		</LinearLayout>
+	</LinearLayout>
+	<!-- The navigation drawer -->  
+    <include layout="@layout/sliding_menu_layout"/>
+    
+</androidx.drawerlayout.widget.DrawerLayout>

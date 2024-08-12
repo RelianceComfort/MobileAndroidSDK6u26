@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coordinator_layout">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/LinearBase.Normal.Vertical" >
+
+            <LinearLayout
+                android:id="@+id/table_layout"
+                style="@style/LinearBase.Normal.Vertical"
+                android:layout_weight="1"
+                android:padding="5dp" >
+
+                <TextView style="@style/TextViewBase.Title" android:tag="SCREEN_LABEL" />
+
+                <TextView
+                    style="@style/TextViewBase.Emphasis"
+                    android:tag="SCREEN_TIP" >
+                </TextView>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dip" >
+
+                    <TextView
+                        android:id="@+id/textview_number_of_selected_items"
+                        style="@style/TextViewBase.ItemCountBarHeading.Dark"
+                        android:layout_alignParentLeft="true" >
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal"
+                        android:padding="5dip" >
+
+                        <ImageButton
+                            android:id="@+id/attachment_imagebtn_camera"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/photo_camera"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp">
+                        </ImageButton>
+
+                        <ImageButton
+                            android:id="@+id/attachment_imagebtn_video_camera"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/video_camera"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp" >
+                        </ImageButton>
+
+                        <ImageButton
+                            android:id="@+id/attachment_imagebtn_file"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/add_attachment"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp">
+                        </ImageButton>
+
+                        <ImageButton
+                            android:id="@+id/attachment_imagebtn_edit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/attachment_icon_edit"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="15dp"
+                            android:visibility="gone" >
+                        </ImageButton>
+
+                        <ImageButton
+                            android:id="@+id/attachment_imagebtn_delete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/attachment_icon_delete"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:visibility="gone" >
+                        </ImageButton>
+                    </LinearLayout>
+                </RelativeLayout>
+                <com.metrix.architecture.ui.widget.MetrixGalleryView
+                    android:id="@+id/attachment_gallery"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:horizontalSpacing="2dp"
+                    android:clipChildren="true"
+                    android:smoothScrollbar="true"
+                    android:listSelector="@null"
+                    android:numColumns="auto_fit"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <include layout="@layout/add_next_bar" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!-- The navigation drawer -->
+    <include layout="@layout/sliding_menu_layout"/>
+</androidx.drawerlayout.widget.DrawerLayout>

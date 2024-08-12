@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Vertical"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector" >
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/table_layout"
+        style="@style/TableBase.Normal" >
+        <TableRow style="@style/TableRowBase.Normal" >
+            <TextView
+                android:id="@+id/purchase_detail__metrix_row_id"
+                style="@style/EditTextBase.Hidden" />
+            <TextView
+                android:id="@+id/purchase_detail__purchase_order_id"
+                style="@style/EditTextBase.Hidden" />
+            <TextView
+                android:id="@+id/purchase_detail__sequence"
+                style="@style/EditTextBase.Hidden" />
+            <TextView
+                android:textColor="#8427E2"
+                android:id="@+id/purchase_detail__part_id"
+                android:layout_width="100dip"
+                style="@style/TextViewBase.Normal.List.Medium" />
+            <TextView
+                android:id="@+id/purchase_detail__unit_cost"
+                style="@style/TextViewBase.Normal.List.Medium" />
+            <TextView
+                android:id="@+id/purchase_detail__qty_ordered"
+                style="@style/TextViewBase.Normal.List.Medium" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

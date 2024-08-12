@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/signin_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dip"
+    android:orientation="vertical" android:layout_alignParentBottom="true">
+
+    <LinearLayout
+        android:layout_marginLeft="5dip" android:layout_marginRight="5dip"
+        style="@style/LinearBase"
+        android:id="@+id/adLine"
+        >
+        <EditText
+            android:id="@+id/ad_personId"
+            android:visibility="invisible"
+            style="@style/EditTextBase.Normal.Table.TwoColumn.Special"
+            android:nextFocusForward="@+id/ad_domain"
+            android:nextFocusRight="@id/ad_domain"
+            android:nextFocusDown="@id/ad_domain"
+            android:inputType="textNoSuggestions"></EditText>
+
+        <EditText
+            android:id="@+id/ad_domain"
+            android:visibility="invisible"
+            style="@style/EditTextBase.Normal.Table.TwoColumn.Special"
+            android:nextFocusForward="@+id/ad_tenant"
+            android:nextFocusDown="@+id/ad_tenant"
+            android:nextFocusLeft="@id/ad_tenant"
+            android:inputType="textNoSuggestions"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="5dip" android:layout_marginRight="5dip"
+        style="@style/LinearBase"
+        android:id="@+id/adLine2"
+        >
+        <EditText
+            android:id="@+id/ad_tenant"
+            style="@style/EditTextBase.Normal.Table.TwoColumn.Special"
+            android:visibility="invisible"
+            android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:inputType="textNoSuggestions"
+            android:nextFocusForward="@+id/personId"
+            android:nextFocusDown="@+id/personId"
+            android:nextFocusLeft="@id/personId">
+        </EditText>
+        <Button
+            android:id="@+id/sso_authenticate"
+            android:visibility="invisible"
+            style="@style/ButtonBase.Normal.ActionBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        </Button>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/table_layout"
+        style="@style/LinearBase"
+        android:layout_marginLeft="5dip" android:layout_marginRight="5dip"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/LinearBase" >
+            <EditText
+                android:id="@+id/personId"
+                style="@style/EditTextBase.Normal.Table.TwoColumn.Special"
+                android:inputType="textNoSuggestions"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dip"
+            style="@style/LinearBase" >
+            <EditText
+                android:id="@+id/password"
+                style="@style/EditTextBase.Normal.Table.TwoColumn.Special"
+                android:inputType="textPassword"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LinearBase"
+            android:orientation="horizontal" >
+            <CheckBox
+                android:id="@+id/showPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/White" />
+            <!--<CheckBox-->
+            <!--android:id="@+id/azureAuth"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:textColor="@color/White" />-->
+        </LinearLayout>
+        <EditText
+            android:id="@+id/serviceUrl"
+            style="@style/EditTextBase.Normal.Table.TwoColumn.Special"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkboxLine"
+            android:inputType="textUri" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+            <Button
+                android:id="@+id/activate"
+                style="@style/ButtonBase.Normal.ActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"></Button>
+
+            <Button
+                android:id="@+id/cancel"
+                style="@style/ButtonBase.Normal.ActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"></Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

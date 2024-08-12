@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/ZZMD.LinearBase.Normal.Vertical" >  
+	<LinearLayout
+		style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+		android:padding="5dip" >
+		<TextView
+			android:tag="metrix_row_id"
+			style="@style/ZZMD.TextViewBase.Hidden" />
+		<TextView
+			android:tag="pv_id"
+			style="@style/ZZMD.TextViewBase.Hidden" />
+		<TextView
+			android:tag="control_type"
+			style="@style/ZZMD.TextViewBase.Hidden"
+			android:text="IMAGE_LOOKUP" /> 
+		<TextView
+			android:tag="property_name"
+			style="@style/ZZMD.TextViewBase.Hidden" /> 
+		<TextView
+		    android:tag="property_name_string"
+			style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn"
+			android:layout_weight="0.6" />
+	    <Button
+	        android:tag="image_select"
+	        style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:layout_weight="0.2" />
+	    <Button
+	        android:tag="image_clear"
+	        style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:layout_weight="0.2" />
+	</LinearLayout>
+	<LinearLayout 
+		style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+		android:padding="5dip" >  
+        <TextView
+            android:tag="property_value"
+            style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn"
+            android:visibility="invisible"
+            android:layout_weight="0.4" />
+        <LinearLayout 
+			android:layout_width="0dip" android:layout_height="wrap_content"
+            android:layout_weight="0.6" >
+			<ImageView android:tag="image_preview"
+			    android:layout_width="150dip" android:layout_height="120dip"
+			    android:src="@drawable/no_image80x80" /> 
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

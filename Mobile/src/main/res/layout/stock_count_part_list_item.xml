@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Vertical"
+    android:background="@drawable/list_selector" >
+    <TextView
+        android:id="@+id/part_id"
+        style="@style/TextViewBase.Heading" />
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/table_layout"
+        style="@style/TableBase.Normal" >
+        <TableRow style="@style/TableRowBase.Normal" >
+            <TextView
+                android:id="@+id/internal_desc"
+                style="@style/TextViewBase.Normal.List.Medium" />
+        </TableRow>
+        <TableRow style="@style/TableRowBase.Normal" >
+            <TextView
+                android:id="@+id/location"
+                style="@style/TextViewBase.Normal.List.Medium" />
+        </TableRow>
+        <TableRow style="@style/TableRowBase.Normal" >
+            <TextView
+                android:id="@+id/bin_id"
+                style="@style/TextViewBase.Normal.List.Medium" />
+        </TableRow>
+        <TableRow style="@style/TableRowBase.Normal"
+            >
+            <TextView
+                android:id="@+id/usable"
+                style="@style/TextViewBase.Normal.List.Medium"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/unusable"
+                style="@style/TextViewBase.Normal.List.Medium"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:visibility="gone"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

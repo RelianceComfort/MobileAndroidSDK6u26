@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/calendarDayItemModifiedIcon"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingLeft="0px"
+        android:paddingTop="0px"
+        android:src="@drawable/ic_day_needs_sync"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/calendarDayItemWarningIcon"
+        android:layout_gravity="right"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingRight="0px"
+        android:paddingTop="0px"
+        android:src="@drawable/ic_day_warning"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <LinearLayout
+        android:id="@+id/calendarDayItem"
+        android:layout_height="@dimen/calendar_day_item_height"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables"> <!-- The state icon can't be a compound drawable since you can't set the level on that so stop bugging me about it -->
+
+        <TextView
+            android:id="@+id/calendarDayItemTextView"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:paddingBottom="@dimen/calendar_day_item_number_padding_bottom"
+            android:paddingTop="@dimen/calendar_day_item_number_padding_top"
+            android:textColor="@color/IfsText"
+            android:textSize="@dimen/calendar_day_item_number_text_size"
+            tools:text="31"/>
+
+        <ImageView
+            android:contentDescription="@null"
+            android:id="@+id/calendarDayStateIcon"
+            android:layout_gravity="center"
+            android:layout_height="8sp"
+            android:layout_width="8sp"
+            android:layout_marginTop="4sp"
+            android:src="@drawable/icon_state"
+            tools:ignore="SmallSp" />
+
+    </LinearLayout>
+</FrameLayout>

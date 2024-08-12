@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ZZMD.LinearBase.Normal.Horizontal"
+    android:background="@drawable/list_selector"
+    android:gravity="center_vertical" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TableLayout
+            android:id="@+id/table_layout"
+            style="@style/ZZMD.TableBase.Normal" >
+            <TableRow style="@style/ZZMD.TableRowBase.Normal" >
+                <TextView
+                    android:id="@+id/mm_revision__revision_number"
+                    style="@style/ZZMD.TextViewBase.Strong.List.Medium" />
+                <TextView
+                    android:id="@+id/mm_revision__status"
+                    style="@style/ZZMD.TextViewBase.Normal.List.Medium" />
+            </TableRow>
+            <TableRow style="@style/ZZMD.TableRowBase.Normal" >
+                <TextView
+                    android:id="@+id/mm_revision__description"
+                    style="@style/ZZMD.TextViewBase.Emphasis" />
+                <TextView
+                    android:id="@+id/mm_revision__revision_id"
+                    style="@style/ZZMD.TextViewBase.Hidden" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>

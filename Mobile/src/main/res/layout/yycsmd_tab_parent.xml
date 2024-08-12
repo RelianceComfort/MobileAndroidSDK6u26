@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout style="@style/LinearBase.Normal.Vertical" >
+        <TabHost
+            android:id="@android:id/tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:padding="5dp" >
+                <HorizontalScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="none" >
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dip"
+                        android:layout_marginRight="0dip" />
+                </HorizontalScrollView>
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="5dp" />
+            </LinearLayout>
+        </TabHost>
+    </LinearLayout>
+    <include layout="@layout/sliding_menu_layout"/>
+</androidx.drawerlayout.widget.DrawerLayout>

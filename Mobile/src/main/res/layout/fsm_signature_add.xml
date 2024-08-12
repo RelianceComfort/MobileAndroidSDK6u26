@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CoordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.gcacace.signaturepad.views.SignaturePad
+            android:id="@+id/SignaturePad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:penColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/signatureLabel"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:background="@color/Ash" />
+
+        <TextView
+            android:id="@+id/signatureLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="24dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:gravity="center"
+            tools:text="Place your signature above the line" />
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/signatureCancelBtn"
+        style="@style/FloatingActionBtnBase.Third"
+        android:src="@drawable/ic_chevron_left"
+        app:layout_anchor="@id/signatureClearBtn" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/signatureClearBtn"
+        style="@style/FloatingActionBtnBase.Second"
+        android:src="@drawable/ic_cancel"
+        app:layout_anchor="@id/signatureAcceptBtn" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/signatureAcceptBtn"
+        style="@style/FloatingActionBtnBase.First"
+        android:src="@drawable/ic_check" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

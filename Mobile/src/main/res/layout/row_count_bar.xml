@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row_count_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/action_bar_gradient_background"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+    <TextView
+        android:id="@+id/row_count"
+        style="@style/TextViewBase.ActionBarHeading"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dip" />
+</RelativeLayout>

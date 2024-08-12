@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/important_information_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/important_information_gradient_background"
+    android:visibility="gone"
+    android:orientation="horizontal" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp" >
+        <TextView
+            android:id="@+id/important_information_heading"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="5dp"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:textColor="@color/Black"
+            android:textStyle="bold" />
+        <TextView android:id="@+id/important_information" style="@style/TextViewBase.Normal.List" />
+        <TextView android:id="@+id/important_information2" style="@style/TextViewBase.Normal.List" android:visibility="gone" />
+        <TextView android:id="@+id/important_information3" style="@style/TextViewBase.Normal.List" android:visibility="gone" />
+        <TextView android:id="@+id/important_information4" style="@style/TextViewBase.Normal.List" android:visibility="gone" />
+        <TextView android:id="@+id/important_information5" style="@style/TextViewBase.Normal.List" android:visibility="gone" />
+        <TextView android:id="@+id/important_information6" style="@style/TextViewBase.Normal.List" android:visibility="gone" />
+        <TextView android:id="@+id/important_information7" style="@style/TextViewBase.Normal.List" android:visibility="gone" />
+        <TextView android:id="@+id/important_information8" style="@style/TextViewBase.Normal.List" android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

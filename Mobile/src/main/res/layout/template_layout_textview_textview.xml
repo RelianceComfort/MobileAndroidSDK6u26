@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/LinearBase.Normal.Vertical.Table">
+    
+	<TextView
+		android:paddingStart="@dimen/field_horizontal_margin"
+		android:paddingBottom="0dp"
+		style="@style/TextViewBase.Normal.Table.Label">
+	</TextView>
+
+	<TextView
+		android:paddingTop="0dp"
+		android:paddingEnd="@dimen/field_horizontal_margin"
+		android:paddingBottom="@dimen/field_separator"
+		android:textIsSelectable="true"
+		style="@style/TextViewBase.ReadOnlyValue.Table">
+	</TextView>
+  
+</LinearLayout>

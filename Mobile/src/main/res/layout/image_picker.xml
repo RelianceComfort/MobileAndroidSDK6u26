@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Vertical"
+    android:layout_weight="1"
+    android:padding="5dp"
+    android:background="@color/Black" >
+	<com.metrix.architecture.ui.widget.MetrixGalleryView
+        android:id="@+id/image_gallery"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:horizontalSpacing="2dp"
+		android:clipChildren="true"
+		android:smoothScrollbar="true"
+        android:listSelector="@null"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="2dp" />
+</LinearLayout>

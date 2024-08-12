@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:versionCode="8690"
+    android:versionName="6.26">
+    <!-- <uses-sdk android:minSdkVersion="4" -->
+    <!-- android:targetSdkVersion="11" /> -->
+    <permission
+        android:name="com.metrix.metrixmobile.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-permission android:name="com.metrix.metrixmobile.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-feature android:name="android.hardware.usb.host" />
+    <uses-permission android:name="android.permission.USB_PERMISSION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" android:maxSdkVersion="29"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" android:minSdkVersion="33"/>
+
+    <!--  Managing External Storage Permissions  -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:replace="android:maxSdkVersion"
+        android:maxSdkVersion="29"/>
+
+    <!-- Allows access to the flashlight -->
+    <uses-feature android:name="android.hardware.camera.flash" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <application
+        android:name="com.metrix.architecture.database.MobileApplication"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/CustomActionBarTheme"
+        android:largeHeap="true"
+        android:label="IFS Field Service"
+        android:allowBackup="false"
+        android:requestLegacyExternalStorage="true">
+        <!-- DefaultServiceUrl: Setting this will change the default URL presented to the user on the activation screen. -->
+        <meta-data
+            android:name="DefaultServiceUrl"
+            android:value="http://" />
+        <!-- DatabaseVersion: This value is not normally changed. -->
+        <meta-data
+            android:name="DatabaseVersion"
+            android:value="1" />
+        <!-- UploadMessageSizeLimit: This defines the maximum size, in bytes, of an attachment that we'll attempt to upload from the app. -->
+        <meta-data
+            android:name="UploadMessageSizeLimit"
+            android:value="20971120" />
+        <!--  AttachmentImageWidthLimit: This defines the maximum width of an image that can be added as an attachment. -->
+        <meta-data
+            android:name="AttachmentImageWidthLimit"
+            android:value="800" />
+        <!-- ClientOwner: This value should NEVER be changed. -->
+        <meta-data
+            android:name="ClientOwner"
+            android:value="Metrix" />
+        <!--  DirectoryName: This value will be used as the name of the directory the app will be created in. -->
+        <meta-data
+            android:name="DirectoryName"
+            android:value="com.metrix.metrixmobile" />
+        <!-- DemoBuild: This value should NEVER be changed. -->
+        <meta-data
+            android:name="DemoBuild"
+            android:value="false" />
+        <!-- The following is release key for 563 map api v2 android:value="AIzaSyDh1N9JYgZWuHnSijp5-kEYNIHN5Fgu_To"
+        debug key against users\xyz\.android\debug.keystore "AIzaSyD-H7DLoYpch-k3HtsV2qJHIEEt9NbdeOI" -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDh1N9JYgZWuHnSijp5-kEYNIHN5Fgu_To" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.aviary.android.feather.v1.API_KEY"
+            android:value="0dd0ff9fb5e6c46b" />
+        <activity
+            android:name="com.metrix.metrixmobile.system.Splash"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:label="@string/Metrix"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.Login"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.ui.widget.ColorPicker"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.ui.widget.ImagePicker"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.signature.FSMSignatureAdd"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.attachment.FSMAttachmentAdd"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.attachment.FSMAttachmentCard"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.attachment.FSMAttachmentFullScreen"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.attachment.FSMAttachmentList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.ArchHelp"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerSkinActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerSkinAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerSkinColorsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerSkinImagesActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerDesignSetActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerDesignActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerDesignAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerRevisionActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerCategoriesActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerMenusActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerHomeMenuAddActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerHomeMenuEnablingActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerHomeMenuOrderActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerHomeMenuPropActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerGlobalMenuAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerGlobalMenuPropActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerGlobalMenuEnablingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerGlobalMenuOrderActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerWorkflowMenuEnablingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerWorkflowMenuOrderActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerScreenActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerScreenAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerScreenPropActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerScreenTabOrderActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFilterSortAddActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFilterSortEnablingActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFilterSortOrderActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFilterSortPropActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerScreenItemActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerScreenItemAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerScreenItemPropActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldOrderActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldPropActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupPropActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupTableActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupTableAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupTablePropActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupColumnActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupColumnAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupColumnOrderActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupColumnPropActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupFilterActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupFilterAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupFilterOrderActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupFilterPropActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupOrderbyActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupOrderbyAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupOrderbyOrderActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerFieldLookupOrderbyPropActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerWorkflowActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerWorkflowScreenEnablingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerWorkflowScreenOrderActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.architecture.designer.MetrixDesignerWorkflowAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".Home"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".Profile"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".Commitment"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".CommitmentList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".DebriefCustomerSignature"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefCustomerReview"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".EscalationList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".DebriefPaymentList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".DebriefSurvey"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".DebriefRequest"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".DebriefPayment"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".DebriefPaymentContact"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".ProductHistory"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.LoginAfterPassChange"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.ChangePassword"
+            android:label="@string/Metrix"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.Welcome"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.DemoWelcome"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.Help"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.ActivateDevice"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.ActivateDeviceOIDC"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden"
+            >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.ActivateDeviceEntry"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefPartUsage"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefPartUsageType"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefOverview"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefTaskAttachmentAdd"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefSignature"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefReview"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.Lookup"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".JobList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".TeamList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".StockList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".CustomerList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".CustomerTabs"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.ApplicationSettings"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.SyncServiceMonitor"
+            android:theme="@style/CustomActionBarTheme"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.Query"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".QuoteList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name=".QuoteOverview"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden"  >
+        </activity>
+        <activity
+            android:name=".QuoteCustomerSignature"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".QuoteSignature"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".QuoteQuoteAttachment"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name=".QuoteQuoteAttachmentActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name=".QuoteQuoteAttachmentAdd"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name=".QuoteQuoteAttachmentFullScreen"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.survey.SurveyInstanceList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefTaskTextList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefTaskAttachment"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefPartUsageList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".StockAdjustment"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ShipmentList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ShipmentDetailList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ShipmentUnitList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ShipmentUnit"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ShipmentCreate"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ReceivingList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ReceivingDetailList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ReceivingUnitList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ReceivingUnitPO"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ReceivingUnitPOList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".PurchaseOrderList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".PurchaseOrder"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".PurchaseDetailList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".PurchaseDetail"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ProductMap"
+            android:label="@string/Metrix"
+            android:theme="@style/CustomActionBarTheme"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".TaskMap"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".TeamMemberMap"
+            android:label="@string/Metrix"
+            android:theme="@style/CustomActionBarTheme"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".TeamMemberAction"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".TimeReporting"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DayOverviewActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".CalendarException"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".CalendarExceptionList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+
+        <activity
+            android:name="com.metrix.metrixmobile.system.CameraPictures"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefTaskSteps"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.MessageDetails"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".StockSearchMap"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/Metrix"
+            android:theme="@style/CustomActionBarTheme"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefProductRemove"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.FullTextEdit"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.About"
+            android:label="@string/Metrix"
+            android:theme="@android:style/Theme.Dialog"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.DemoHome"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.DemoApplicationSettings"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.survey.MetrixSurveyActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.metrix.architecture.ui.widget.FileDialog"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefTaskAttachmentFullScreen"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefNonPartUsageList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".AddLabor"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DebriefTaskUnitSteps"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <!-- Start code-less screens -->
+        <activity
+            android:name="com.metrix.metrixmobile.system.MetadataDebriefActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.MetadataListDebriefActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.MetadataScheduleActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.MetadataListScheduleActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.MetadataQuoteActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.MetadataListQuoteActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.MetadataListActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.MetadataStandardActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.system.MetadataTabActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <!-- End code-less screens -->
+        <activity
+            android:name=".MetrixPhotoCaptureActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
+        </activity>
+        <activity
+            android:name=".StockCount"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:configChanges="keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name=".StockCountPartList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:configChanges="keyboardHidden|screenSize">
+        </activity>
+        <activity
+            android:name=".StockCountDetail"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:configChanges="keyboardHidden|screenSize">
+        </activity>
+        <activity
+            android:name=".ServicePartsList"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.DebriefPartUsageLookup"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.metrix.metrixmobile.oidc.TokenActivity"
+            android:theme="@style/CustomActionBarTheme"
+            android:label="@string/Metrix"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".SignaturePad"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+
+        <activity
+            android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.NoActionBar" />
+
+        <activity
+            android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorStickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.NoActionBar" />
+
+        <activity
+            android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorTextActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.NoActionBar" />
+
+        <activity
+            android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorDrawActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.NoActionBar" />
+        <!-- Aviary Region Started-->
+<!--        <activity-->
+<!--            android:name="com.aviary.android.feather.sdk.FeatherActivity"-->
+<!--            android:configChanges="orientation|keyboardHidden|screenSize"-->
+<!--            android:hardwareAccelerated="true"-->
+<!--            android:largeHeap="true"-->
+<!--            android:process=":aviarysdk"-->
+<!--            android:screenOrientation="unspecified"-->
+<!--            android:theme="@style/AviaryTheme.Dark">-->
+<!--        </activity>-->
+        <!-- <activity
+            android:name="com.aviary.android.feather.AlertActivity"
+            android:launchMode="standard"
+            android:noHistory="true"
+            android:theme="@style/AviaryTheme.Dialog">
+            <intent-filter>
+                <action android:name="aviary.intent.action.ALERT"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> -->
+        <!-- CDS Content Service -->
+<!--        <service-->
+<!--            android:process=":aviarycds"-->
+<!--            android:name="com.aviary.android.feather.cds.AviaryCdsService"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="aviary.intent.action.CDS_DOWNLOAD_START"/>-->
+<!--                <action android:name="aviary.intent.action.CDS_RESTORE_USER_ITEMS"/>-->
+<!--            </intent-filter>-->
+<!--        </service>-->
+        <!--
+            Cds Content Provider,
+            NOTE that the "authorities" value MUST be formatted in this way:
+            android:authorities="{your.packagename}.AviaryCdsProvider"
+         -->
+<!--        <provider-->
+<!--            android:name="com.aviary.android.feather.cds.AviaryCdsProvider"-->
+<!--            android:authorities="com.metrix.metrixmobile.AviaryCdsProvider"-->
+<!--            android:process=":aviarycds"-->
+<!--            android:exported="false"-->
+<!--            android:syncable="true" />-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+        <!-- CDS Download Receiver -->
+<!--        <receiver-->
+<!--            android:name="com.aviary.android.feather.cds.AviaryCdsReceiver"-->
+<!--            android:process=":aviarycds" >-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+        <!-- Aviary Region Ended-->
+
+        <service
+            android:name="com.metrix.metrixmobile.global.FirebaseService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="false" />
+        <service android:name="com.metrix.architecture.services.MetrixIntentService" android:exported="false"/>
+        <receiver android:name="com.metrix.architecture.services.MetrixAlarmReceiver" android:exported="false"/>
+        <!--<receiver android:name="LocationBroadcastReceiver" >-->
+        <!--<category android:name="android.intent.category.HOME" />-->
+        <!--</receiver>-->
+        <receiver android:name="com.metrix.metrixmobile.system.AcceptTaskBroadcastReceiver" android:exported="true"/>
+        <receiver android:name="com.metrix.metrixmobile.system.RejectTaskBroadcastReceiver" android:exported="true"/>
+    </application>
+</manifest>

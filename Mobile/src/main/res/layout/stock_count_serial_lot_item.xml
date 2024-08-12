@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Horizontal"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector">
+    <TextView
+        android:id="@+id/serial_id"
+        style="@style/TextViewBase.Normal.List.EvenDistributionForStockCount"
+        android:gravity="center" />
+    <TextView
+        android:id="@+id/lot_id"
+        style="@style/TextViewBase.Normal.List.EvenDistributionForStockCount"
+        android:gravity="center" />
+    <TextView
+        android:id="@+id/usability"
+        style="@style/TextViewBase.Normal.List.EvenDistributionForStockCount"
+        android:gravity="center" />
+    <TextView
+        android:id="@+id/lot_Usable"
+        style="@style/TextViewBase.Normal.List.EvenDistributionForStockCount"
+        android:gravity="center" />
+    <TextView
+        android:id="@+id/lot_unusable"
+        style="@style/TextViewBase.Normal.List.EvenDistributionForStockCount"
+        android:gravity="center" />
+    <CheckBox
+        android:id="@+id/checkboxState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:focusable="false"
+        android:textColor="@color/transparent"
+        android:onClick="listViewItemSelect"/>
+</LinearLayout>

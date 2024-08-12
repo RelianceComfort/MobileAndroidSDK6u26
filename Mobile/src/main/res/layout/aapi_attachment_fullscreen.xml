@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/coordinator_layout">
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <com.metrix.architecture.attachment.FSMCarouselView
+            android:id="@+id/attachment_pager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+    </FrameLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|end"
+        android:orientation="vertical"
+        app:layout_dodgeInsetEdges="bottom">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/edit_attachment"
+            style="@style/FloatingActionBtnBase.First"
+            android:src="@drawable/edit_alt"
+            app:layout_anchor="@id/view_card" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/view_card"
+            style="@style/FloatingActionBtnBase.First"
+            android:src="@drawable/note" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

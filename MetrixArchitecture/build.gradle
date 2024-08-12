@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.metrix.architecture'
+    compileSdk rootProject.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:24.7.1')
+    implementation 'com.google.android.gms:play-services-base:6.5.87'
+    implementation 'com.google.android.gms:play-services-code-scanner:16.0.0'
+
+    api 'com.google.firebase:firebase-messaging:17.3.4'
+    api "com.google.android.material:material:1.0.0"
+    api 'com.google.code.gson:gson:1.7.1'
+
+    api "androidx.appcompat:appcompat:${rootProject.androidXVersions.appCompat}"
+    api "androidx.legacy:legacy-support-v4:1.0.0"
+    api "androidx.recyclerview:recyclerview:1.0.0"
+    api "androidx.work:work-rxjava2:${rootProject.workVersion}"
+
+    implementation 'com.madgag.spongycastle:core:1.54.0.0'
+    implementation 'com.madgag.spongycastle:prov:1.54.0.0'
+    implementation 'com.madgag.spongycastle:pkix:1.54.0.0'
+    implementation 'com.madgag.spongycastle:pg:1.54.0.0'
+
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'io.reactivex.rxjava2:rxjava:2.2.11'
+    // Signature Pad
+    api 'com.github.gcacace:signature-pad:1.2.1'
+    // DS Photo Editor SDK
+    api(name:'ds-photo-editor-sdk-v10', ext:'aar')
+
+    implementation "androidx.lifecycle:lifecycle-runtime:2.0.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.0.0"
+}

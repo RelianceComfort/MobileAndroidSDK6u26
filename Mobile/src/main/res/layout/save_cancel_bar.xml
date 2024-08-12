@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/save_cancel_bar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom|end"
+    android:orientation="vertical"
+    app:layout_dodgeInsetEdges="bottom">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cancel"
+        style="@style/FloatingActionBtnBase.First"
+        android:src="@drawable/ic_clear_white_24dp"
+        app:layout_anchor="@id/custom_save" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/update"
+        style="@style/FloatingActionBtnBase.First"
+        android:src="@drawable/ic_save_white_24dp"
+        android:visibility="gone" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/custom_save"
+        style="@style/FloatingActionBtnBase.First"
+        android:src="@drawable/ic_save_white_24dp" />
+
+    <include layout="@layout/split_action_bar" />
+</LinearLayout>

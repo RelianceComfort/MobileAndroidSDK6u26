@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- TextView Styles -->
+    <style name="TextViewBase" >
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+    <style name="TextViewBase.Title">
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+        <item name="android:textColor">@color/IFSPurple</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:tag">TextViewBase.Title</item>
+    </style>
+    <style name="TextViewBase.Heading">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/IFSGold</item>
+        <item name="android:paddingLeft">@dimen/md_margin</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+        <item name="android:paddingTop">@dimen/md_margin</item>
+        <item name="android:tag">TextViewBase.Heading</item>
+    </style>
+    <style name="TextViewBase.Region">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:background">@color/IFSGold</item>
+        <item name="android:paddingLeft">@dimen/md_margin</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+        <item name="android:paddingTop">@dimen/md_margin</item>
+        <item name="android:paddingBottom">@dimen/region_title_bottom_padding</item>
+        <item name="android:tag">TextViewBase.Region</item>
+    </style>
+    <style name="TextViewBase.Heading1">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:tag">TextViewBase.Heading1</item>
+    </style>
+    <style name="TextViewBase.ActionBarHeading">
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextViewBase.ActionBarHeading.Medium">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+    <style name="TextViewBase.ItemCountBarHeading">
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+    </style>
+    <style name="TextViewBase.ItemCountBarHeading.Dark">
+        <item name="android:textColor">#A0A0A0</item>
+    </style>
+    <style name="TextViewBase.ItemCountBarHeading.Light">
+        <item name="android:textColor">#D8D8D8</item>
+    </style>
+    <style name="TextViewBase.Heading.Lookup">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:layout_width">fill_parent</item>
+    </style>
+    <style name="TextViewBase.Heading1.Lookup">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:layout_width">fill_parent</item>
+    </style>
+    <style name="TextViewBase.Emphasis">
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:paddingBottom">@dimen/md_margin</item>
+    </style>
+    <style name="TextViewBase.Strong">
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextViewBase.Normal">
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+    </style>
+    <style name="TextViewBase.Normal.HeadingColor">
+        <item name="android:textColor">@color/IFSGold</item>
+    </style>
+    <style name="TextViewBase.Large">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+    <style name="TextViewBase.Dialog">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+	<style name="TextViewBase.Dialog.Contrast">
+        <item name="android:textColor">@color/Black</item>
+    </style>
+    <style name="TextViewBase.Dialog.Small">
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+    </style>
+    <style name="TextViewBase.Normal.Table">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+    </style>
+    <style name="TextViewBase.Normal.Table.Label">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">@dimen/label_text_size</item>
+        <item name="android:paddingStart">@dimen/label_indent</item>
+    </style>
+    <style name="TextViewBase.Normal.Table.Text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:paddingStart">@dimen/value_indent</item>
+    </style>
+    <style name="TextViewBase.Normal.Table.TwoColumn">
+        <item name="android:layout_weight">.30</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="TextViewBase.Normal.Table.TwoColumnForStockCount">
+        <item name="android:layout_weight">.40</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="TextViewBase.Normal.List.EvenDistributionForStockCount">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="TextViewBase.Normal.Table.FourColumn">
+        <item name="android:layout_weight">.15</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="TextViewBase.Normal.Lookup">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:paddingStart">@dimen/value_indent</item>
+
+    </style>
+    <style name="TextViewBase.Normal.List">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:paddingStart">@dimen/value_indent</item>
+
+    </style>
+    <style name="TextViewBase.Normal.List.Thin">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">.30</item>
+    </style>
+    <style name="TextViewBase.Normal.List.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">.40</item>
+    </style>
+    <style name="TextViewBase.Normal.List.Wide">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">.70</item>
+    </style>
+    <style name="TextViewBase.Strong.List">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:layout_weight">.50</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="TextViewBase.Strong.List.Thin">
+        <item name="android:layout_weight">.35</item>
+    </style>
+    <style name="TextViewBase.Strong.List.Medium">
+        <item name="android:layout_weight">.40</item>
+    </style>
+    <style name="TextViewBase.Strong.List.Wide">
+        <item name="android:layout_weight">.65</item>
+    </style>
+    <style name="TextViewBase.Hidden">
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="TextViewBase.Hidden.Table">
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="TextViewBase.Hidden.Table.TwoColumn">
+        <item name="android:layout_weight">.30</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="TextViewBase.Hidden.Table.FourColumn">
+        <item name="android:layout_weight">.15</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="TextViewBase.ReadOnlyValue">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+    <style name="TextViewBase.ReadOnlyValue.Table">
+        <item name="android:paddingStart">@dimen/value_indent</item>
+    </style>
+    <style name="TextViewBase.ReadOnlyValue.Table.TwoColumn">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:paddingLeft">13dp</item>
+    </style>
+    <style name="TextViewBase.ReadOnlyValue.Table.TwoColumn.Small">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+    </style>
+    <style name="TextViewBase.ReadOnlyValue.Table.TwoColumn.Large">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="TextViewBase.ReadOnlyValue.Table.FourColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="TextViewBase.ReadOnlyValue.Large">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+    <!-- EditText Styles -->
+    <style name="EditTextBase">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="EditTextBase.Dialog">
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:layout_width">fill_parent</item>
+    </style>
+    <style name="EditTextBase.Normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:gravity">left</item>
+        <item name="android:paddingStart">@dimen/value_indent</item>
+    </style>
+    <style name="EditTextBase.Normal.Table">
+    </style>
+    <style name="EditTextBase.Normal.Table.TwoColumn">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="EditTextBase.Normal.Table.TwoColumnForStockCount">
+        <item name="android:layout_weight">.60</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="EditTextBase.Normal.Table.TwoColumn.Special">
+        <item name="android:background">@drawable/special_edit_text</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_margin">1dp</item>
+    </style>
+    <style name="EditTextBase.Normal.Table.FourColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="EditTextBase.Hidden">
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="EditTextBase.Hidden.Table"></style>
+    <style name="EditTextBase.Hidden.Table.TwoColumn">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="EditTextBase.Hidden.Table.FourColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+
+    <!-- Spinner Styles -->
+    <style name="SpinnerBase" parent="@style/Widget.AppCompat.Spinner.Underlined">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="SpinnerBase.Normal">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+    <style name="SpinnerBase.Hidden">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="SpinnerBase.Normal.Table">
+        <item name="android:dropDownWidth">match_parent</item>
+    </style>
+    <style name="SpinnerBase.Normal.Table.TwoColumn">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="SpinnerBase.Normal.Table.FourColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>  
+    <style name="SpinnerBase.Normal.Table.ThreeColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <!-- CheckBox Styles -->
+    <style name="CheckBoxBase">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/checkbox_indent</item>
+    </style>
+    <style name="CheckBoxBase.Normal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+    <style name="CheckBoxBase.Hidden">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="CheckBoxBase.Normal.Table">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:focusable">false</item>
+        <item name="android:textColor">@color/transparent</item>
+        <item name="android:layout_marginStart">@dimen/checkbox_indent</item>
+    </style>
+    <style name="CheckBoxBase.Normal.Table.TwoColumn">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="CheckBoxBase.Normal.Table.FourColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <!-- RadioButton Styles -->
+    <style name="RadioButton">
+	  <item name="android:textColor">@color/Black</item> 
+	  <item name="android:textStyle">normal</item> 
+	  <item name="android:typeface">normal</item> 
+	  <item name="android:layout_height">wrap_content</item> 
+	</style>
+	<style name="RadioButton.Normal">
+	  <item name="android:layout_width">175dp</item> 
+	</style>
+	<style name="RadioButton.Survey"></style>
+    <!-- TableLayout Styles -->
+    <style name="TableBase">
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="TableBase.Normal"></style>
+    <style name="TableBase.Normal.Buttons">
+        <item name="android:orientation">vertical</item>
+        <item name="android:stretchColumns">*</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="TableRowBase">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="TableRowBase.Normal"></style>
+    <!-- LinearLayout Styles -->
+    <style name="LinearBase">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="LinearBase.Normal">
+        <item name="android:background">@color/White</item>
+    </style>
+    <style name="LinearBase.Normal.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="LinearBase.Normal.Vertical.Table">
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="LinearBase.Normal.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="LinearBase.Normal.Horizontal.Table">
+        <item name="android:weightSum">1.0</item>
+        <item name="android:gravity">top</item>
+    </style>
+    <!-- ScrollView Styles -->
+    <style name="ScrollViewBase">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    <style name="ScrollViewBase.Normal"></style>
+    <style name="ScrollViewBase.Normal.Vertical">
+        <item name="android:scrollbars">vertical</item>
+    </style>
+    <style name="ScrollViewBase.Normal.Horizontal">
+        <item name="android:scrollbars">horizontal</item>
+    </style>
+    <!-- Button Styles -->
+    <style name="ButtonOverlayWithWidget" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:colorButtonNormal">#361838</item>
+        <item name="android:colorAccent">#360065</item>
+    </style>
+    <style name="ButtonBase">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:minHeight">54dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ButtonBase.Normal"></style>
+    <style name="ButtonBase.Normal.Table">
+        <item name="android:layout_gravity">top</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:drawablePadding">2dp</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:background">@null</item>
+        <item name="android:width">100dp</item>
+        <item name="android:padding">20dp</item>
+    </style>
+    <style name="ButtonBase.Normal.Center">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">2dp</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="ButtonBase.Normal.Wide">
+        <item name="android:tag">ButtonBase.Normal.ActionBar</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:backgroundTint">@color/IFSPurple</item>
+        <item name="android:foreground">@drawable/light_ripple</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>        
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+    <style name="ButtonBase.Normal.ActionBar">
+        <item name="android:tag">ButtonBase.Normal.ActionBar</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:backgroundTint">@color/IFSPurple</item>
+        <item name="android:foreground">@drawable/light_ripple</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+    <style name="ButtonBase.Normal.Dialog">
+        <item name="android:textSize">16sp</item>
+        <item name="android:backgroundTint">@color/IFSPurple</item>
+        <item name="android:foreground">@drawable/light_ripple</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_width">152dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+    <style name="ButtonBase.Survey">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ButtonBase.Normal.MD">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:foreground">@drawable/light_ripple</item>
+    </style>
+    <style name="ButtonBase.Normal.MD.Hidden">
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="ButtonBase.Normal.MD.Table">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+    <style name="ButtonBase.Normal.MD.Table.OneColumn">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ButtonBase.Normal.MD.Table.TwoColumn">
+        <item name="android:layout_weight">.70</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="ButtonBase.Normal.MD.Table.FourColumn">
+        <item name="android:layout_weight">.35</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <!-- FAB's -->
+    <style name="FloatingActionBtnBase">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fabSize">auto</item>
+        <item name="elevation">@dimen/md_margin</item>
+        <item name="rippleColor">@color/White</item>
+        <item name="backgroundTint">@color/IFSPurple</item>
+        <item name="android:tag">FloatingActionBtnBase</item>
+    </style>
+
+    <style name="FloatingActionBtnBase.First">
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:layout_marginEnd">@dimen/fab_margin</item>
+        <item name="android:layout_marginBottom">@dimen/fab_margin</item>
+    </style>
+
+    <style name="FloatingActionBtnBase.Second">
+        <item name="android:layout_gravity">top|end</item>
+        <item name="android:layout_marginEnd">@dimen/fab_margin</item>
+        <item name="android:layout_marginBottom">@dimen/fab_2_margin</item>
+        <item name="layout_anchorGravity">top|end</item>
+    </style>
+
+    <style name="FloatingActionBtnBase.Third">
+        <item name="android:layout_gravity">top|end</item>
+        <item name="android:layout_marginEnd">@dimen/fab_margin</item>
+        <item name="android:layout_marginBottom">@dimen/fab_3_margin</item>
+        <item name="layout_anchorGravity">top|end</item>
+    </style>
+
+    <style name="ExtendedFloatingActionBtnBase">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="elevation">@dimen/md_margin</item>
+        <item name="rippleColor">@color/White</item>
+        <item name="backgroundTint">@color/IFSPurple</item>
+        <item name="android:tag">FloatingActionBtnBase</item>
+    </style>
+
+    <style name="ExtendedFloatingActionBtnBase.First">
+        <item name="android:layout_gravity">bottom|center_horizontal</item>
+    </style>
+
+    <!-- ImageView Styles -->
+    <style name="ImageViewBase">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ImageViewBase.Normal"></style>
+
+    <!-- ImageButton Styles -->
+    <style name="ImageButtonBase">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ImageButtonBase.AttachmentIcons">
+        <item name="android:layout_width">@dimen/attachment_icon_size</item>
+        <item name="android:layout_height">@dimen/attachment_icon_size</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingLeft">@dimen/attachment_icon_horizontal_padding</item>
+        <item name="android:paddingRight">@dimen/attachment_icon_horizontal_padding</item>
+    </style>
+
+
+    <!-- Home Styles -->
+    <style name="HomeButtonRelativeLayoutFirstRowLeftTile">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+    </style>
+    <style name="HomeButtonRelativeLayoutFirstRowRight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="HomeButtonRelativeLayoutFirstRowRight.TopTile">
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingLeft">2dp</item>
+    </style>
+    <style name="HomeButtonRelativeLayoutFirstRowRight.BottomTile">
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingTop">2dp</item>
+    </style>
+    <style name="HomeButtonRelativeLayoutSecondRow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
+    <style name="HomeButtonRelativeLayoutSecondRow.LeftTile">
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingTop">2dp</item>
+    </style>
+    <style name="HomeButtonRelativeLayoutSecondRow.RightTile">
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingTop">2dp</item>
+    </style>
+    <style name="HomeButtonRelativeLayoutLastRow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="HomeButtonRelativeLayoutLastRow.LeftTile">
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingTop">2dp</item>
+    </style>
+    <style name="HomeButtonRelativeLayoutLastRow.RightTile">
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingTop">2dp</item>
+    </style>
+    <style name="HomeButtonContentRelativeLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/PartiallyTransparentBlack</item>
+        <item name="android:padding">2dp</item>
+    </style>
+    <style name="HomeTextViewItemCount">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/home_textview_count</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="HomeTextViewItemHeading">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="HomeImageButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+    <style name="HomeTableLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:shrinkColumns">*</item>
+        <item name="android:stretchColumns">*</item>
+    </style>
+    <style name="HomeImportantInfoScrollView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fillViewport">true</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <!-- Home Landscape Styles -->
+    <style name="HomeTableLayoutLand">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:shrinkColumns">*</item>
+        <item name="android:stretchColumns">*</item>
+    </style>    
+    <style name="HomeButtonLandRelativeLayoutFirstRowLeftTile">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+    <style name="HomeButtonLandRelativeLayoutFirstRowEven">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="HomeButtonLandRelativeLayoutFirstRowEven.TopTile">
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+    <style name="HomeButtonLandRelativeLayoutFirstRowEven.BottomTile">
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+    <style name="HomeButtonLandRelativeLayoutFirstRowMid">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="HomeButtonLandRelativeLayoutFirstRowMid.TopTile">
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+    <style name="HomeButtonLandRelativeLayoutFirstRowMid.BottomTile">
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+    <style name="HomeButtonLandRelativeLayoutFirstRowRight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="HomeButtonLandRelativeLayoutFirstRowRight.TopTile">
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingLeft">4dp</item>
+    </style>
+    <style name="HomeButtonLandRelativeLayoutFirstRowRight.BottomTile">
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingTop">2dp</item>
+    </style>
+    
+
+
+    <!-- MetrixQuickLinksBar Styles -->
+    <style name="QuickActionBarItemCount">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/quick_action_badge</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <!--<style name="CustomActionBarBaseTheme" parent="Theme.AppCompat.Light">-->
+        <!--&lt;!&ndash;-->
+            <!--Theme customizations available in newer API levels can go in-->
+            <!--res/values-vXX/styles.xml, while customizations related to-->
+            <!--backward-compatibility can go here.-->
+        <!--&ndash;&gt;-->
+    <!--</style>-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <!--<style name="Base.AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!-- Customize your theme here. -->
+    </style>
+    
+    <!-- Application theme. -->
+    <!--<style name="CustomActionBarTheme" parent="CustomActionBarBaseTheme">-->
+        <!--&lt;!&ndash; All customizations that are NOT specific to a particular API-level can go here. &ndash;&gt;-->
+        <!--<item name="actionBarStyle">@style/MyActionBar</item>-->
+        <!--<item name="actionOverflowButtonStyle">@style/CustomActionBarTheme.OverFlow</item>-->
+    <!--</style>-->
+    <style name="CustomActionBarTheme" parent="AppTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="actionOverflowButtonStyle">@style/CustomActionBarTheme.OverFlow</item>
+    </style>
+    
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="background">@drawable/action_bar_gradient_background</item>
+        <item name="android:background">@drawable/action_bar_gradient_background</item>
+    </style>
+    
+    <style name="CustomActionBarTheme.OverFlow" parent="@style/Widget.AppCompat.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/ellipsis_vertical</item>
+        <item name="android:contentDescription">IFSFSMAOverflowIcon</item>
+    </style>
+    <style name="CalendarHeader">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/IFSGold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:padding">1dip</item>
+        <item name="android:textColor">@color/IfsWhite</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="CalendarDayHeader">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/IFSGold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:padding">1dip</item>
+        <item name="android:textColor">@color/IfsWhite</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="DebriefNavigationTitle" parent="TextViewBase.Title">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:tag">DebriefNavigationTitle</item>
+    </style>
+
+    <style name="Theme.Base.AppCompat.Dialog.FixedSize" parent="Base.Theme.AppCompat.Dialog.FixedSize">
+    </style>
+</resources>

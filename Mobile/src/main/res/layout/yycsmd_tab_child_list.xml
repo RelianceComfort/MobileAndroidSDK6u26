@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Vertical"
+    android:id="@+id/tab_child_layout" >
+    <TextView
+        android:id="@+id/tab_child_label"
+        style="@style/TextViewBase.Title" />
+    <TextView
+        android:id="@+id/tab_child_tip"
+        style="@style/TextViewBase.Emphasis" />
+
+    <TableLayout
+        style="@style/TableBase.Normal" android:visibility="visible" >
+
+        <AutoCompleteTextView
+            android:id="@+id/tab_child_search_criteria"
+            style="@style/EditTextBase.Normal.Table.TwoColumn"
+            android:visibility="visible"/>
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tab_child_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
+</LinearLayout>

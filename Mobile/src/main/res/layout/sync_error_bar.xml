@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This acts as a wrapper to include the split_action_bar with the proper
+     LinearLayout wrapper. This will cause it to act similar to if there were
+     FloatingActionButtons at the bottom of the screen. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/add_next_bar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom|end"
+    android:orientation="vertical"
+    app:layout_dodgeInsetEdges="bottom">
+
+    <include layout="@layout/split_action_bar" />
+</LinearLayout>

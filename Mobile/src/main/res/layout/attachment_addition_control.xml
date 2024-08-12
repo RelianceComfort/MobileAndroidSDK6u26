@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:divider="@drawable/attachment_button_divider"
+    android:showDividers="middle"
+    style="@style/LinearBase.Normal.Horizontal.Table">
+
+    <ImageButton
+        android:id="@+id/attachment_imagebtn_camera"
+        android:background="@drawable/photo_camera"
+        style="@style/ImageButtonBase.AttachmentIcons" />
+
+    <ImageButton
+        android:id="@+id/attachment_imagebtn_video_camera"
+        android:background="@drawable/video_camera"
+        style="@style/ImageButtonBase.AttachmentIcons" />
+
+    <ImageButton
+        android:id="@+id/attachment_imagebtn_file"
+        android:background="@drawable/add_attachment"
+        style="@style/ImageButtonBase.AttachmentIcons" />
+
+</LinearLayout>

@@ -1,0 +1,129 @@
+<FrameLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.metrix.architecture.ui.widget.DayOverviewFragment">    
+    <LinearLayout
+		android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables"> <!-- The state icon can't be a compound drawable since you can't set the level on that so stop bugging me about it -->
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:id="@+id/dayOverviewFragmentDateText"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/IFSLightGray"
+            android:textSize="120sp"
+            tools:text="29"/>
+
+        <ImageView
+            android:contentDescription="@null"
+            android:id="@+id/dayOverviewFragmentStateIcon"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="24dip"
+            android:layout_width="24dip"
+            android:src="@drawable/icon_state"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"  
+        android:gravity="center"      
+        android:layout_margin="0dp"
+        >
+        <ImageView
+                android:id="@+id/leftArrow"
+                android:layout_width="40dp"
+                android:layout_height="32dp"                                               
+                android:layout_gravity="left|center_vertical"                
+                android:src="@drawable/arrow_left"                
+        />        
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_weight="1" 
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/activity_vertical_margin" 
+        android:layout_marginTop="@dimen/activity_vertical_margin"        
+        android:layout_width="match_parent"
+        android:orientation="vertical">		
+        <TextView
+            android:id="@+id/dayOverviewFragmentWeekDayHeader"
+            tools:text="Weekday"
+            style="@style/CalendarDayHeader"/>
+
+        <RelativeLayout
+            android:background="@drawable/day_overview_border"
+			android:layout_height="0dip"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+
+            <FrameLayout
+                android:id="@+id/dayOverviewFragmentTimeListContainer"
+                android:layout_above="@+id/dayOverviewFragmentSummaryBox"
+                android:layout_alignParentTop="true"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dayOverviewFragmentTimeList"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    tools:listitem="@layout/listitem_day_overview" />
+
+            </FrameLayout>
+
+            <include
+                android:id="@+id/dayOverviewFragmentSummaryBox"                
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:paddingTop="4dip"
+                layout="@layout/include_day_summary"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/dayOverviewFragmentMonthHeader"
+            tools:text="Month 2000"
+            style="@style/CalendarDayHeader"/>
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:background="@color/White"
+	        android:gravity="center|bottom"	        
+        	android:orientation="horizontal"
+        	android:layout_marginBottom="@dimen/activity_vertical_margin"
+			android:paddingTop="4dip">
+
+			<Button
+				android:id="@+id/addF"
+				style="@style/ButtonBase.Normal.Wide"
+				android:layout_width="fill_parent"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:layout_marginRight="2dip" />
+
+			<Button
+				android:id="@+id/addException"
+				style="@style/ButtonBase.Normal.Wide"
+				android:layout_width="fill_parent"
+				android:layout_height="match_parent"
+				android:layout_marginLeft="2dip"
+				android:layout_weight="1" />
+		</LinearLayout>
+	</LinearLayout>    
+	<ImageView
+                android:id="@+id/rightArrow"
+                android:layout_width="40dp"
+                android:layout_height="32dp"                        
+                android:layout_gravity="right|center_vertical"
+                android:src="@drawable/arrow_right"                
+                />   		               
+	</LinearLayout>    
+</FrameLayout>

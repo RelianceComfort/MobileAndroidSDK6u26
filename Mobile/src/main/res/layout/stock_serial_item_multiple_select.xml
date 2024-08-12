@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content"
+	style="@style/LinearBase.Normal.Horizontal">
+	<CheckBox android:id="@+id/itemselected"
+		android:focusable="false" android:layout_width="wrap_content"
+		android:layout_height="match_parent" />
+	<LinearLayout style="@style/LinearBase.Normal.Vertical" android:padding="5dp">
+
+		<TextView
+			android:id="@+id/itemdescription"
+			style="@style/TextViewBase.Heading.Lookup" />
+		<LinearLayout style="@style/LinearBase.Normal.Horizontal">
+			<TextView android:id="@+id/item1" style="@style/TextViewBase.Normal.Lookup" android:layout_width="wrap_content" />
+			<TextView android:id="@+id/item2" style="@style/TextViewBase.Normal.Lookup" />
+			<TextView android:id="@+id/item3" style="@style/TextViewBase.Normal.Lookup" />
+			<TextView android:id="@+id/item4" style="@style/TextViewBase.Normal.Lookup" />
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

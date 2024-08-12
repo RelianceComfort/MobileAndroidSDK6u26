@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coordinator_layout">
+        <LinearLayout style="@style/LinearBase.Normal.Vertical" >
+            <LinearLayout
+                android:id="@+id/table_layout"
+                style="@style/LinearBase.Normal.Vertical"
+                android:layout_weight="1"
+                android:padding="5dp" >
+                <include layout="@layout/quicklinks_with_screen_label" />
+                <TextView style="@style/TextViewBase.Emphasis" android:tag="SCREEN_TIP" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/task_steps_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|end"
+            android:orientation="vertical"
+            app:layout_dodgeInsetEdges="bottom">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                style="@style/FloatingActionBtnBase.First"
+                android:id="@+id/update"
+                android:src="@drawable/ic_save_white_24dp"/>
+
+            <include layout="@layout/split_action_bar" />
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!-- The navigation drawer -->
+    <include layout="@layout/sliding_menu_layout"/>
+</androidx.drawerlayout.widget.DrawerLayout>

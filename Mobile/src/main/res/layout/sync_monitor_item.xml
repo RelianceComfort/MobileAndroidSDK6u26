@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/LinearBase.Normal.Vertical"
+	android:layout_height="wrap_content">
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/table_layout" style="@style/TableBase.Normal">
+		<TableRow style="@style/TableRowBase.Normal">
+			<TextView android:id="@+id/sync__datetime" style="@style/TextViewBase.Normal.List.Medium" />
+			<TextView android:id="@+id/sync__datatype" style="@style/TextViewBase.Normal.List.Medium" />
+		</TableRow>
+		<TableRow style="@style/TableRowBase.Normal">
+			<TextView android:id="@+id/sync__message" style="@style/TextViewBase.Normal.List.Medium" />
+		</TableRow>
+	</TableLayout>
+</LinearLayout>

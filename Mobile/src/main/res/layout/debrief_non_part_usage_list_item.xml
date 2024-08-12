@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Horizontal"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:gravity="center_vertical" >
+
+    <!-- <ImageView
+        android:id="@+id/imageView_non_part_usage_person"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_vertical|top"/> -->
+
+    <TableLayout style="@style/TableBase.Normal" >
+        <TableRow style="@style/TableRowBase.Normal" >
+            <TextView
+                android:id="@+id/nonPartUsage_metrix_row_id"
+                style="@style/EditTextBase.Hidden" />
+
+            <TextView
+                android:id="@+id/nonPartUsage_npu_id"
+                style="@style/EditTextBase.Hidden" />            
+        	<TextView
+                    android:id="@+id/nonPartUsage_description"
+                    style="@style/TextViewBase.Strong.List.Thin" />
+             <TextView
+                     android:id="@+id/nonPartUsage_quantity"
+                     android:gravity="center_horizontal"
+                    style="@style/TextViewBase.Normal.List.Thin" />
+             <TextView
+                    android:id="@+id/nonPartUsage_work_dt"
+                    android:gravity="right"
+                    style="@style/TextViewBase.Normal.List.Wide" />                 
+        </TableRow>
+        <TableRow style="@style/TableRowBase.Normal" >
+            <TextView
+                android:id="@+id/nonPartUsage_created_on"                
+                style="@style/TextViewBase.ItemCountBarHeading.Dark"
+                android:padding="3dp" />
+            <TextView
+                android:id="@+id/nonPartUsage_task_id"  
+                android:gravity="right"
+                android:textAlignment="textEnd"            
+                style="@style/TextViewBase.Normal.List.Wide" />                                                
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/ZZMD.LinearBase.Normal.Horizontal.Table" > 
+	<TextView
+		android:tag="metrix_row_id"
+		style="@style/ZZMD.TextViewBase.Hidden" />
+	<TextView
+		android:tag="pv_id"
+		style="@style/ZZMD.TextViewBase.Hidden" />  
+	<TextView
+		android:tag="control_type"
+		style="@style/ZZMD.TextViewBase.Hidden"
+		android:text="COMBOBOX" /> 
+	<TextView
+		android:tag="property_name"
+		style="@style/ZZMD.TextViewBase.Hidden" />
+	<TextView
+	    android:tag="property_name_string"
+		style="@style/ZZMD.TextViewBase.Normal.Table.TwoColumn" />
+	<Spinner 
+	    android:tag="property_value"
+	    style="@style/ZZMD.SpinnerBase.Normal.Table.TwoColumn" />
+</LinearLayout>

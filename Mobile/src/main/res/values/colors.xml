@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="IFSPurple">#360065</color>
+    <color name="IFSLightPurple">#C280C2</color>
+    <color name="IFSGold">#8427E2</color>
+    <color name="IFSOrange">#8427E2</color>
+    <color name="IFSDarkGrey">#333333</color>
+    <color name="IFSLightGray">#F8F8FF</color>
+    <color name="IfsText">#333333</color>
+    <color name="IFSGreen">#BAD27A</color>
+    <color name="IFSBlue">#0087C1</color>
+    <color name="IfsGreenLight">#BAD27A</color>
+    <color name="IfsWhite">#F8F8FF</color>
+    <color name="Black">#FF000000</color>
+    <color name="GhostWhite">#F8F8FF</color>
+    <color name="CornflowerBlue">#6495ED</color>
+    <color name="PartiallyTransparentBlack">#90000000</color>
+    <color name="DarkRed">#FF8B0000</color>
+    <color name="White">#FFFFFFFF</color>
+    <!-- The following colors are added for UI widgets -->
+    <color name="transparent">#00000000</color>
+    <color name="ActionBarButton">#360065</color>
+    <color name="PartiallyTransparentPurple">#C183C6</color>
+    <color name="PartiallyTransparentAsh">#8BA0B0</color>
+    <color name="Ash">#C0C0C0</color>
+</resources>

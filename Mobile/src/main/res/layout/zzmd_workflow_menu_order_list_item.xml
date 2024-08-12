@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ZZMD.LinearBase.Normal.Vertical"
+    android:background="@drawable/list_selector"
+    android:padding="5dip" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+		<TableLayout
+	        android:id="@+id/table_layout" 
+	        style="@style/ZZMD.TableBase.Normal" >
+	        <TableRow style="@style/ZZMD.TableRowBase.Normal">
+			    <TextView
+			        android:id="@+id/mm_screen__screen_name"
+			        style="@style/ZZMD.TextViewBase.Strong.List.Full" />
+			    <TextView
+					android:id="@+id/mm_workflow_screen__screen_id"
+					style="@style/ZZMD.TextViewBase.Hidden" />
+			    <TextView
+					android:id="@+id/mm_workflow_screen__jump_order"
+					style="@style/ZZMD.TextViewBase.Hidden" />
+			    <TextView
+					android:id="@+id/mm_workflow_screen__metrix_row_id"
+					style="@style/ZZMD.TextViewBase.Hidden" />
+	        </TableRow>
+	    </TableLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+
+    <solid android:color="@color/IfsGreenLight" />
+    
+    <stroke
+        android:color="@color/IfsGreenLight"
+        android:width="2dip"/>
+
+    <size android:width="10dip" android:height="3dip"/>
+</shape>

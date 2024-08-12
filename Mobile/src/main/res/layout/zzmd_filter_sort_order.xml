@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout style="@style/ZZMD.LinearBase.Normal.Vertical" >
+        <LinearLayout
+            android:id="@+id/table_layout"
+            style="@style/ZZMD.LinearBase.Normal.Vertical"
+            android:layout_weight="1"
+            android:padding="5dp" >
+            <TextView
+                style="@style/ZZMD.TextViewBase.Title"
+                android:id="@+id/filter_sort_order_label" />
+            <TextView
+                style="@style/ZZMD.TextViewBase.Emphasis"
+                android:id="@+id/filter_sort_order_tip" />
+            <Button
+                android:id="@+id/filter_sort_toggle"
+                style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+                android:padding="10dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <com.metrix.architecture.designer.DynamicListView
+                android:id="@+id/listview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:cacheColorHint="#00000000"
+                android:descendantFocusability="beforeDescendants" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/White"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+            <Button
+                android:id="@+id/save"
+                style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/finish"
+                style="@style/ZZMD.ButtonBase.Normal.ActionBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+    <include layout="@layout/sliding_menu_layout"/>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ZZMD.LinearBase.Normal.Horizontal"
+    android:layout_width="fill_parent"
+    android:gravity="center_vertical"
+    android:background="@drawable/list_selector" > 
+    <LinearLayout
+        style="@style/ZZMD.LinearBase.Normal.Vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        android:background="#00000000" >
+        <LinearLayout
+            style="@style/ZZMD.LinearBase.Normal.Horizontal.Table"
+            android:background="#00000000" >
+            <TextView
+                android:id="@+id/mm_menu_item__item_name"
+                style="@style/ZZMD.TextViewBase.Strong.List.Full" />
+		    <TextView
+				android:id="@+id/mm_menu_item__display_order"
+				style="@style/ZZMD.TextViewBase.Hidden" />
+		    <TextView
+				android:id="@+id/mm_menu_item__metrix_row_id"
+				style="@style/ZZMD.TextViewBase.Hidden" />
+		    <TextView
+				android:id="@+id/mm_menu_item__item_id"
+				style="@style/ZZMD.TextViewBase.Hidden" />
+        </LinearLayout>
+    </LinearLayout> 
+    <CheckBox
+        android:id="@+id/checkboxState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:focusable="false"
+        android:textColor="@color/transparent" >
+    </CheckBox>
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:id="@+id/login_block" >
+    <LinearLayout
+        android:id="@+id/login_section"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="left"
+            android:layout_margin="15dip"
+            android:id="@+id/login_icon"
+            android:src="@drawable/ifs_logo_80x172"
+            android:contentDescription="openid_logo_content_description"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dip"
+            android:layout_marginStart="15dip"
+            android:text="@string/ActivateDeviceEntryWelcomeTo"
+            style="@style/Base.TextAppearance.AppCompat.Caption" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dip"
+            android:layout_marginStart="15dip"
+            android:text="@string/ActivateDeviceEntryIFSFSM"
+            style="@style/Base.TextAppearance.AppCompat.Title" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/signin_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:layout_below="@id/login_section"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/table_layout"
+            style="@style/LinearBase"
+            android:layout_marginLeft="5dip" android:layout_marginRight="5dip"
+            android:layout_marginStart="5dip" android:layout_marginEnd="5dip"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical" >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingStart="10dp"
+                android:paddingRight="10dp"
+                android:paddingEnd="10dp">
+                <TextView
+                    android:id="@+id/endpointLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingLeft="10dp"
+                android:paddingStart="10dp"
+                android:paddingRight="10dp"
+                android:paddingEnd="10dp">
+            <EditText
+                android:id="@+id/serviceUrl"
+                style="@style/EditTextBase.Normal.Table.TwoColumn.Special"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textUri" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dip" >
+                <Button
+                    android:id="@+id/validateUrl"
+                    style="@style/ButtonBase.Normal.ActionBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"></Button>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/table_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dip" > 
+    <TextView
+        android:id="@+id/revision_add_dialog_title"
+        style="@style/ZZMD.TextViewBase.Dialog" >
+    </TextView>
+    <EditText
+        android:id="@+id/revision_add_description"
+        style="@style/ZZMD.EditTextBase.Dialog" >
+    </EditText>
+    <TextView
+        android:text=""
+        style="@style/ZZMD.TextViewBase.Dialog.Small" >
+    </TextView>
+    <TextView
+        android:id="@+id/revision_add_dialog_description"
+        style="@style/ZZMD.TextViewBase.Dialog.Small" >
+    </TextView>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ZZMD.LinearBase.Normal.Vertical"
+    android:background="@drawable/list_selector"
+    android:padding="5dip" >
+    <TextView
+        android:id="@+id/mm_design_set__name"
+        style="@style/ZZMD.TextViewBase.Heading" />
+    <TextView
+		android:id="@+id/mm_design_set__design_set_id"
+		style="@style/ZZMD.TextViewBase.Hidden" />
+</LinearLayout>

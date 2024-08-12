@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/survey_section_header"
+            style="@style/TextViewBase.Title"
+            android:layout_weight="1"            
+            android:layout_alignParentLeft="true" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/skip_all"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/skip_all" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/survey_section_detail"
+        style="@style/TextViewBase.Emphasis"
+        android:layout_width="match_parent" >
+    </TextView>
+
+</merge>

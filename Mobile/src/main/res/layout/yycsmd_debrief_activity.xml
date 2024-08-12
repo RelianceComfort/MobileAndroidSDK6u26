@@ -1,0 +1,28 @@
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<androidx.coordinatorlayout.widget.CoordinatorLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/coordinator_layout">
+		<LinearLayout style="@style/LinearBase.Normal.Vertical"
+			android:descendantFocusability="beforeDescendants"
+			android:focusableInTouchMode="true">
+		  <androidx.core.widget.NestedScrollView
+			  android:id="@+id/scroll_view"
+			  style="@style/ScrollViewBase.Normal.Vertical"
+			  android:layout_weight="1">
+			<LinearLayout android:id="@+id/table_layout" style="@style/LinearBase.Normal.Vertical" android:focusable="true" android:focusableInTouchMode="true">
+			  <include layout="@layout/quicklinks_with_screen_label" />
+			  <TextView style="@style/TextViewBase.Emphasis" android:tag="SCREEN_TIP" />
+			</LinearLayout>
+		  </androidx.core.widget.NestedScrollView>
+		  <include layout="@layout/view_previous_entries_bar" />
+		</LinearLayout>
+		<include layout="@layout/add_next_bar" />
+	</androidx.coordinatorlayout.widget.CoordinatorLayout>
+	<!-- The navigation drawer -->  
+    <include layout="@layout/sliding_menu_layout"/>
+</androidx.drawerlayout.widget.DrawerLayout>

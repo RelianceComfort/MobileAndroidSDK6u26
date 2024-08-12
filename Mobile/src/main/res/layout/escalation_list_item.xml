@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Vertical"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector" >
+    <TextView
+        android:id="@+id/person__created_user_name"
+        style="@style/TextViewBase.Heading" />
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/table_layout"
+        style="@style/TableBase.Normal" >
+        <TableRow style="@style/TableRowBase.Normal" >
+            <TextView
+                android:id="@+id/person__phone"
+                style="@style/TextViewBase.Normal.List.Medium"
+                android:autoLink="phone" />
+            <TextView
+                android:id="@+id/person__email_address"
+                style="@style/TextViewBase.Normal.List.Medium"
+                android:autoLink="email" />
+        </TableRow>
+        <TableRow style="@style/TableRowBase.Normal" >
+            <TextView
+                android:id="@+id/escalation__foreign_key_num1"
+                style="@style/TextViewBase.Normal.List.Medium" />
+            <TextView
+                android:id="@+id/escalation__due_dttm"
+                style="@style/TextViewBase.Normal.List.Medium" />
+        </TableRow>
+        <TableRow style="@style/TableRowBase.Normal" >
+            <TextView
+                android:id="@+id/escalation__esc_id"
+                style="@style/TextViewBase.Normal.List.Medium" />
+            <TextView
+                android:id="@+id/escalation__esc_reason"
+                style="@style/TextViewBase.Normal.List.Medium" />
+        </TableRow>
+        <TableRow style="@style/TableRowBase.Normal" >
+            <TextView
+                android:id="@+id/escalation__esc_status"
+                style="@style/TextViewBase.Normal.List.Medium" />
+            <TextView
+                android:id="@+id/escalation__priority"
+                style="@style/TextViewBase.Normal.List.Medium" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

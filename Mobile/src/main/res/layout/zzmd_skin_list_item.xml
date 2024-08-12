@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ZZMD.LinearBase.Normal.Horizontal"
+    android:background="@drawable/list_selector"
+    android:gravity="center_vertical" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TableLayout
+            android:id="@+id/table_layout"
+            style="@style/ZZMD.TableBase.Normal" >
+            <TableRow style="@style/ZZMD.TableRowBase.Normal" >
+                <TextView
+                    android:id="@+id/mm_skin__name"
+                    style="@style/ZZMD.TextViewBase.Strong.List.Full" />
+            </TableRow>
+            <TableRow style="@style/ZZMD.TableRowBase.Normal">
+                <include layout="@layout/zzmd_skin_color_bar" />
+            </TableRow>
+            <TableRow style="@style/ZZMD.TableRowBase.Normal" >
+                <TextView
+                    android:id="@+id/mm_skin__description"
+                    style="@style/ZZMD.TextViewBase.Emphasis" />
+                <TextView
+                    android:id="@+id/mm_skin__metrix_row_id"
+                    style="@style/ZZMD.TextViewBase.Hidden" />
+                <TextView
+                    android:id="@+id/mm_skin__skin_id"
+                    style="@style/ZZMD.TextViewBase.Hidden" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>

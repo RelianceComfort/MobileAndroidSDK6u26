@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearBase.Normal.Horizontal"
+    android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:gravity="center_vertical" >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="0dp"
+        android:layout_weight="0.75"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TableLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/table_layout"
+            style="@style/TableBase.Normal" >
+            <TableRow style="@style/TableRowBase.Normal" >
+                <TextView
+                    android:id="@+id/action_description"
+                    style="@style/TextViewBase.Strong.List.Thin" />
+                </TableRow>
+                <TableRow style="@style/TableRowBase.Normal" >
+                <TextView
+                    android:id="@+id/action_info"
+                    style="@style/TextViewBase.Normal.List.Medium" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+		<ImageView
+	       android:id="@+id/person_action_icon"
+	       android:src="@drawable/phonebook_message"
+	       android:layout_weight="0.25"
+	       android:paddingRight="5dp"		            
+	       android:layout_width="wrap_content"
+	       android:layout_height="40dip" >  
+	    </ImageView>
+   		<ImageView
+	       android:id="@+id/person_action_icon2"
+	       android:src="@drawable/phonebook_message"
+	       android:layout_weight="0.25"		            
+	       android:layout_width="wrap_content"
+	       android:layout_height="40dip" >  
+	    </ImageView>
+    </LinearLayout>        
+</LinearLayout>
